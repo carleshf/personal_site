@@ -2,6 +2,9 @@
 title: "Winter Card 2016 - 2017"
 date: 2016-12-21T16:09:41+02:00
 draft: false
+tags:
+  - geek winter card
+  - javascript
 ---
 
 Following the tradition of the last years, I've made a _geek christmas card:. This year I typed it in _javascript_ using the improvements of _HTML5_.

@@ -2,9 +2,12 @@
 title: "Winter Card 2014 - 2015"
 date: 2014-12-18T22:12:12+02:00
 draft: false
+tags:
+  - geek winter card
+  - R
 ---
 
-Like the previous years, I continued with the tradition of sending a geed Winter Card to my workmates.
+Like the previous years, I continued with the tradition of sending a _geek christmas card_ to my workmates.
 
 This year I wrote it in R since it is one of the most used languages at my workplace, CREAL.
 

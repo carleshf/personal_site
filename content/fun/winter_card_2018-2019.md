@@ -2,6 +2,9 @@
 title: "Winter Card 2018 - 2019"
 date: 2018-12-21T15:17:29+02:00
 draft: false
+tags:
+  - geek winter card
+  - javascript
 ---
 
 Following the tradition, I've made the _geek christmas card_ for this year. As it is being the trend lately, it is coded in _javascript_ and _HTML5_.

@@ -2,6 +2,9 @@
 title: "Winter Card 2019 - 2020"
 date: 2019-12-30T15:17:29+02:00
 draft: false
+tags:
+  - geek winter card
+  - javascript
 ---
 
 For this Christmas, I wanted to move the level of the _geek christmas card_ further that I did before.

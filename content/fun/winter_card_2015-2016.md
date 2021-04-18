@@ -2,6 +2,10 @@
 title: "Winter Card 2015 - 2016"
 date: 2015-12-18T16:12:12+02:00
 draft: false
+tags:
+  - geek winter card
+  - java
+  - asci
 ---
 
 It's time for the _geek christmas card_. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.

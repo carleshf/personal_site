@@ -2,6 +2,9 @@
 title: "Winter Card 2017 - 2018"
 date: 2017-12-20T15:19:41+02:00
 draft: false
+tags:
+  - geek winter card
+  - javascript
 ---
 
 It is the time to follow the tradition of creating a _geek christmas card_. As I did last year, the one for this year I typed it in _javascript_. It is much simpler compared to the _game_ of the 2016 Christmas, but I enjoyed coding it.

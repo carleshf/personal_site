@@ -2,6 +2,9 @@
 title: "Winter Card 2012 - 2013"
 date: 2012-12-15T22:18:44+02:00
 draft: false
+tags:
+  - geek winter card
+  - python
 ---
 
 This year I've decided to send a Christmas' card to my classmates. And since we are a bunch a little geeks, and I'm not an exception, here you have the postcard I sent them: _A source-code-postcard in python_.

@@ -2,6 +2,10 @@
 title: "Winter Card 2020 - 2021"
 date: 2020-12-20T15:10:02+02:00
 draft: false
+tags:
+  - geek winter card
+  - javascript
+  - p5js
 ---
 
 
