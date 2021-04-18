@@ -2,6 +2,8 @@
 title: "rolvember20 día 15: limpieza"
 date: 2020-11-15T16:34:27+02:00
 draft: false
+tags:
+  - D&D5e
 ---
 
 

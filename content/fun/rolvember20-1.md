@@ -2,6 +2,8 @@
 title: "rolvember20 día 1: cosecha"
 date: 2020-11-01T00:14:51+02:00
 draft: false
+tags:
+  - D&D5e
 ---
 
 Este año voy a tomarme en serio participar con (cierta) regularidad a la iniciativa de [Manuel Garrido](bit.ly/2PoNn2M) llamada [#rolvember20](ttps://twitter.com/hashtag/rolvember20?src=hashtag_click).

@@ -2,6 +2,8 @@
 title: "rolvember20 día 29: legal"
 date: 2020-11-29T02:08:01+02:00
 draft: false
+tags:
+  - D&D5e
 ---
 
 Esta es la cuarta y última entrada para el [#rolvember20](https://twitter.com/hashtag/rolvember20?src=hashtag_click). Para cerrar este pequeño capítulo rolero vamos a terminar tal y cómo empezamos, con una semilla de aventura. El concepto, o palabra clave, es "_legal_".

@@ -2,6 +2,8 @@
 title: "rolvember20 día 22: aire"
 date: 2020-11-22T12:06:10+02:00
 draft: false
+tags:
+  - D&D5e
 ---
 
 Para esta tercera entrega para [#rolvember20](https://twitter.com/hashtag/rolvember20?src=hashtag_click) me propuse escribir una subclase de D&D 5e. Me decidí por el monje, pues es la clase que más desconozco.

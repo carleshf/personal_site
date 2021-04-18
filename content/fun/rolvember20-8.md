@@ -2,6 +2,8 @@
 title: "rolvember20 día 8: fuego"
 date: 2020-11-08T00:17:36+02:00
 draft: false
+tags:
+  - D&D5e
 ---
 
 Esta es la segunda de las entregas a las que me comprometí para [#rolvember20]("https://twitter.com/hashtag/rolvember20?src=hashtag_click). Me propuse el diseño de un nuevo NPC parq ue pudiera ser usado a modo de enemigo de los PJs, aunque en realidad los PJs podría formar parte de "__El Culto del Fuego Carmesí__".
