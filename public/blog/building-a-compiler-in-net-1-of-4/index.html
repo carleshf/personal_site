@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Carles Hernandez-Ferrer ">
+<meta name="description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)." />
+<meta name="keywords" content=", .net, C#" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/" />
+
+
+    <title>
+        
+            Building a Compiler in .Net  (1 of 4) :: Carles Hernandez-Ferrer 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Building a Compiler in .Net  (1 of 4)">
+<meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)."><meta itemprop="datePublished" content="2011-12-20T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-12-20T00:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="942"><meta itemprop="image" content="http://212.71.254.23"/>
+<meta itemprop="keywords" content=".net,C#," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://212.71.254.23"/>
+
+<meta name="twitter:title" content="Building a Compiler in .Net  (1 of 4)"/>
+<meta name="twitter:description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)."/>
+
+
+
+
+    <meta property="og:title" content="Building a Compiler in .Net  (1 of 4)" />
+<meta property="og:description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/" /><meta property="og:image" content="http://212.71.254.23"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-12-20T00:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2011-12-20T00:00:00&#43;02:00" /><meta property="og:site_name" content="Carles Hernandez-Ferrer" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2011-12-20 00:00:00 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">C:\carles.exe</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/academic">Academic</a></li><li><a href="/blog">Blog</a></li><li><a href="/fun">Fun</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/">Building a Compiler in .Net  (1 of 4)</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>This post is part of a series of 4. Here you have the links to each one:</p>
+<ul>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/">Building a Compiler in .Net (1 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-2-of-4/">Building a Compiler in .Net (2 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/">Building a Compiler in .Net (3 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-4-of-4/">Building a Compiler in .Net (4 of 4)</a></li>
+</ul>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</p>
+<h2 id="compiling-steps">Compiling steps</h2>
+<p>A compiler is a very complex program. It’s difficult to tell the difference between its own parts:</p>
+<figure>
+    <img src="/img/compiler_structure.png"
+         alt="Compiler workflow"/> <figcaption>
+            <p>Compiler workflow</p>
+        </figcaption>
+</figure>
+
+<ul>
+<li><strong>Scanner</strong>: The scanner is in charge to get a characters sequence (source code) and obtain the hidden tokens.</li>
+<li><strong>Parser</strong>: Gets a tokens sequence from scanner and builds the non-attributed syntax tree. It’s in charge to discover the (unique) structure of the input program (source code).</li>
+<li><strong>Semantic Analyser</strong>: It’s objective is to validate the semantic of the input code (sensitive to the context) and to generate the attribute of each token if necessary.</li>
+<li><strong>Code Generation</strong>: With the attributed-syntactic tree it generates the object code to be executed.</li>
+</ul>
+<h3 id="scanner">Scanner</h3>
+<p>Also known as Lexical Analyser it reads the characters from source code one by one to compose tokens. Tokens are the input source of the next step (Parser). Each token is a group of characters with some meaning: clue words (like <code>while</code> of <code>if</code>), identifiers, operations&hellip; Tokens have two parts: The token’s type and its value. For example, if <code>myVar</code> is an identifier, it’s token’s type will be &lsquo;identifier&rsquo; and it’s value &lsquo;myVar&rsquo;.</p>
+<p>To sum up, the scanner s in charge to read char in source code to compose tokens, ruling white spaces, comments, tabs&hellip;</p>
+<h3 id="parser">Parser</h3>
+<p>Also called Syntax Analyser, it takes the tokens collection from scanner and validates it’s order. It means parse is in charge to build a syntax tree. This tree represents source code structure and it has to be unique (if it is not unique we could have more than one output value for the same input value). One of the most important aspect relates to parser is referred whit operation’s hierarchy. Let’s see an example: The operations <code>A/B*C</code> will be understood as <code>(A/B)*C</code> by FORTRAN and as <code>A/(B*C)</code> by APL.</p>
+<p>To take care of all this aspects we use a grammar. Using other words, parser defines the grammar of our language. Here we can speak, now, about different types of grammar and properties of each type, but we will don&rsquo;t do that: In summary, we can classify each grammar in one of this types:</p>
+<ul>
+<li><em>Regular</em>: Linear complexity. Usually defines using finite automats.</li>
+<li><em>Context free</em>: Linear complexity. Usually defined using a stack.</li>
+<li><em>Context dependent</em>: Exponential complexity.</li>
+<li><em>General</em>: Can&rsquo;t be analysed using finite memory.</li>
+</ul>
+<p>In fact we should use a context dependent grammar but, using one of this types, we takes a hard task. So, to don’t work so harder, we will use a context free grammar and we will analyse the context in semantic analysis.</p>
+<p>When we define our grammar we need to take care of some kind of details like operations priority. It’s not the same to define a grammar as this:</p>
+<pre><code>&lt; expression &gt; ::= [ - ] &lt; operand &gt; { ( + | - | * | / ) [ - ] &lt; operand &gt; }
+&lt; operand &gt; ::= '(' &lt; expression &gt; ')' | identifier | number
+</code></pre><p>As if we do like:</p>
+<pre><code>&lt; expression &gt; ::= &lt; term &gt; { ( + | - ) &lt; term &gt; }
+&lt; term &gt; ::= &lt; factor &gt; { ( * | / ) &lt; factor &gt; }
+&lt; factor &gt; ::= - &lt; factor &gt; | ( '(' &lt; expression &gt; ')' | identifier | number
+</code></pre><p>Why? Because with the first one a <code>+</code> and a <code>*</code> are in the same evaluation-level and, logically, we want to operate first <code>*</code> then <code>+</code>. We&rsquo;re doing this in the second one.</p>
+<h3 id="semantic-analysis">Semantic Analysis</h3>
+<p>The Semantic Analysis uses the syntax tree to check the source program consistency with the language definition. It also gathers type information and saves it in either the attributed-syntax tree or the symbol table, for subsequent use during code generation step.</p>
+<p>An important part of semantic analysis is type checking, where the compiler checks that each operator has matching operands. The language specification may permit some type conversions called coercions (an operation between an integer and a float will result in a float).</p>
+<h3 id="code-generation">Code Generation</h3>
+<p>The code generation process determines how fast the code will run and how large it will be. It takes the attributed-syntax tree (or an intermediate representation of the source code) and transforms it to machine instructions. The code generation can be seen as a double step process. A first step who involves code optimisation and a second one to generate the machine code.</p>
+<p>In the first step, optimisation, the compiler generates an intermediate representation of code more efficient than the input one.This process can be very slow and may not be able to improve the code much. For this reason, many compilers don&rsquo;t include optimisers, and, if they do, they look only for areas that are easy to optimise (usually called &ldquo;local optimisation&rdquo;).</p>
+<p>Code generation  process takes the intermediate code produced by the optimiser (or attributed syntax-tree if the compiler has no optimiser) and generates machine code. The choice of instructions for the fastest execution and smallest code size are made at this point, according to the machine&rsquo;s operating system. Each code generator is designed specifically for the machine and operating system the final code will run on.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://212.71.254.23/tags/.net/">.net</a></span>
+        <span class="tag"><a href="http://212.71.254.23/tags/c/">C#</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="http://212.71.254.23/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>

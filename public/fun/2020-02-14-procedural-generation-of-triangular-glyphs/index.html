@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Carles Hernandez-Ferrer ">
+<meta name="description" content="Some triangular glyphs
+  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL." />
+<meta name="keywords" content=", haxe, openfl" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://212.71.254.23/fun/2020-02-14-procedural-generation-of-triangular-glyphs/" />
+
+
+    <title>
+        
+            Procedural generation of triangular glyphs :: Carles Hernandez-Ferrer 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Procedural generation of triangular glyphs">
+<meta itemprop="description" content="Some triangular glyphs
+  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL."><meta itemprop="datePublished" content="2020-02-14T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2020-02-14T00:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="502"><meta itemprop="image" content="http://212.71.254.23"/>
+<meta itemprop="keywords" content="haxe,openfl," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://212.71.254.23"/>
+
+<meta name="twitter:title" content="Procedural generation of triangular glyphs"/>
+<meta name="twitter:description" content="Some triangular glyphs
+  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL."/>
+
+
+
+
+    <meta property="og:title" content="Procedural generation of triangular glyphs" />
+<meta property="og:description" content="Some triangular glyphs
+  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://212.71.254.23/fun/2020-02-14-procedural-generation-of-triangular-glyphs/" /><meta property="og:image" content="http://212.71.254.23"/><meta property="article:section" content="fun" />
+<meta property="article:published_time" content="2020-02-14T00:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2020-02-14T00:00:00&#43;02:00" /><meta property="og:site_name" content="Carles Hernandez-Ferrer" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-02-14 00:00:00 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">C:\carles.exe</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/academic">Academic</a></li><li><a href="/blog">Blog</a></li><li><a href="/fun">Fun</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://212.71.254.23/fun/2020-02-14-procedural-generation-of-triangular-glyphs/">Procedural generation of triangular glyphs</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <figure>
+    <img src="/img/haxe-triangle-glyph-00.png"
+         alt="Some triangular glyphs"/> <figcaption>
+            <p>Some triangular glyphs</p>
+        </figcaption>
+</figure>
+
+<p>Some days ago I randomly ended into the subreddit on <strong>Procedural generation</strong>, which I didn&rsquo;t suspect existed. In specific, I ended up into the <a href="https://www.reddit.com/r/proceduralgeneration/comments/5wzo7j/monthly_challenge_16_march_2017_procedural_runes/"><em>monthly challange</em></a> of March 2017.</p>
+<p>As you can see there, the challenge was on generating a set of <em>runes</em>, <em>glyphs</em>, or <em>symbols</em>. I found the challenge very interesting and starting from one of the pictures they reference (<a href="http://i.imgur.com/haZhAVz.png">this one</a>) I decided to create my own <em>generator</em> as an excuse to learn a bit of <a href="https://haxe.org/">Haxe</a> and <a href="https://www.openfl.org/">OpenFL</a>.</p>
+<p>I focused on the <em>gliphs</em> with triangular forms, the ones called &ldquo;actions&rdquo; in the reference picture. I first sifted the <em>gliphs</em> from the figure in order to have a more clear picture of the type of <em>triangular gliphs</em> I wanted to create. So, I removed &ldquo;connect&rdquo; and &ldquo;reflect&rdquo; since they broke the pyramidal structure of the other ones. I also sifted &ldquo;learn&rdquo;, &ldquo;understand&rdquo;, and &ldquo;protect&rdquo;, because they added two new elements (the circle and the dot) that I dislike.</p>
+<p>I started by placing a triangle in a matrix of 5x5 dots. Then I assigned a probability of 0.9 to a close-base triangle and a probability of 0.1 to an open-base triangle.</p>
+<figure>
+    <img src="/img/haxe-triangle-glyph-01.png"
+         alt="Outline of triangle glyphs"/> <figcaption>
+            <p>Outline of triangle glyphs</p>
+        </figcaption>
+</figure>
+
+<p>With the border already working, I dissected the original <em>glyph</em> and obtained ten small pieces with which to generate the filling of the triangle to create a <em>glyph</em>. I assigned the same probability, to each piece, to be part of the final <em>glyph</em>.</p>
+<figure>
+    <img src="/img/haxe-triangle-glyph-02.png"
+         alt="Content of triangle glyphs"/> <figcaption>
+            <p>Content of triangle glyphs</p>
+        </figcaption>
+</figure>
+
+<p>After many tests, I decided to impose some rules to avoid the creation of overcharged <em>glyphs</em>:</p>
+<ol>
+<li>A <em>glyph</em> will have a maximum of a border and three pieces with a probability of 0.6 to have a single piece, 0.3 for two pieces, and 0.1 for three pieces.</li>
+<li>Each part can only be included once (I know, this one is obvious).</li>
+<li>When added any diagonal lines none of the following pieces can be added (and vice versa): (small) happy face, (small) sad face, leg (line in the middle), (large) sad face, nor any diagonal.</li>
+<li>When added (small) sad face we cannot add a large sad face (and vice versa).</li>
+<li>Beltline (horizontal midline within the triangle) cannot be combined with the lance line (horizontal midline across the triangle).</li>
+<li>Ceiling (horizontal line on the top of the <em>glyph</em>) and lance cannot be combined.</li>
+</ol>
+<p>With these rules in place, I liked the type of <em>glyphs</em> obtained from the random generation.</p>
+<p>The last part was to decide the colors to use as background and for the <em>glyphs</em>. I went for a old-paper color as background and some old-ink colors for the <em>glyphs</em>:</p>
+<ul>
+<li><em>paper</em>: <code>0xfff8bd</code></li>
+<li><em>pink salmon</em>: <code>0xf78bc1</code></li>
+<li><em>cloud blue</em>: <code>0xafd8df</code></li>
+<li><em>ink blue</em>: <code>0x000f55</code></li>
+</ul>
+<figure>
+    <img src="/img/haxe-triangle-glyph-03.png"
+         alt="Colors for triangular glyphs"/> <figcaption>
+            <p>Colors for triangular glyphs</p>
+        </figcaption>
+</figure>
+
+<p>The final piece can be seen in <a href="https://carleshf.itch.io/">my dashboard</a> at itch (just look for &ldquo;Triangle Glyphs&rdquo;). The small web application allows you to generate a wall with 30 randomly generated <em>glyphs</em>, an alphabet with 25 unique <em>glyphs</em>, and to see the pieces used to create all of them.</p>
+<p>The code is available at <a href="https://github.com/carleshf/triangleGliph">GitHub</a>.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://212.71.254.23/tags/haxe/">haxe</a></span>
+        <span class="tag"><a href="http://212.71.254.23/tags/openfl/">openfl</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="http://212.71.254.23/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>
