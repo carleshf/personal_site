@@ -38,6 +38,7 @@ name = "Carles Hernandez-Ferrer"
     [languages.en.params.logo]
       logoText = "C:\\carles.exe"
       logoHomeLink = "/"
+      logoCursorColor = "#4169E1"
     # or
     #
     # path = "/img/your-example-logo.svg"
