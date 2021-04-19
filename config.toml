@@ -23,14 +23,9 @@ name = "Carles Hernandez-Ferrer"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
+  description = "Personal page"
   keywords = "homepage, blog"
   images = [""]
-
-[taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
 
 [languages]
   [languages.en]
@@ -54,13 +49,13 @@ name = "Carles Hernandez-Ferrer"
     name       = "About"
     url        = "/about"
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/blog"
-  [[menu.main]]
     identifier = "academic"
     name       = "Academic"
     url        = "/academic"
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/blog"
   [[menu.main]]
     identifier = "fun"
     name       = "Fun"
