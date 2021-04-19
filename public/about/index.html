@@ -39,7 +39,7 @@
   Welcome to CNAG
   Before working at the Centre Nacional d’Anàlisi Genòmica, my research interests included the study of the relations between environmental factors and internal omic perturbations, development of applications to integrate multiple layers of omic data-sets and web development of databases."><meta itemprop="datePublished" content="2021-04-17T21:59:10&#43;02:00" />
 <meta itemprop="dateModified" content="2021-04-17T21:59:10&#43;02:00" />
-<meta itemprop="wordCount" content="251"><meta itemprop="image" content="http://212.71.254.23"/>
+<meta itemprop="wordCount" content="285"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://212.71.254.23"/>
@@ -138,9 +138,32 @@
 <p>Previously turning into research, I studied my bachelor in Computer Sciences at Universitat Autònoma de Barcelona, as well as my master in Bioinformatics, and worked as a computer engineer and as a software developer elsewhere.</p>
 <h2 id="contact">Contact</h2>
 <ul>
-<li><strong>Location</strong>: Centre Nacional d&rsquo;Anàlisi Genòmica (CNAG-CRG); Parc Científic de Barcelona; Carrer de Baldiri Reixac, 4, 08028 Barcelona, Spain</li>
 <li><strong>E-mail</strong>: carles.hernandez/@\cnag.crg.eu</li>
+<li><strong>Location</strong>: Centre Nacional d&rsquo;Anàlisi Genòmica (CNAG-CRG); Parc Científic de Barcelona; Carrer de Baldiri Reixac, 4, 08028 Barcelona, Spain</li>
 </ul>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <style>
+      #map { height: 180px; }
+  </style>
+  <div id="map"></div>
+  <script>
+    // initialize Leaflet
+    var map = L.map('map').setView({lat: 41.381830, lon: 2.116485}, 16);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(map)
+      L.control.scale().addTo(map)
+      L.marker({lat: 41.381830, lon: 2.116485}).bindPopup("Centre Nacional d'Anàlisi Genòmica (CNAG-CRG)").addTo(map)
+  </script>
+
 
             </div>
         </article>

@@ -16,5 +16,29 @@ Previously turning into research, I studied my bachelor in Computer Sciences at 
 
 ## Contact
 
-  * __Location__: Centre Nacional d'Anàlisi Genòmica (CNAG-CRG); Parc Científic de Barcelona; Carrer de Baldiri Reixac, 4, 08028 Barcelona, Spain
-  * __E-mail__: carles.hernandez/@\cnag.crg.eu
+   * __E-mail__: carles.hernandez/@\cnag.crg.eu
+   * __Location__: Centre Nacional d'Anàlisi Genòmica (CNAG-CRG); Parc Científic de Barcelona; Carrer de Baldiri Reixac, 4, 08028 Barcelona, Spain
+ 
+
+{{< rawhtml >}}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <style>
+      #map { height: 180px; }
+  </style>
+  <div id="map"></div>
+  <script>
+    // initialize Leaflet
+    var map = L.map('map').setView({lat: 41.381830, lon: 2.116485}, 16);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(map)
+      L.control.scale().addTo(map)
+      L.marker({lat: 41.381830, lon: 2.116485}).bindPopup("Centre Nacional d'Anàlisi Genòmica (CNAG-CRG)").addTo(map)
+  </script>
+{{< /rawhtml >}}
