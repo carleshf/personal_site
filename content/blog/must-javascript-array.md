@@ -1,5 +1,5 @@
 ---
-title: "Some must methods for JavaScript array"
+title: "Some 'must' methods for JavaScript array"
 date: 2019-11-07T00:00:00+02:00
 draft: false
 tags:
