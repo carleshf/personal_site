@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Carles Hernandez-Ferrer ">
+<meta name="description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler." />
+<meta name="keywords" content=", .net, C#" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/" />
+
+
+    <title>
+        
+            Building a Compiler in .Net  (3 of 4) :: Carles Hernandez-Ferrer 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Building a Compiler in .Net  (3 of 4)">
+<meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."><meta itemprop="datePublished" content="2012-02-13T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-02-13T00:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="1488"><meta itemprop="image" content="http://212.71.254.23"/>
+<meta itemprop="keywords" content=".net,C#," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://212.71.254.23"/>
+
+<meta name="twitter:title" content="Building a Compiler in .Net  (3 of 4)"/>
+<meta name="twitter:description" content="This post is part of a series of 4. Here you have the links to each one:
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."/>
+
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2012-02-13 00:00:00 &#43;0200 &#43;0200" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">C:\carles.exe</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/academic">Academic</a></li><li><a href="/blog">Blog</a></li><li><a href="/fun">Fun</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/">Building a Compiler in .Net  (3 of 4)</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>This post is part of a series of 4. Here you have the links to each one:</p>
+<ul>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/">Building a Compiler in .Net (1 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-2-of-4/">Building a Compiler in .Net (2 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/">Building a Compiler in .Net (3 of 4)</a></li>
+<li><a href="http://212.71.254.23/blog/building-a-compiler-in-net-4-of-4/">Building a Compiler in .Net (4 of 4)</a></li>
+</ul>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<h3 id="in-previous-posts">In previous posts</h3>
+<p>In this third post we will finish our compiler. In the last part ( <em>number 4</em> ) we will talk about some educative improvements I&rsquo;ve done to our compiler. So, now we&rsquo;re gonna talk about symbol&rsquo;s table, &ldquo;.net machine code&rdquo; and how to generate this one (not necessary in this order).</p>
+<p>In the first post we said a compiler is formed, at last, by four different phases: Scanner, Parser, Semantic Analyser and Code Generation. In the second post we covered the implementation of the Scanner and the Parser. In this posts, the third we will implement a mix of Semantic Analyser and Code Generation.</p>
+<p>Good compilers separate the Semantic Analyser of the generation of code to add a new stage: Code Optimization. This new step can be done after Semantic Analyser or after Code Generation. Our compiler, as simple as it is, will not have Code Optimization and, for this reason, we can mix Semantic Analyser with Code Generation.</p>
+<h3 id="net-framework">.NET Framework</h3>
+<p>We call Common Language Run time ( <strong>CLR</strong> ) the virtual machine component of Microsoft .NET Framework responsible of the execution of .NET programs. It&rsquo;s in charge to compile the common Intermediate Language ( <strong>CIL</strong> ) into machine code during the compilation process known as just-in-time ( <strong>JIT</strong> ). CLR provides additional services related to memory management, type safety,&hellip; and an assembly language to define executable programs. All programs written for the .NET framework are executed by the CLR.</p>
+<p>The CLR uses an abstract stack-based data structure to model code execution, and CIL, to define the operations you can perform on the stack. When a computer program defined using CIL is executed, the CLR simply simulates the operations specified against a stack, pushing and popping data to be executed instruction by instruction.</p>
+<p>Let&rsquo;s see and example where we multiply two numbers (<code>2 * 3</code>):</p>
+<pre><code>ldc.i4 2
+ldc.i4 3
+mul
+</code></pre><p>The two firsts instructions (<code>lcd.i4</code>) push an integer onto the stack. The last instruction (<code>mul</code>) multiplies the two pushed integers (popping them from the stack) and push the result onto the stack.</p>
+<p>There are lots of CIL instructions available for building your programs they range from basic arithmetic to flow control to a variety of calling conventions. Details about all the CIL instructions can be found in <a href="http://www.ecma-international.org/publications/standards/Ecma-335.htm">ecma-335</a>.</p>
+<p>Out compiler makes use of a Base Class Library component called <code>System.Reflection.Emit</code> to deal with IL code generation and .NET assembly creation and packaging. The <code>AssemblyBuilder</code> class is used to set up the necessary .NET assembly metadata elements like the manifest. The <code>ModuleBuilder</code> class is used to create modules within the assembly. <code>TypeBuilder</code> is used to create <code>Types</code> and their associated metadata. <code>MethodBuilder</code> and <code>LocalBuilder</code> deal with adding methods to types and locals to methods, respectively. The <code>ILGenerator</code> class is used to generate the CIL code for methods, utilizing the <code>OpCodes</code> class, which is a big enumeration containing all possible CIL instructions.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="reflectionemit">Reflection.Emit</h3>
+<p>Our compiler relies heavily on the <code>Reflection.Emit</code> library to produce an executable. In the constructor of the class (shown behind) we set up the necessary infrastructure from <code>Reflection.Emit</code> to start generating code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> CodeGen( InstrStmt p_input, <span style="color:#66d9ef">string</span> p_module_name ) {
+    <span style="color:#66d9ef">if</span> ( IO.Path.GetFileName( p_module_name ) != p_module_name ) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;By the way we can only output into current directory!&#34;</span> );
+    }
+    Reflect.AssemblyName name = <span style="color:#66d9ef">new</span> Reflect.AssemblyName( IO.Path.GetFileNameWithoutExtension( p_module_name ) );
+    Emit.AssemblyBuilder asmb = System.AppDomain.CurrentDomain.DefineDynamicAssembly( name, Emit.AssemblyBuilderAccess.Save );
+    Emit.ModuleBuilder modb = asmb.DefineDynamicModule( p_module_name );
+
+    <span style="color:#75715e">// At start our SL language has no class loaded. But we need, at last, one class on root.
+</span><span style="color:#75715e"></span>    Emit.TypeBuilder typeBuilder = modb.DefineType( <span style="color:#e6db74">&#34;Foo&#34;</span> );
+
+    <span style="color:#75715e">// Here we defines a main method to hold the IL that will be generated.
+</span><span style="color:#75715e"></span>    Emit.MethodBuilder methb = typeBuilder.DefineMethod( <span style="color:#e6db74">&#34;Main&#34;</span>, Reflect.MethodAttributes.Static, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">void</span> ), System.Type.EmptyTypes );
+
+    <span style="color:#75715e">// Global CodeGenerator
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.il = methb.GetILGenerator();
+    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">new</span> Collections.Dictionary&lt; <span style="color:#66d9ef">string</span>, Emit.LocalBuilder &gt;();
+
+    <span style="color:#75715e">// Compile
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.GenInstr( p_input, <span style="color:#66d9ef">null</span> );
+
+    il.Emit( Emit.OpCodes.Ret );
+    typeBuilder.CreateType();
+    modb.CreateGlobalFunctions();
+    asmb.SetEntryPoint( methb ); <span style="color:#75715e">// Calling SetEntryPoint on MethodBuilder so it will run on startup when a user runs the executable.
+</span><span style="color:#75715e"></span>    asmb.Save( p_module_name );
+
+    <span style="color:#75715e">// Clear
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.il = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.module_name = p_module_name;
+}
+</code></pre></div><p>We start defining the assembly name and passing that to the assembly builder. In this example, we use the source file name as the assembly name. Next is the <code>ModuleBuilder</code> definition this uses the same name as the assembly. After that we define a <code>TypeBuilder</code> on the <code>ModuleBuilder</code> to hold the only type in the assembly. There are no types defined as first class citizens of the our language definition, but at least one type is necessary to hold the method, which will run on startup. We cal it <em>Foo</em>. The <code>MethodBuilder</code> defines a Main method to hold the CIL that will be generated. We need to call <code>SetEntryPoint</code> on this <code>MethodBuilder</code> so it will run on startup when the executable will be runt. The we create the global <code>ILGenerator</code> from the <code>MethodBuilder</code> using the <code>GetILGenerator</code> method.</p>
+<h3 id="geninstr">GenInstr</h3>
+<p>After all this set up step we call the function <code>GenInstr</code>. This function will walk into the syntax-tree generating the necessary CIL code using our <code>ILGenerator</code> instance.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> GenInstr(<span style="color:#66d9ef">object</span> p_instr, System.Type p_expected_type) { 
+
+    System.Type my_type = <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Sequence ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadIntStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadStrStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> IfStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> WhileStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ExprStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BoolStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> TermStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> StringLt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BracketExpr) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Variable ) {
+    }
+    <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Unexpected code bloc &#34;</span> + p_instr.GetType().Name );
+    }
+
+    <span style="color:#66d9ef">if</span> (p_expected_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != p_expected_type ) {
+        <span style="color:#66d9ef">if</span> ( my_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) &amp;&amp; p_expected_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">string</span> ) ) {
+            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Box, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) );
+            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Callvirt, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">object</span> ).GetMethod( <span style="color:#e6db74">&#34;ToString&#34;</span> ) );
+        } 
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Can&#39;t coerce a &#34;</span> + my_type.Name + <span style="color:#e6db74">&#34; to a &#34;</span> + p_expected_type.Name );
+        }
+    }
+}
+</code></pre></div><p>As we can see each type of &ldquo;VSL instruction&rdquo; has its own code-generation step. Now we&rsquo;re going to look carefully three of this steps, you can look the other ones at your own time. The three cases discussed below represent the three different types of cases that we are generating code: Code-Generation code in intself, check/modify the Symbol&rsquo;s table and using existing methods.</p>
+<h4 id="numberlt"><code>NumberLt</code></h4>
+<p>Let&rsquo;s start with <code>NumberLt</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) { 
+    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Ldc_I4, ( (NumberLt) p_instr ).Value ); my_type = <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ); 
+}
+</code></pre></div><p>In this case we&rsquo;re creating the opcode <code>lcd.i4</code> like the opcode seen in the .NET Framework section of this article, pushing to the stack the value of a number literal.</p>
+<h3 id="variable"><code>Variable</code></h3>
+<p>Now we go with <code>Variable</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) { 
+    VarStmt declare = (VarStmt) p_instr; 
+    <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.symbol_table.ContainsKey( declare.Identifier ) ) { 
+        <span style="color:#75715e">// declare local 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.symbol_table[ declare.Identifier ] = <span style="color:#66d9ef">this</span>.il.DeclareLocal( <span style="color:#66d9ef">this</span>.TypeOf( declare.Expression ) ); 
+        <span style="color:#75715e">// set the initial value =&gt; &lt; identifier &gt; = &lt; expr &gt; AssignStmt assign = new AssignStmt(); 
+</span><span style="color:#75715e"></span>        assign.Identifier = declare.Identifier; 
+        assign.Expression = declare.Expression; <span style="color:#66d9ef">this</span>.GenInstr( assign, <span style="color:#66d9ef">null</span> ); 
+    } 
+    <span style="color:#66d9ef">else</span> { 
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;A variable with name &#34;&#34; + declare.Identifier + &#34;&#34; was declared before.&#34;</span> ); 
+    } 
+} 
+<span style="color:#75715e">// [ ... ] 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) { 
+    AssignStmt assign = (AssignStmt) p_instr; 
+    <span style="color:#66d9ef">this</span>.GenInstr( assign.Expression, <span style="color:#66d9ef">null</span> ); 
+    <span style="color:#66d9ef">this</span>.StoreTS( assign.Identifier, <span style="color:#66d9ef">this</span>.TypeOf( assign.Expression ) ); 
+}
+</code></pre></div><p>In this case we&rsquo;re creating a variable. First of all we must check if a variable with the same name exists. If not, we add this new variable to the symbol&rsquo;s table with it&rsquo;s type. Then we create an assignment statement to store the first value of the declared variable.</p>
+<h3 id="printstmt"><code>PrintStmt</code></h3>
+<p>The last case of code-generation we&rsquo;re gonna see is <code>PrintStmt</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) { 
+    <span style="color:#75715e">// &#34;print&#34; statement is an alias for System.Console.WriteLine. 
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// it uses the string case System.Type 
+</span><span style="color:#75715e"></span>    expr_type = <span style="color:#66d9ef">this</span>.TypeOf( ( (PrintStmt) p_instr ).Expression ); 
+    <span style="color:#66d9ef">this</span>.GenInstr( ( (PrintStmt) p_instr ).Expression, <span style="color:#66d9ef">null</span> ); 
+    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Call, <span style="color:#66d9ef">typeof</span>( System.Console ).GetMethod( <span style="color:#e6db74">&#34;WriteLine&#34;</span>, <span style="color:#66d9ef">new</span> System.Type[] { expr_type } ) ); 
+}
+</code></pre></div><p>In this last case we call a function from <code>System.Console</code> class. See we use <code>Emit.OpCode.Call</code> with a <code>GetMethod</code> to access to method <code>WriteLine</code>.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://212.71.254.23/tags/.net/">.net</a></span>
+        <span class="tag"><a href="http://212.71.254.23/tags/c/">C#</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="http://212.71.254.23/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>
