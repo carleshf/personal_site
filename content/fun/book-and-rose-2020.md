@@ -1,5 +1,5 @@
 ---
-title: "St. Jordi 2019 (Barcelona + Pandemic Ed.)"
+title: "St. Jordi 2020 (Barcelona + Pandemic Ed.)"
 date: 2020-04-23T00:00:00+02:00
 draft: false
 tags:
