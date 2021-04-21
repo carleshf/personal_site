@@ -25,8 +25,7 @@
       
       <guid>http://212.71.254.23/fun/book-and-rose-2019/</guid>
       <description>Saint Gorge is the patron of Catalonia (a northeast region in Spain). It is the national day of the region and it is celebrated by offering books and roses to your intimate and loved ones (more information about it on this page from Barcelona&amp;rsquo;s City council).
-I made this super simple drawing in HTML5 and javacript to celebrate this amazing Catalan festivity.
-  * { padding: 0; margin: 0; } canvas { background: #fff; display: block; margin: 0 auto; } h1 { text-align: center; font-family: cursive; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.</description>
+This is the first year outside Catalonia for this day. So, I made this super simple drawing in HTML5 and javacript to celebrate this amazing Catalan festivity.</description>
     </item>
     
   </channel>

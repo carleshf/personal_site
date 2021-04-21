@@ -8,7 +8,7 @@ tags:
 
 Saint Gorge is the patron of Catalonia (a northeast region in Spain). It is the national day of the region and it is celebrated by offering books and roses to your intimate and loved ones (more information about it on [this page](https://www.barcelona.de/en/barcelona-sant-jordi.html) from Barcelona's City council).
 
-I made this super simple drawing in _HTML5_ and _javacript_ to celebrate this amazing Catalan festivity.
+This is the first year outside Catalonia for this day. So, I made this super simple drawing in _HTML5_ and _javacript_ to celebrate this amazing Catalan festivity.
     
 {{< rawhtml >}}
     <canvas id="canvas" width="500" height="500"></canvas>
