@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://212.71.254.23/</loc>
+    <lastmod>2021-04-23T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/fun/</loc>
+    <lastmod>2021-04-23T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/st.-jordi/</loc>
+    <lastmod>2021-04-23T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/fun/book-and-rose-2021/</loc>
+    <lastmod>2021-04-23T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/</loc>
+    <lastmod>2021-04-23T00:00:00+02:00</lastmod>
+  </url><url>
     <loc>http://212.71.254.23/academic/</loc>
     <lastmod>2021-04-17T22:01:41+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/about/</loc>
     <lastmod>2021-04-17T21:59:10+02:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/</loc>
-    <lastmod>2020-12-20T15:10:02+02:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/fun/</loc>
-    <lastmod>2020-12-20T15:10:02+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/tags/geek-winter-card/</loc>
     <lastmod>2020-12-20T15:10:02+02:00</lastmod>
@@ -21,9 +30,6 @@
     <lastmod>2020-12-20T15:10:02+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/tags/p5js/</loc>
-    <lastmod>2020-12-20T15:10:02+02:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/tags/</loc>
     <lastmod>2020-12-20T15:10:02+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/fun/winter_card_2020-2021/</loc>
@@ -46,9 +52,6 @@
   </url><url>
     <loc>http://212.71.254.23/fun/rolvember20-1/</loc>
     <lastmod>2020-11-01T00:14:51+02:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/tags/st.-jordi/</loc>
-    <lastmod>2020-04-23T00:00:00+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/fun/book-and-rose-2020/</loc>
     <lastmod>2020-04-23T00:00:00+02:00</lastmod>
