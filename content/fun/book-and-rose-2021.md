@@ -6,7 +6,7 @@ tags:
   - St. Jordi
 ---
 
-Once again I am coding a virtual rose to offer to my loved ones. This time I'm bringing some changes since it is not a "static one". 
+Once again I am coding a digital rose to offer to my wife. This time I'm bringing some changes since it is not a "static one" 😉.
 
 If you press on the following picture you'll be moved to `itch.io` so you can play this _super-minigame_ where you have to find the 5 hidden roses in the garden.
 

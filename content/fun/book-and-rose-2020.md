@@ -6,7 +6,7 @@ tags:
   - St. Jordi
 ---
 
-Following previous year (fun-post [here]({{< ref "/fun/book-and-rose-2019.md" >}})), I come again with a virtual rose. This time, a pure-CSS rose.
+As I did last year (fun-post [here]({{< ref "/fun/book-and-rose-2019.md" >}})), I come again with a digital rose for my wife. This time, a pure-CSS rose.
 
 {{< rawhtml >}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento">

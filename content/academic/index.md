@@ -19,12 +19,12 @@ draft: false
 
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., C Hernandez-Ferrer, ..., J Wright, M Vrijheid
-  * Environment International (accepted: 2021-03-25)
+  * [Environment International](https://www.sciencedirect.com/science/article/pii/S0160412021001483?via%3Dihub) (2021-03-25)
  
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
   * L Matalonga, Carles Hernandez-Ferrer, D Piscia, ..., H Graessner, S Beltran
   * European Journal of Human Genetics (accepted: 2020-11-13)
- 
+
 * __In utero and childhood exposure to tobacco smoke and multi-layer molecular signatures in children__
   * M Vives-Usano, C Hernandez-Ferrer, L Maitre, ..., V Vrijheid, M Bustamante
   * [BMC Medicine](https://pubmed.ncbi.nlm.nih.gov/32811491/) (2020-08-19)
@@ -71,7 +71,7 @@ draft: false
  
 * __A systemic approach to identify signaling pathways activated during short-term exposure to traffic-related urban air pollution from human blood__
   * JE Vargas, N Kubesch, C Hernandez-Ferrer, G Carrasco-Turigas, M Bustamante, M Nieuwenhuijsen, JR Gonzalez
-  * [Environmental science and pollution research international](https://link.springer.com/article/10.1007/s11356-018-3009-8) (2018-08-23)
+  * [Environmental Science and Pollution Research](https://link.springer.com/article/10.1007/s11356-018-3009-8) (2018-08-23)
  
 * __CTDquerier: a bioconductor R package for Comparative Toxicogenomics Database (TM) data extraction, visualization and enrichment of environmental and toxicological studies__
   * C Hernandez-Ferrer, JR Gonzalez
@@ -94,7 +94,7 @@ draft: false
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1455-1) (2017-01-17)
  
 * __The Pregnancy Exposome: Multiple Environmental Exposures in the INMA-Sabadell Birth Cohort__
-  * O Robinson, X Basagaña, L Agier, M de Castro, C Hernandez-Ferrer, JR Gonzalez, J. Grimalt, M Nieuwenhuijsen, J Sunyer, R Slama, M Vrijheid
+  * O Robinson, X Basagaña, L Agier, M de Castro, C Hernandez-Ferrer, JR Gonzalez, J Grimalt, M Nieuwenhuijsen, J Sunyer, R Slama, M Vrijheid
   * [Environmental Science & Technology](https://pubs.acs.org/doi/10.1021/acs.est.5b01782) (2015-07-13)
  
 * __affy2sv: an R package to pre-process Affymetrix CytoScan HD and 750K arrays for SNP, CNV, inversion and mosaicism calling__
