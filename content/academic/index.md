@@ -26,7 +26,7 @@ draft: false
   * European Journal of Human Genetics (accepted: 2020-11-13)
 
 * __In utero and childhood exposure to tobacco smoke and multi-layer molecular signatures in children__
-  * M Vives-Usano, C Hernandez-Ferrer, L Maitre, ..., V Vrijheid, M Bustamante
+  * M Vives-Usano, C Hernandez-Ferrer, L Maitre, ..., M Vrijheid, M Bustamante
   * [BMC Medicine](https://pubmed.ncbi.nlm.nih.gov/32811491/) (2020-08-19)
  
 * __A guide to writing systematic reviews of rare disease treatments to generate FAIR-compliant datasets: building a Treatabolome__
