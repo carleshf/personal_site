@@ -17,6 +17,10 @@ draft: false
 
 #### Published & Accepted
 
+* __WEScover: selection between clinical whole exome sequencing and gene panel testing__
+  * IH Lee, Y Lin, WJ Alvarez, C Hernandez-Ferrer, KD Mandl, S Kong
+  * BMC Bioinformtics (accepted: 2021-05-07)
+
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., C Hernandez-Ferrer, ..., J Wright, M Vrijheid
   * [Environment International](https://www.sciencedirect.com/science/article/pii/S0160412021001483?via%3Dihub) (2021-03-25)
@@ -114,10 +118,6 @@ draft: false
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, C Hernandez-Ferrer, D Thiel, ..., M Coen, JR González, HC Keun, M Vrijheid
   * Cell (2021-02-03)
-
-* __WEScover: selection between clinical whole exome sequencing and gene panel testing__
-  * IH Lee, Y Lin, WJ Alvarez, C Hernandez-Ferrer, KD Mandl, S Kong
-  * BMC Bioinformtics (2020-12-17)
 
 * __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
   * C Ruiz-Arenas, C Hernandez-Ferrer, M Vives-Usano, ..., M Vrijheid, JR Gonzalez, M Bustamante
