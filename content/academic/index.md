@@ -117,11 +117,11 @@ draft: false
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, C Hernandez-Ferrer, D Thiel, ..., M Coen, JR González, HC Keun, M Vrijheid
-  * Cell (2021-02-03)
+  * Cell (2021-02-03) | [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
 
 * __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
   * C Ruiz-Arenas, C Hernandez-Ferrer, M Vives-Usano, ..., M Vrijheid, JR Gonzalez, M Bustamante
-  * [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (bioRxiv: 2020-11-05) 
+  * eLife (2020-11-05) | [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (2020-11-05)
 
 * __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
   * J Julvez, M López-Vicente, ..., C Hernandez-Ferrer, ..., X Basagaña, M Vrijheid
