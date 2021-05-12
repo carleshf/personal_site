@@ -26,7 +26,7 @@ draft: false
   * [Environment International](https://www.sciencedirect.com/science/article/pii/S0160412021001483?via%3Dihub) (2021-03-25)
  
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
-  * L Matalonga, Carles Hernandez-Ferrer, D Piscia, ..., H Graessner, S Beltran
+  * L Matalonga, C Hernandez-Ferrer, D Piscia, ..., H Graessner, S Beltran
   * European Journal of Human Genetics (accepted: 2020-11-13)
 
 * __In utero and childhood exposure to tobacco smoke and multi-layer molecular signatures in children__
@@ -208,8 +208,8 @@ Acting as final master thesis director:
 * _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner Sotes and being conducted during 2nd semester of 2020
 * _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020 (grade: A; score of 9.2/10)
 * _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020 (grade: A; score of 9.4/10)
-* _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019 (grade: B; score of 8.97/10)
-* _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019 (grade: A; score of 9.16/10)
+* _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019 (grade: B; score of 8.9/10)
+* _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019 (grade: A; score of 9.2/10)
 
 #### __Biotools for biostatistics and bioinformatics (1st edition)__
 * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
@@ -237,6 +237,12 @@ The institution was collaborating with the regional government in order to host 
 * 2015-05 as _Instructor_
 
 2h: Genomic data visualization
+
+#### Introduction to R
+* Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
+* 2014-04 as _Instructor_
+
+4h: Algorithms and programming structures
 
 #### Introduction to python for bioinformatics
 * Centre for Research in Agricultural Genomics // Statistical and population genomics
