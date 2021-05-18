@@ -17,6 +17,10 @@ draft: false
 
 #### Published & Accepted
 
+* __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
+  * J Julvez, M López-Vicente, ..., C Hernandez-Ferrer, ..., X Basagaña, M Vrijheid
+  * Environmental Pollution (accepted: 2021-05-16)
+
 * __WEScover: selection between clinical whole exome sequencing and gene panel testing__
   * IH Lee, Y Lin, WJ Alvarez, C Hernandez-Ferrer, KD Mandl, S Kong
   * BMC Bioinformtics (accepted: 2021-05-07)
@@ -122,10 +126,6 @@ draft: false
 * __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
   * C Ruiz-Arenas, C Hernandez-Ferrer, M Vives-Usano, ..., M Vrijheid, JR Gonzalez, M Bustamante
   * eLife (2020-11-05) · [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (2020-11-05)
-
-* __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
-  * J Julvez, M López-Vicente, ..., C Hernandez-Ferrer, ..., X Basagaña, M Vrijheid
-  * Environmental Pollution (2020-10-23)
 
 #### In preparation
 
@@ -239,7 +239,7 @@ The institution was collaborating with the regional government in order to host 
 2h: Genomic data visualization
 
 #### Introduction to R
-* Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
+* Barcelona Institute for Global Health
 * 2014-04 as _Instructor_
 
 4h: Algorithms and programming structures
