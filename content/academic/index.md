@@ -23,7 +23,7 @@ draft: false
 
 * __WEScover: selection between clinical whole exome sequencing and gene panel testing__
   * IH Lee, Y Lin, WJ Alvarez, C Hernandez-Ferrer, KD Mandl, S Kong
-  * BMC Bioinformtics (accepted: 2021-05-07)
+  * [BMC Bioinformtics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5) (2021-05-20)
 
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., C Hernandez-Ferrer, ..., J Wright, M Vrijheid
@@ -198,20 +198,20 @@ No articles in preparation at this moment.
  
 ## Teaching
 
-#### __Direction of master thesis in bioinformatics__
+#### Direction of master thesis in bioinformatics
   * Open University of Catalonia // [Master in Bioinformatics and Biostatistics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion)
   * from 2019-09 to 2021-06 as _External Collaborator_
 
 Acting as final master thesis director:
 
-* _Analyzing glioma samples to identify glimoa-specific expression biomarkers_; by Aitor Gómez Osuna and being conducted during 2nd semester of 2020
-* _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner Sotes and being conducted during 2nd semester of 2020
-* _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020 (grade: A; score of 9.2/10)
-* _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020 (grade: A; score of 9.4/10)
-* _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019 (grade: B; score of 8.9/10)
-* _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019 (grade: A; score of 9.2/10)
+* _Analyzing glioma samples to identify glimoa-specific expression biomarkers_; by Aitor Gómez and being conducted during 2nd semester of 2020-2021
+* _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner and being conducted during 2nd semester of 2020-2021
+* _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
+* _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
+* _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
+* _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
 
-#### __Biotools for biostatistics and bioinformatics (1st edition)__
+#### Biotools for biostatistics and bioinformatics (1st edition)
 * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
 * 2017-05 as _Instructor_
 
