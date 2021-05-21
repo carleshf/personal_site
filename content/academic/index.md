@@ -137,7 +137,7 @@ No articles in preparation at this moment.
   * CL Johnson, E Jazan, SW Kong, KD Pennell
   * [Environmental Science and Pollution Research](https://link.springer.com/article/10.1007/s11356-020-10702-6) (2020-09-10)
 
- 
+
 ## Talks
  
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
@@ -211,43 +211,43 @@ No articles in preparation at this moment.
 
 Acting as final master thesis director:
 
-* _Analyzing glioma samples to identify glimoa-specific expression biomarkers_; by Aitor Gómez and being conducted during 2nd semester of 2020-2021
-* _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner and being conducted during 2nd semester of 2020-2021
-* _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
-* _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
-* _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
-* _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
+  1. _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
+  2. _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
+  3. _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
+  4. _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
+  5. _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner and being conducted during 2nd semester of 2020-2021
+  6. _Analyzing glioma samples to identify glimoa-specific expression biomarkers_; by Aitor Gómez and being conducted during 2nd semester of 2020-2021
 
 #### Biotools for biostatistics and bioinformatics (1st edition)
-* Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
-* 2017-05 as _Instructor_
+  * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
+  * 2017-05 as _Instructor_
 
 4’5h: Code management using GIT repositories
 
 #### Tutorship of high school research projects
-* Barcelona Institute for Global Health
-* From 2016-06 to 2018-01 as _Tutor and/or supervisor_
+  * Barcelona Institute for Global Health
+  * From 2016-06 to 2018-01 as _Tutor and/or supervisor_
 
 The institution was collaborating with the regional government in order to host some students in an internship during their last year of high school, allowing them to conduct a research project.
 
-* _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of 10/10)
-* _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of 10/10)
+  1. _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of 10/10)
+  2. _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of 10/10)
 
 #### Statistical analysis of omic data in R (3th edition)
-* Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
-* 2016-05 as _Instructor_
+  * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
+  * 2016-05 as _Instructor_
 
 6h: RNASeq data analysis using R and Bioconductor packages
 
 #### Statistical analysis of omic data in R (2nd edition)
-* Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
-* 2015-05 as _Instructor_
+  * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
+  * 2015-05 as _Instructor_
 
 2h: Genomic data visualization
 
 #### Introduction to R
-* Barcelona Institute for Global Health
-* 2014-04 as _Instructor_
+  * Barcelona Institute for Global Health
+  * 2014-04 as _Instructor_
 
 4h: Algorithms and programming structures
 
@@ -258,7 +258,7 @@ The institution was collaborating with the regional government in order to host 
 8h: Basic introduction to python programming for non-programmers in bioinformatics in the field of plant and animal genomics. The session covered from languages description to small bioinformatics exercises.
 
 #### Fonaments dels Computadors (subject 102765)
-* Universitat Autonoma de Barcelona // [Bachelor's Degree in Computer Engineering](https://guies.uab.cat/guies_docents/public/portal/html/2020/assignatura/102765/en)
-* From 2010-09 to 2011-06 as _Teaching Assistant_
+  * Universitat Autonoma de Barcelona // [Bachelor's Degree in Computer Engineering](https://guies.uab.cat/guies_docents/public/portal/html/2020/assignatura/102765/en)
+  * From 2010-09 to 2011-06 as _Teaching Assistant_
 
 100h: Computer laboratory sessions covering the three main blocks of the subject (Combinational Circuits, Sequential Circuits, and Process Unit-Control Unit architecture and processors) as well as individual tutorship on student's demand.
