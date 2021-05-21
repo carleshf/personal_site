@@ -17,13 +17,13 @@ draft: false
 
 #### Published & Accepted
 
-* __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
-  * J Julvez, M López-Vicente, ..., C Hernandez-Ferrer, ..., X Basagaña, M Vrijheid
-  * Environmental Pollution (accepted: 2021-05-16)
-
 * __WEScover: selection between clinical whole exome sequencing and gene panel testing__
   * IH Lee, Y Lin, WJ Alvarez, C Hernandez-Ferrer, KD Mandl, S Kong
   * [BMC Bioinformtics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5) (2021-05-20)
+
+* __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
+  * J Julvez, M López-Vicente, ..., C Hernandez-Ferrer, ..., X Basagaña, M Vrijheid
+  * Environmental Pollution (accepted: 2021-05-16)
 
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., C Hernandez-Ferrer, ..., J Wright, M Vrijheid
