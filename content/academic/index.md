@@ -130,6 +130,13 @@ draft: false
 #### In preparation
 
 No articles in preparation at this moment.
+
+#### Aknowledged
+
+* __A two-step gas chromatography-tandem mass spectrometry method for measurement of multiple environmental pollutants in human plasma__
+  * CL Johnson, E Jazan, SW Kong, KD Pennell
+  * [Environmental Science and Pollution Research](https://link.springer.com/article/10.1007/s11356-020-10702-6) (2020-09-10)
+
  
 ## Talks
  
