@@ -170,7 +170,7 @@ No articles in preparation at this moment.
 ## Posters
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
-  * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: S Beltran)
+  * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: A Atalaia)
   * European Human Genetics Conference Virtual Conference 2021 ([program](https://2021.eshg.org/))
  
 * __Treatabolome: a rare diseases treatment awareness project__
