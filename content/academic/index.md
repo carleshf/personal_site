@@ -4,12 +4,12 @@ date: 2021-04-17T22:01:41+02:00
 draft: false
 ---
 
-| __Section__ | __Description__ |  
-|:------------|:----------------|
-| [Articles](#articles) | List of publiched, acepted, submitted and scientific articles in preparation. |
-| [Talks](#talks)       | (Scientific-) Talks I gave during the last years. |
+| __Section__           | __Description__                                                                |  
+|:----------------------|:-------------------------------------------------------------------------------|
+| [Articles](#articles) | List of publiched, acepted, submitted and scientific articles in preparation.  |
+| [Talks](#talks)       | (Scientific-) Talks I gave during the last years.                              |
 | [Poster](#posters)    | (Scientific-) Posters I presented or I participated in the presented research. |
-| [Teaching](#teaching) | Summary of my experience in teaching. |
+| [Teaching](#teaching) | Summary of my experience in teaching.                                          |
 
 ---
 
