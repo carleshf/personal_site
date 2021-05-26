@@ -33,7 +33,7 @@ draft: false
  
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
   * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
-  * European Journal of Human Genetics (accepted: 2020-11-13)
+  * European Journal of Human Genetics (accepted: 2021-02-13)
 
 * __In utero and childhood exposure to tobacco smoke and multi-layer molecular signatures in children__
   * M Vives-Usano, _C Hernandez-Ferrer_, ..., M Vrijheid, M Bustamante
