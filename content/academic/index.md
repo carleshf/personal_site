@@ -15,7 +15,7 @@ draft: false
 
 ## Articles
 
-♠ : This symbol denotes that the authors consider the two first authors should be regarded as “joint first authors”.
+♠ : This symbol denotes that the authors consider that the two first authors should be regarded as “joint first authors”.
 
 #### Published & Accepted
 
@@ -175,7 +175,7 @@ No articles in preparation at this moment.
  
 * __Treatabolome: a rare diseases treatment awareness project__
   * A Atalaia, R Thompson, ..., _C Hernandez-Ferrer_, ..., S Beltran, G Bonne (conductor: A Atalaia)
-  * European Conference on Rare Diseases (ECRD2020)  ([program](), [poster](http://download2.eurordis.org.s3-eu-west-1.amazonaws.com/ecrd/2020/Posters/Theme%204/P168_Treatabolome_a_personalised_treatment_awareness_project.pdf))
+  * European Conference on Rare Diseases (ECRD2020)  ([program](http://download2.eurordis.org.s3-eu-west-1.amazonaws.com/ecrd/2020/ECRD2020_full_programme.pdf), [poster](http://download2.eurordis.org.s3-eu-west-1.amazonaws.com/ecrd/2020/Posters/Theme%204/P168_Treatabolome_a_personalised_treatment_awareness_project.pdf))
  
 * __Improving the RD-Connect GPAP usability to facilitate rare disease diagnosis and gene discovery__
   * A Corvò, L Matalonga, ..., _C Hernandez-Ferrer_, ..., I Gut, S Beltran (conductor: A Corvò)
