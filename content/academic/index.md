@@ -25,7 +25,7 @@ draft: false
 
 * __WEScover: selection between clinical whole exome sequencing and gene panel testing__
   * IH Lee, Y Lin, WJ Alvarez, _C Hernandez-Ferrer_, KD Mandl, S Kong
-  * [BMC Bioinformtics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5) (2021-05-20)
+  * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5) (2021-05-20)
 
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., _C Hernandez-Ferrer_, ..., J Wright, M Vrijheid
