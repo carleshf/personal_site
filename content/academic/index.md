@@ -19,22 +19,22 @@ draft: false
 
 #### Published & Accepted
 
+* __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
+  * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
+  * European Journal of Human Genetics (accepted: 2021-02-13)
+
 * __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
   * J Julvez, M López-Vicente, ..., _C Hernandez-Ferrer_, ..., X Basagaña, M Vrijheid
   * [Environmental Pollution](https://www.sciencedirect.com/science/article/pii/S0269749121009866) (2021-05-24)
 
 * __WEScover: selection between clinical whole exome sequencing and gene panel testing__
-  * IH Lee, Y Lin, WJ Alvarez, _C Hernandez-Ferrer_, KD Mandl, S Kong
+  * IH Lee, Y Lin, ..., _C Hernandez-Ferrer_, KD Mandl, SW Kong
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5) (2021-05-20)
 
 * __Early-life environmental exposure determinants of child behavior in Europe: a longitudinal, population-based study__
   * L Maitre, J Julvez, ..., _C Hernandez-Ferrer_, ..., J Wright, M Vrijheid
   * [Environment International](https://www.sciencedirect.com/science/article/pii/S0160412021001483?via%3Dihub) (2021-03-25)
  
-* __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
-  * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
-  * European Journal of Human Genetics (accepted: 2021-02-13)
-
 * __In utero and childhood exposure to tobacco smoke and multi-layer molecular signatures in children__
   * M Vives-Usano, _C Hernandez-Ferrer_, ..., M Vrijheid, M Bustamante
   * [BMC Medicine](https://pubmed.ncbi.nlm.nih.gov/32811491/) (2020-08-19)
@@ -217,7 +217,7 @@ Acting as final master thesis director:
   2. _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
   3. _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
   4. _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
-  5. _Análisis de integración en la asociación de datos omicos con la exposición a aire contaminado (diésel)_; by Laura Pauner and being conducted during 2nd semester of 2020-2021
+  5. _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and being conducted during 2nd semester of 2020-2021
   6. _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and being conducted during 2nd semester of 2020-2021
 
 #### Biotools for biostatistics and bioinformatics (1st edition)
