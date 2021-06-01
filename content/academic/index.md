@@ -21,7 +21,7 @@ draft: false
 
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
   * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
-  * European Journal of Human Genetics (accepted: 2021-02-13)
+  * [European Journal of Human Genetics](https://www.nature.com/articles/s41431-021-00852-7) (2021-06-01)
 
 * __Early Life Multiple Exposures and Child Cognitive Function: A Multi-Centric Birth Cohort Study in Six European Countries__
   * J Julvez, M López-Vicente, ..., _C Hernandez-Ferrer_, ..., X Basagaña, M Vrijheid
