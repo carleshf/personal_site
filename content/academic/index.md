@@ -17,7 +17,7 @@ draft: false
 
 ♠ : This symbol denotes that the authors consider that the two first authors should be regarded as “joint first authors”.
 
-#### Published & Accepted
+#### Published
 
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
   * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
@@ -111,23 +111,23 @@ draft: false
   * _C Hernandez-Ferrer_, I Quintela Garcia, ..., LA Pérez-Jurado, JR Gonzalez
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
-#### Submmited
-
-* __Variability of multi-omics profiles in a population-based child cohort__
-  * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
-  * BMC Medicine (2021-03-30)
+#### Accepted & Submmited
 
 * __The early-life exposome and epigenetic age acceleration in children__
   * P Prado-Bert, M Vives-Usano, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
-  * Environmental International (2021-02-10)
+  * Environmental International (accepted: 2021-06-02)
+
+* __Variability of multi-omics profiles in a population-based child cohort__
+  * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
+  * BMC Medicine (submmited: 2021-03-30)
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
-  * Cell (2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
+  * Cell (submmited: 2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
 
 * __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
-  * eLife (2020-11-05) · [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (2020-11-05)
+  * eLife (submmited: 2020-11-05) · [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (2020-11-05)
 
 #### In preparation
 
