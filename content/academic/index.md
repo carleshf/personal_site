@@ -19,6 +19,10 @@ draft: false
 
 #### Published
 
+* __The early-life exposome and epigenetic age acceleration in children__
+  * P Prado-Bert, M Vives-Usano, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
+  * [Environmental International](https://www.sciencedirect.com/science/article/pii/S0160412021003081) (2021-06-15)
+
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
   * L Matalonga, _C Hernandez-Ferrer_, ..., H Graessner, S Beltran
   * [European Journal of Human Genetics](https://www.nature.com/articles/s41431-021-00852-7) (2021-06-01)
@@ -112,10 +116,6 @@ draft: false
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
 #### Accepted & Submmited
-
-* __The early-life exposome and epigenetic age acceleration in children__
-  * P Prado-Bert, M Vives-Usano, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
-  * Environmental International (accepted: 2021-06-02)
 
 * __Variability of multi-omics profiles in a population-based child cohort__
   * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
