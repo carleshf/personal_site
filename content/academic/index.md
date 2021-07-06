@@ -218,7 +218,7 @@ Acting as final master thesis director:
   3. _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
   4. _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
   5. _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and conducted during 2nd semester of 2020-2021 (grade: B, score: 8.8/10)
-  6. _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of 8.7)
+  6. _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of 8.7/10)
 
 #### Biotools for biostatistics and bioinformatics (1st edition)
   * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
