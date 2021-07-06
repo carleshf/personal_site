@@ -39,7 +39,7 @@ You can play it clicking the previous picture and the code of this card here.</d
       
       <guid>http://212.71.254.23/fun/rolvember20-29/</guid>
       <description>Esta es la cuarta y última entrada para el #rolvember20. Para cerrar este pequeño capítulo rolero vamos a terminar tal y cómo empezamos, con una semilla de aventura. El concepto, o palabra clave, es &amp;ldquo;legal&amp;rdquo;.
- Adventurer Caravan by Adventurer Caravan (ArtStation)
+  Adventurer Caravan by Adventurer Caravan (ArtStation)
    En el Ducado de Teeralshi uno no puede entrar sin que haya sido invitado a hacerlo. Esta ley, ideada por el padre del actual duque, fue impuesta para controlar la entrada de extranjeros al ducado a y La Ciudad Roja, centro del ducado y hogar de la Mansión de las Cien Ventanas.</description>
     </item>
     
@@ -52,7 +52,7 @@ You can play it clicking the previous picture and the code of this card here.</d
       <description>Para esta tercera entrega para #rolvember20 me propuse escribir una subclase de D&amp;amp;D 5e. Me decidí por el monje, pues es la clase que más desconozco.
 Originalmente quería escribir La Senda del Viento pero al dar algo de trasfondo y justificación a esta subclase no pude evitar dar forma y color a La Senda del Hielo también.
 La Senda del Viento y La Senda del Hielo en PDF
-He usado GM Binder para escribir el documento que contiene ambas subclases, al igual que en las dos anteriores entradas.</description>
+ He usado GM Binder para escribir el documento que contiene ambas subclases, al igual que en las dos anteriores entradas.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ Lo que he hecho a sido diseñar tres perfiles de enemigos. Los tres son de tipo 
 Aquí el tuit inaugural:
 Aquí está la información y palabras del #rolvember20. Recordad que empieza el 1 de Noviembre. Leed bien las dos imágenes e id preparándoos ;)
 Rolvember 2020. Por @GarriManu, con la (maravillosa) colaboración de @Moguchaser y @LaTabernaRolera pic.twitter.com/XX0D9hCGcD
-&amp;mdash; 👻Manuel Garrido💀 (@GarriManu) 27 de octubre de 2020 Mi intención es subir un mínimo de una entrada por semana.</description>
+&amp;mdash; 👻Manuel Garrido💀 (@GarriManu) 27 de octubre de 2020  Mi intención es subir un mínimo de una entrada por semana.</description>
     </item>
     
     <item>
@@ -95,7 +95,7 @@ Rolvember 2020. Por @GarriManu, con la (maravillosa) colaboración de @Moguchase
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
-.container2 {height: 100px;width: 100px;position: relative;top: 60px;bottom: 60px;left: 0;right: 0;margin: auto;}.caption2 {height: 100px;width: 500px;position: relative;top: 125px;bottom: 0;left: 0;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 48px;}.subcaption2 {height: 100px;width: 500px;position: relative;top: 100px;bottom: 50px;left: 45%;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 23px;}.</description>
+ .container2 { height: 100px; width: 100px; position: relative; top: 60px; bottom: 60px; left: 0; right: 0; margin: auto; } .caption2 { height: 100px; width: 500px; position: relative; top: 125px; bottom: 0; left: 0; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 48px; } .subcaption2 { height: 100px; width: 500px; position: relative; top: 100px; bottom: 50px; left: 45%; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 23px; } .</description>
     </item>
     
     <item>
@@ -171,7 +171,7 @@ The card is an HTML5 canvas used as a grid where different pixelled cartoons app
       <guid>http://212.71.254.23/fun/winter_card_2015-2016/</guid>
       <description>It&amp;rsquo;s time for the geek christmas card. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.
 It is the simplest card I coded but I made it thinking in simplicity.
- Winter card 2015 - 2014: ASCI art
+  Winter card 2015 - 2014: ASCI art
   The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
     </item>
     
@@ -183,8 +183,8 @@ It is the simplest card I coded but I made it thinking in simplicity.
       <guid>http://212.71.254.23/fun/winter_card_2014-2015/</guid>
       <description>Like the previous years, I continued with the tradition of sending a geek christmas card to my workmates.
 This year I wrote it in R since it is one of the most used languages at my workplace, CREAL.
- Winter card 2014 - 2015: snowflake recursion!
-  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above. The source code for that can be found at my christmas-card&amp;rsquo;s github (link) as mc201415.</description>
+  Winter card 2014 - 2015: snowflake recursion!
+  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above.</description>
     </item>
     
     <item>
@@ -195,7 +195,7 @@ This year I wrote it in R since it is one of the most used languages at my workp
       <guid>http://212.71.254.23/fun/winter_card_2013_2014/</guid>
       <description>This year I decided to continue with the tradition I started last year and sending a Christmas Card to my workmates written in python.
 The result of running the script I sent is seen below.
- Winter card 2013 - 2014: santa claus is coming to town
+  Winter card 2013 - 2014: santa claus is coming to town
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     
@@ -207,7 +207,7 @@ The result of running the script I sent is seen below.
       <guid>http://212.71.254.23/fun/winter_card_2012-2013/</guid>
       <description>This year I&amp;rsquo;ve decided to send a Christmas&#39; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
 The result of running the script is this:
- Winter card 2012 - 2013: snowflake
+  Winter card 2012 - 2013: snowflake
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     

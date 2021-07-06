@@ -6,7 +6,7 @@ draft: false
 
 ## Trajectory
 
-I am a researcher at the [Analysis Grup](https://cnag.es/teams/bioinformatics-unit/data-analysis) (from Bioinformatics' Unit) from the [Centre Nacional d’Anàlisi Genòmica (CNAG-CRG)](https://www.cnag.crg.eu). I mainly work as a data and software engineer developing new software and improving our existing pipelines for genomic and genomic-related data analyses.
+I am a researcher at the [Analysis Grup](https://cnag.es/teams/bioinformatics-unit/data-analysis) (from Bioinformatics' Unit) from the [Centre Nacional d’Anàlisi Genòmica (CNAG-CRG)](https://www.cnag.crg.eu). I mainly work as a data and software engineer developing new software and improving our existing pipelines for genomic and genomic-related data analyses. I am also a collaborator [directing master thesis](http://carleshf.com/academic/#teaching) from the [MSc. in Bioinformatics & Biostatitics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion) at the [Universitat Oberta de Catalunya](https://uoc.edu).
 
 {{< figure src="/img/portrait.png" caption="Welcome to CNAG-CRG" >}}
 

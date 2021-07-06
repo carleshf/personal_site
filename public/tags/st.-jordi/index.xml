@@ -27,7 +27,7 @@ If you press on the following picture you&amp;rsquo;ll be moved to itch.io so yo
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
-.container2 {height: 100px;width: 100px;position: relative;top: 60px;bottom: 60px;left: 0;right: 0;margin: auto;}.caption2 {height: 100px;width: 500px;position: relative;top: 125px;bottom: 0;left: 0;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 48px;}.subcaption2 {height: 100px;width: 500px;position: relative;top: 100px;bottom: 50px;left: 45%;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 23px;}.</description>
+ .container2 { height: 100px; width: 100px; position: relative; top: 60px; bottom: 60px; left: 0; right: 0; margin: auto; } .caption2 { height: 100px; width: 500px; position: relative; top: 125px; bottom: 0; left: 0; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 48px; } .subcaption2 { height: 100px; width: 500px; position: relative; top: 100px; bottom: 50px; left: 45%; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 23px; } .</description>
     </item>
     
     <item>
