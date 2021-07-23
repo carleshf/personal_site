@@ -19,6 +19,10 @@ draft: false
 
 #### Published
 
+* __Variability of multi-omics profiles in a population-based child cohort__
+  * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
+  * [BMC Medicine](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-02027-z) (2021-07-22)
+
 * __The early-life exposome and epigenetic age acceleration in children__
   * P Prado-Bert, M Vives-Usano, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
   * [Environmental International](https://www.sciencedirect.com/science/article/pii/S0160412021003081) (2021-06-15)
@@ -116,10 +120,6 @@ draft: false
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
 #### Accepted & Submmited
-
-* __Variability of multi-omics profiles in a population-based child cohort__
-  * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
-  * BMC Medicine (submmited: 2021-03-30)
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
