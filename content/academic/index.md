@@ -137,7 +137,7 @@ draft: false
 * __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based rare diseases__
   * _C Hernandez-Ferrer_, ..., S Beltran
 
-* __Quantification of epimutations burden in european healthy pediatric population__
+* __Quantification of epimutations burden in generally healthy european pediatric population__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., LA Jurado
 
 #### Aknowledged
