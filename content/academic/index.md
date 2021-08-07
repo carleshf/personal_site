@@ -131,7 +131,14 @@ draft: false
 
 #### In preparation
 
-No articles in preparation at this moment.
+* __epimutacions: a Bioconductor package to identify DNA methylation outliers__
+  * L Abarrategui, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
+
+* __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based rare diseases__
+  * _C Hernandez-Ferrer1_, ..., S Beltran
+
+* __Quantification of the burden of epimutations in european healthy pediatric population__
+  * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., LA Jurado
 
 #### Aknowledged
 
