@@ -151,7 +151,7 @@ draft: false
 
 * __El re-análisis sistemático de datos genómicos y fenotípicos de mas de 4000 pacientes con enfermedades raras no diagnosticadas contribuye a resolver más de un 8% de los casos__
   * _L Matalonga Borrel_, C Hernandez-Ferrer, ..., S Beltran
-  * III Congreso Interdisciplinar de Genética Humana ([program](https://drive.google.com/file/d/1NhpqpRp5Sng9cUisZ-VbSfzMmRTQ6UTR/view?usp=sharing)
+  * III Congreso Interdisciplinar de Genética Humana ([program](https://drive.google.com/file/d/1NhpqpRp5Sng9cUisZ-VbSfzMmRTQ6UTR/view?usp=sharing))
   * from 2021-11-03 to 2021-11-05 (performed: 2021-11-03)
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
