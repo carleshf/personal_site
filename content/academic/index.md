@@ -148,7 +148,12 @@ draft: false
 
 
 ## Talks
- 
+
+* __El re-análisis sistemático de datos genómicos y fenotípicos de mas de 4000 pacientes con enfermedades raras no diagnosticadas contribuye a resolver más de un 8% de los casos__
+  * _L Matalonga Borrel_, C Hernandez-Ferrer, ..., S Beltran
+  * III Congreso Interdisciplinar de Genética Humana ([program](https://drive.google.com/file/d/1NhpqpRp5Sng9cUisZ-VbSfzMmRTQ6UTR/view?usp=sharing)
+  * from 2021-11-03 to 2021-11-05 (performed: 2021-11-03)
+
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
   * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran
   * Solve-RD Annual Meeting 2021  ([program](https://drive.google.com/file/d/1wVjb-UuVJhPpcQtS9k4sM4F4XAiCOdfF/view?usp=sharing))
@@ -161,7 +166,7 @@ draft: false
  
 * __Extending Bioconductor To Exposome Data Analysis__
   * _C Hernandez-Ferrer_, JR Gonzalez
-  * BioC 2017: Where Software and Biology Connect  ([program](https://bioconductor.org/help/course-materials/2017/BioC2017/#developer-day))
+  * BioC 2017: Where Software and Biology Connect ([program](https://bioconductor.org/help/course-materials/2017/BioC2017/#developer-day))
   * from 2017-07-26 to 2017-07-28 (performed: 2017-07-26)
  
 * __rexposome: a Bioconductor package for characterizing multiple environmental factors and its association with different omics biomarkers and diseases__
