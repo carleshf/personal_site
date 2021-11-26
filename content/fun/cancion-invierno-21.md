@@ -8,7 +8,7 @@ tags:
   - one-shot
 ---
 
-Después de darle muchas vueltas, me he lanzada a intentar publicar de forma seria algunas de las aventuras que escribo y que dirijo. ["El tronco de ceniza"](https://www.dmsguild.com/product/378158/El-tronco-de-ceniza) es la primera. Con una ambientación invernal, la aventura presenta la canción catalana para la familiar celebración de "la cagada del tió". He usado esta tradición catalana como semilla para la aventura.
+Después de darle muchas vueltas, me he lanzada a intentar publicar de forma seria algunas de las aventuras que escribo y que dirijo. ["El tronco de ceniza"](https://www.dmsguild.com/product/378158/El-tronco-de-ceniza) es la primera. Con una ambientación invernal, la aventura presenta la canción catalana para la familiar celebración de "la cagada del tió". He usado esta tradición catalana como semilla para este one-shot navideño.
 
 Aquí el resumen de la aventura:
 
