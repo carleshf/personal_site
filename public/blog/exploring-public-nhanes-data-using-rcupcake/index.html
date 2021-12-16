@@ -37,8 +37,8 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
 <meta itemprop="name" content="Exploring public NHANES data using Rcupcake">
 <meta itemprop="description" content="The Rcupcake package contains functions to query different databases through the BD2K RESTful API. BD2K RESTful API is an interface that provides access to different data sources, making easier data accessibility, analysis reproducibility and scalability.
 The package is installed via devtools using it&rsquo;s GitHub URL (hms-dbmi/Rcupcake) or following their guide (also in GiHub - here).
-library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path=&#39;Figs/&#39;, echo=TRUE, warning=FALSE, message=FALSE, cache=FALSE ) Rcupcake package follows a four-step process to retrieve the data from a database:"><meta itemprop="datePublished" content="2017-10-30T00:00:00+02:00" />
-<meta itemprop="dateModified" content="2017-10-30T00:00:00+02:00" />
+library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path=&#39;Figs/&#39;, echo=TRUE, warning=FALSE, message=FALSE, cache=FALSE ) Rcupcake package follows a four-step process to retrieve the data from a database:"><meta itemprop="datePublished" content="2017-10-30T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2017-10-30T00:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="826"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="R," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -127,8 +127,8 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
             <div class="post-content">
                 <p>The <code>Rcupcake</code> package contains functions to query different databases through the BD2K RESTful API. BD2K RESTful API is an interface that provides access to different data sources, making easier data accessibility, analysis reproducibility and scalability.</p>
 <p>The package is installed via <code>devtools</code> using it&rsquo;s GitHub URL (<code>hms-dbmi/Rcupcake</code>) or following their guide (also in GiHub - <a href="https://github.com/hms-dbmi/Rcupcake">here</a>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( Rcupcake )
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( knitr )
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( Rcupcake )
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( knitr )
 <span style="color:#a6e22e">library</span>( stringr )
 opts_chunk<span style="color:#f92672">$</span><span style="color:#a6e22e">set</span>(
     fig.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Figs/&#39;</span>,
@@ -150,31 +150,31 @@ opts_chunk<span style="color:#f92672">$</span><span style="color:#a6e22e">set</s
 <li><code>apiKey</code>: the key to successfully access to the data.</li>
 </ul>
 <p>It works as follows</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">start.session</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">start.session</span>( 
     url    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;url&#34;</span>, 
     apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key&#34;</span>
 )
 </code></pre></div><p>In this case, the URL corresponds to <code>https://nhanes.hms.harvard.edu/</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx
-</code></pre></div><pre tabindex="0"><code>## [1] &quot;Start Session: success&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx
+</code></pre></div><pre><code>## [1] &quot;Start Session: success&quot;
 </code></pre><p>With the connection opened we can proceed to explores the existing variables. To this end we use <code>get.children</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesCategories <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesCategories <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
    url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo&#34;</span>
 )
 nhanesCategories
-</code></pre></div><pre tabindex="0"><code>## [1] &quot;/nhanes/Demo/demographics/demographics/&quot;  
+</code></pre></div><pre><code>## [1] &quot;/nhanes/Demo/demographics/demographics/&quot;  
 ## [2] &quot;/nhanes/Demo/examination/examination/&quot;    
 ## [3] &quot;/nhanes/Demo/laboratory/laboratory/&quot;      
 ## [4] &quot;/nhanes/Demo/questionnaire/questionnaire/&quot;
 </code></pre><p>As you can see, the content of the <code>fieldname</code> it not really clear since it includes a <em>Demo</em> and the results includes two times the <em>category</em>. Let&rsquo;s hope the <code>Rcupcake</code>&rsquo;s paper puts some light here.</p>
 <p>Using the same strategy we can obtain the list of laboratory tests:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesLaboratory <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesLaboratory <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
    url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/laboratory/laboratory/&#34;</span>
 )
 nhanesLaboratory
-</code></pre></div><pre tabindex="0"><code>##  [1] &quot;/nhanes/Demo/laboratory/laboratory/acrylamide/&quot;           
+</code></pre></div><pre><code>##  [1] &quot;/nhanes/Demo/laboratory/laboratory/acrylamide/&quot;           
 ##  [2] &quot;/nhanes/Demo/laboratory/laboratory/aging/&quot;                
 ##  [3] &quot;/nhanes/Demo/laboratory/laboratory/allergen test/&quot;        
 ##  [4] &quot;/nhanes/Demo/laboratory/laboratory/bacterial infection/&quot;  
@@ -200,12 +200,12 @@ nhanesLaboratory
 ## [24] &quot;/nhanes/Demo/laboratory/laboratory/viral infection/&quot;      
 ## [25] &quot;/nhanes/Demo/laboratory/laboratory/volatile compounds/&quot;
 </code></pre><p>Or the demographic information:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesDemographic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesDemographic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
    url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/demographics/demographics/&#34;</span>
 )
 nhanesDemographic
-</code></pre></div><pre tabindex="0"><code>##  [1] &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;      
+</code></pre></div><pre><code>##  [1] &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;      
 ##  [2] &quot;/nhanes/Demo/demographics/demographics/area/&quot;     
 ##  [3] &quot;/nhanes/Demo/demographics/demographics/DMDBORN/&quot;  
 ##  [4] &quot;/nhanes/Demo/demographics/demographics/DMDMARTL/&quot; 
@@ -219,16 +219,16 @@ nhanesDemographic
 ## [12] &quot;/nhanes/Demo/demographics/demographics/SEX/&quot;      
 ## [13] &quot;/nhanes/Demo/demographics/demographics/WTMEC2YR/&quot; 
 ## [14] &quot;/nhanes/Demo/demographics/demographics/WTMEC4YR/&quot;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesExamination <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesExamination <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
    url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/&#34;</span>
 )
 nhanesExamination
-</code></pre></div><pre tabindex="0"><code>## [1] &quot;/nhanes/Demo/examination/examination/blood pressure/&quot;  
+</code></pre></div><pre><code>## [1] &quot;/nhanes/Demo/examination/examination/blood pressure/&quot;  
 ## [2] &quot;/nhanes/Demo/examination/examination/body measures/&quot;   
 ## [3] &quot;/nhanes/Demo/examination/examination/physical fitness/&quot;
 </code></pre><p>Once we now the <em>paths</em> of the variables we want to use we put them in a vector.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesPressure <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesPressure <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
     url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
     fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/blood pressure/&#34;</span>
 )
@@ -243,14 +243,14 @@ nhanesVector <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e
 )
 </code></pre></div><p>This vector indicates to <code>my.query</code> where to locate the <em>fields</em> we want to retrieve to from the database. The <em>field</em> must be indicated into <code>myfields</code>, separated using the vertical columns character (<code>|</code>).</p>
 <p>At this point we need to now that the first <em>field</em> filters the output by existing value. This means that the samples with missing data in the first <em>field</em> will be dropped by default.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.query</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.query</span>( 
     myfields <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AGE|SEX|mean diastolic|Mercury, hair (ppm)|Lead (ug per dL)&#34;</span>, 
     myvector <span style="color:#f92672">=</span> nhanesVector, 
     url      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>
 )
 </code></pre></div><p>The function returns the JSON structure of the query:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query
-</code></pre></div><pre tabindex="0"><code>## {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query
+</code></pre></div><pre><code>## {
 ##   &quot;select&quot;: [
 ##     {
 ##       &quot;field&quot;: {
@@ -295,32 +295,32 @@ nhanesVector <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e
 ##   ]
 ## }
 </code></pre><p>The last step is to retrieve the data. Thai is done with <code>my.data</code>, it retrieves he data as a <code>data.frame</code> and save it into a file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.data</span>( 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.data</span>( 
     query          <span style="color:#f92672">=</span> query,
     url            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
     responseFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CSV&#34;</span>, 
     outputPath     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;~/dataNHANES.txt&#34;</span>
 )
 </code></pre></div><p>The variabte data can be explored as standard <code>data.frame</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">dim</span>( data )
-</code></pre></div><pre tabindex="0"><code>## [1] 41474     4
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">colnames</span>( data )
-</code></pre></div><pre tabindex="0"><code>## [1] &quot;patient_id&quot;                                                          
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">dim</span>( data )
+</code></pre></div><pre><code>## [1] 41474     4
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">colnames</span>( data )
+</code></pre></div><pre><code>## [1] &quot;patient_id&quot;                                                          
 ## [2] &quot;X.nhanes.Demo.demographics.demographics.SEX.&quot;                        
 ## [3] &quot;X.nhanes.Demo.examination.examination.blood.pressure.mean.diastolic.&quot;
 ## [4] &quot;X.nhanes.Demo.demographics.demographics.AGE.&quot;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Gender Proportion</span>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Gender Proportion</span>
 <span style="color:#a6e22e">prop.table</span>( <span style="color:#a6e22e">table</span>( data[ , <span style="color:#ae81ff">2</span>] ) )
-</code></pre></div><pre tabindex="0"><code>## 
+</code></pre></div><pre><code>## 
 ##    female      male 
 ## 0.5114047 0.4885953
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of age</span>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of age</span>
 <span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">4</span>] )
-</code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+</code></pre></div><pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    0.00   10.00   19.00   29.25   47.00   85.00
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of Blood Diastolic Mean</span>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of Blood Diastolic Mean</span>
 <span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">3</span> ] )
-</code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+</code></pre></div><pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
 ##    0.00   57.33   65.33   64.98   73.33  132.00   15438
 </code></pre>
             </div>

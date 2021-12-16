@@ -35,8 +35,8 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
 
 <meta itemprop="name" content="Gene-Enrichment in PsyGeNET&#39;s Main-Psychiatric-Disorders">
 <meta itemprop="description" content="PsyGeNET is a database that integrates information on psychiatric disorders and their genes (check its About page for more information). The current version of the database centered the information of three main psychiatric disorders: Alcoholism, Depression and Cocaine-Related-Disorders.
-Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R package (PsyGeNET2R) to query the information stored into the database and to perform some analysis using this information. We thought that could be a good idea to perform an enrichment analysis on the three main psychiatric disorders given a list of genes of interest."><meta itemprop="datePublished" content="2015-01-06T00:00:00+02:00" />
-<meta itemprop="dateModified" content="2015-01-06T00:00:00+02:00" />
+Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R package (PsyGeNET2R) to query the information stored into the database and to perform some analysis using this information. We thought that could be a good idea to perform an enrichment analysis on the three main psychiatric disorders given a list of genes of interest."><meta itemprop="datePublished" content="2015-01-06T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2015-01-06T00:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="510"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="R," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -125,7 +125,7 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
                 <p><a href="http://psygenet.org">PsyGeNET</a> is a database that integrates information on psychiatric disorders and their genes (check its <em>About</em> page for more information). The current version of the database centered the information of three main psychiatric disorders: <strong>Alcoholism</strong>, <strong>Depression</strong> and <strong>Cocaine-Related-Disorders</strong>.</p>
 <p>Currently the author of <strong>PsyGeNET</strong>, <a href="http://dbmi.hms.harvard.edu/person/postdoctoral-fellows/alba-gutierrez">Alba Gutiérrez</a>, and me are developing an R package (<code>PsyGeNET2R</code>) to query the information stored into the database and to perform some analysis using this information. We thought that could be a good idea to perform an enrichment analysis on the three main psychiatric disorders given a list of genes of interest.</p>
 <p>Using the <strong>PsyGeNET</strong>&rsquo;s browser we can get the following code to download the stored data:</p>
-<pre tabindex="0"><code>library(RCurl)
+<pre><code>library(RCurl)
 oql &lt;- &quot;DEFINE
     c0='/data/main',
     c1='/data/genes',
@@ -147,12 +147,12 @@ oql &lt;- &quot;DEFINE
 dataTsv &lt;- getURLContent(&quot;http://www.psygenet.org/oql&quot;, readfunction = charToRaw(oql), upload = TRUE, customrequest = &quot;POST&quot;)
 data &lt;- read.csv(textConnection(dataTsv), header = TRUE, sep=&quot;;&quot;)
 </code></pre><p>The <code>data.frame</code> called <code>data</code> corresponds to a generalization of the information stored into <strong>PsyGeNET</strong>:</p>
-<pre tabindex="0"><code>&gt; colnames(data)
+<pre><code>&gt; colnames(data)
 [1] &quot;c1.Gene_Symbol&quot;         &quot;c1.Gene_Id&quot;             &quot;c1.Gene_Description&quot;
 [4] &quot;c2.Disease_Id2&quot;         &quot;c2.Disease_code&quot;        &quot;c2.DiseaseName&quot;
 [7] &quot;c2.PsychiatricDisorder&quot; &quot;c0.Score&quot;               &quot;c0.Number_of_Abstracts&quot;
 </code></pre><p>The following tables shows the content of the first three rows of <strong>data</strong>:</p>
-<pre tabindex="0"><code>	c1.Gene_Symbol 	c1.Gene_Id 	c1.Gene_Description 	                                c2.Disease_Id
+<pre><code>	c1.Gene_Symbol 	c1.Gene_Id 	c1.Gene_Description 	                                c2.Disease_Id
 1 	NPY 	        4852 	    neuropeptide Y 	                                        umls:C0001973
 2 	ADH1B 	        125 	    alcohol dehydrogenase 1B (class I), beta polypeptide 	umls:C0001973
 3 	ADH1C 	        126 	    alcohol dehydrogenase 1C (class I), gamma polypeptide 	umls:C0001973
@@ -167,7 +167,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 2 	82
 3 	37
 </code></pre><p>From the vignette <em>&ldquo;PsyGeNET2R: Case study with genes from GWAS study related to bipolar disorder&rdquo;</em> that we are writting, I extracted a list of genes of interest:</p>
-<pre tabindex="0"><code>genesOfInterest &lt;- c( &quot;ADCY2&quot;, &quot;FAM155A&quot;, &quot;MSI2&quot;, &quot;AKAP13&quot;,
+<pre><code>genesOfInterest &lt;- c( &quot;ADCY2&quot;, &quot;FAM155A&quot;, &quot;MSI2&quot;, &quot;AKAP13&quot;,
   &quot;FLJ16124&quot;, &quot;NFIX&quot;, &quot;SIPA1L2&quot;, &quot;SNX8&quot;, &quot;ANK3&quot;, &quot;FSTL5&quot;,
   &quot;NGF&quot;, &quot;SPERT&quot;, &quot;ANKS1A&quot;, &quot;GATA5&quot;, &quot;NPAS3&quot;, &quot;STK39&quot;, &quot;ATP6V1G3&quot;,
   &quot;GNA14&quot;, &quot;ODZ4&quot;, &quot;SYNE1&quot;, &quot;ATXN1&quot;, &quot;GPR81&quot;, &quot;PAPOLG&quot;, &quot;THSD7A&quot;,
@@ -178,7 +178,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
   &quot;DNAJB4&quot;, &quot;MAPK10&quot;, &quot;SGCG&quot;, &quot;DUSP22&quot;, &quot;MCM9&quot;, &quot;SH3PXD2A&quot;
 )
 </code></pre><p>But from the total of 58 genes, only 21 are in <strong>PsyGeNET</strong> today (January 06th, 2015):</p>
-<pre tabindex="0"><code>&gt; length(genesOfInterest)
+<pre><code>&gt; length(genesOfInterest)
 [1] 58
 &gt; sum(genesOfInterest %in% data$c1.Gene_Symbol)
 [1] 21
@@ -220,7 +220,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 </tbody>
 </table>
 <p>All the data come from:</p>
-<pre tabindex="0"><code>&gt; data.dep = data[data$c2.PsychiatricDisorder == &quot;Depression&quot;, ]
+<pre><code>&gt; data.dep = data[data$c2.PsychiatricDisorder == &quot;Depression&quot;, ]
 &gt; x &lt;- sum(genesOfInterest %in% data$c1.Gene_Symbol)
 &gt; n &lt;- sum(sel %in% data.dep$c1.Gene_Symbol)
 &gt; t &lt;- length(unique(data.dep$c1.Gene_Symbol))
@@ -234,7 +234,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 &gt; T
 [1] 1317
 </code></pre><p>To end, we can say that those selected genes are not enriched in &ldquo;Depression&rdquo;:</p>
-<pre tabindex="0"><code>&gt; phyper(n - 1, t, T - t, x, lower.tail = FALSE)
+<pre><code>&gt; phyper(n - 1, t, T - t, x, lower.tail = FALSE)
 [1] 0.1177713
 </code></pre>
             </div>
