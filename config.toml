@@ -1,6 +1,6 @@
 baseURL         = "http://212.71.254.23"
 languageCode    = "en-us"
-#title           = "My New Hugo Site"
+#title           = "carles hernandez ferrer"
 theme           = "hello-friend-ng"
 
 [Author]
@@ -23,8 +23,8 @@ name = "Carles Hernandez-Ferrer"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "Personal page"
-  keywords = "homepage, blog"
+  description = "Carles Hernandez-Ferrer's personal page"
+  keywords = "bioinformatics, software, data analysis"
   images = [""]
 
 [languages]
