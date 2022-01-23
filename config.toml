@@ -54,6 +54,10 @@ name = "Carles Hernandez-Ferrer"
     name       = "Academic"
     url        = "/academic"
   [[menu.main]]
+    identifier = "software"
+    name       = "Software"
+    url        = "/software"
+  [[menu.main]]
     identifier = "blog"
     name       = "Blog"
     url        = "/blog"

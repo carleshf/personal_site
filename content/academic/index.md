@@ -140,6 +140,9 @@ draft: false
 * __Quantification of epimutation burden in european generally healthy pediatric population__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., LA Jurado
 
+* __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
+  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
+
 #### Aknowledged
 
 * __A two-step gas chromatography-tandem mass spectrometry method for measurement of multiple environmental pollutants in human plasma__
