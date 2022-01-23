@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Carles Hernandez-Ferrer</title>
+    <link>http://212.71.254.23/tags/python/</link>
+    <description>Recent content in python on Carles Hernandez-Ferrer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code for Care (Hackathon)</title>
+      <link>http://212.71.254.23/blog/code-4-care-hackathon/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/code-4-care-hackathon/</guid>
+      <description>On Saturday, June 1st 2019, I attended the hackathon Code for Care organized by Humana Experience Center, at the District Hall (Boston, MA).
+The goal of that hackathon was to build a digital software to help [not-necessary] elderly to manage their medications, taking special attention to those individuals with comorbidities (the simultaneous presence of two chronic diseases or conditions in the same individual).
+There was no limitation in type of software nor in technology we could use for the development, although we were encouraged to use the FDA’s free drug data API, that provides access to data like adverse events, product labeling, and a full directory of all NDCs (National Drug Codes).</description>
+    </item>
+    
+    <item>
+      <title>Exploiting XML data from Human Metabolome Data Base</title>
+      <link>http://212.71.254.23/blog/hmdb-xml-to-csv/</link>
+      <pubDate>Tue, 18 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/hmdb-xml-to-csv/</guid>
+      <description>I am currently working on a project where I need to annotate exogenous chemicals measured in plasma using GC-MS/MS to the Human Metabolome Data Base (HMDB) and to the Toxin and Toxin Target Database (T3DB).
+T3DB offers a series of downloadable resources that can be easy integrated into R as a CSV file after being parsed using bash. On the other hand, HMDB only offers XML sources that are to heavy to be parsed using the XML R package in my laptop.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2013 - 2014</title>
+      <link>http://212.71.254.23/fun/winter_card_2013_2014/</link>
+      <pubDate>Wed, 18 Dec 2013 22:14:40 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2013_2014/</guid>
+      <description>This year I decided to continue with the tradition I started last year and sending a Christmas Card to my workmates written in python.
+The result of running the script I sent is seen below.
+ Winter card 2013 - 2014: santa claus is coming to town
+  You can see the gallery of cards here and you have the source code here.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2012 - 2013</title>
+      <link>http://212.71.254.23/fun/winter_card_2012-2013/</link>
+      <pubDate>Sat, 15 Dec 2012 22:18:44 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2012-2013/</guid>
+      <description>This year I&amp;rsquo;ve decided to send a Christmas&#39; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
+The result of running the script is this:
+ Winter card 2012 - 2013: snowflake
+  You can see the gallery of cards here and you have the source code here.</description>
+    </item>
+    
+  </channel>
+</rss>

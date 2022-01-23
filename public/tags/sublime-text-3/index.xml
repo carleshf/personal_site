@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime Text 3 on Carles Hernandez-Ferrer</title>
+    <link>http://212.71.254.23/tags/sublime-text-3/</link>
+    <description>Recent content in Sublime Text 3 on Carles Hernandez-Ferrer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/tags/sublime-text-3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spell-checking in Sublime Text 3</title>
+      <link>http://212.71.254.23/blog/spell-checking-and-dictionaries-in-sublime-text-3/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/spell-checking-and-dictionaries-in-sublime-text-3/</guid>
+      <description>I was a fan of the package Dictionaries but is seems that it is no available and that will not be re-included. The package&amp;rsquo;s page in package control is here, indicating that the package was removed.
+Anyway, the package is in GitHub and it can be installed from the repository. The steps follows:
+ Download the package as a ZIP file Open a terminal on your Downloads folder Unzip the file with unzip Dictionaries-master.</description>
+    </item>
+    
+    <item>
+      <title>Change key for toggle comment in Sublime Text 3</title>
+      <link>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</link>
+      <pubDate>Wed, 06 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
+      <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } { &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: true } } I like it to behave like this:
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
+    </item>
+    
+  </channel>
+</rss>

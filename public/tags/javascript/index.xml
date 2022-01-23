@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Carles Hernandez-Ferrer</title>
+    <link>http://212.71.254.23/tags/javascript/</link>
+    <description>Recent content in javascript on Carles Hernandez-Ferrer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 16 Dec 2021 10:10:01 +4900</lastBuildDate><atom:link href="http://212.71.254.23/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Winter Card 2021 - 2022</title>
+      <link>http://212.71.254.23/fun/winter_card_2021-2022/</link>
+      <pubDate>Thu, 16 Dec 2021 10:10:01 +4900</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2021-2022/</guid>
+      <description>Again, this year has been challanging and we all have been busy coping with all the difulties that the pandeic rasied in our everyday. So, makeing a diference with the last year, this one I created a new small game where you help Noelle collect the presents for her workmakes, scattered accross the office by her clumsy boss.
+ Winter card 2021 - 2022: Happy Yultide!
+  You can play it clicking the previous picture and find the code of this card here.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2020 - 2021</title>
+      <link>http://212.71.254.23/fun/winter_card_2020-2021/</link>
+      <pubDate>Sun, 20 Dec 2020 15:10:02 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2020-2021/</guid>
+      <description>This past year has been a really significant one with many challenges. Therefore I wanted to make a winter card that shows the opposite: simplicity, elegance, and, specially, joy.
+ Winter card 2020 - 2021: Happy Yultide!
+  So, the winter card it is juts a snowing page that allows you to discover your present, from a possible random set of 35 different drawings.
+You can play it clicking the previous picture.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2019 - 2020</title>
+      <link>http://212.71.254.23/fun/winter_card_2019-2020/</link>
+      <pubDate>Mon, 30 Dec 2019 15:17:29 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2019-2020/</guid>
+      <description>For this Christmas, I wanted to move the level of the geek christmas card further that I did before.
+The previous gamified GCCs were based on a couple of smartphone games. For instance, the one for 2018-2019 was based on a game called Tomb of the Mask and the first on I gamified, 2016-2017, was based on FlappyBird.
+This time I wanted to come back in time and bring back an old point-and-click game-system that I played in Where in the world is Carmen Sandiego?</description>
+    </item>
+    
+    <item>
+      <title>Some &#39;must&#39; methods for JavaScript array</title>
+      <link>http://212.71.254.23/blog/must-javascript-array/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/must-javascript-array/</guid>
+      <description>I recently been working a lot with JavaScript and I missed some methods for the JavaScript&amp;rsquo;s array.
+First I missed three core methods related of the content of the array. A method to get the unique elements in the array (arr.unique()), a method that returns the number of occurrences of a given element (arr.count(val)), and a method that returns some sort of table with the number of occurrences of each unique element in the array - see this one as a combination of the previous two - (arr.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2018 - 2019</title>
+      <link>http://212.71.254.23/fun/winter_card_2018-2019/</link>
+      <pubDate>Fri, 21 Dec 2018 15:17:29 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2018-2019/</guid>
+      <description>Following the tradition, I&amp;rsquo;ve made the geek christmas card for this year. As it is being the trend lately, it is coded in javascript and HTML5.
+ Winter card 2018 - 2019: Mike has lost his presents for Santaclaus!
+  The card is, again, a minigame where Mike &amp;lsquo;the elf&amp;rsquo; has lost the present he crafter for this Christmas and we need to help him to find them all. Make a click on the picture to play the game.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2017 - 2018</title>
+      <link>http://212.71.254.23/fun/winter_card_2017-2018/</link>
+      <pubDate>Wed, 20 Dec 2017 15:19:41 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2017-2018/</guid>
+      <description>It is the time to follow the tradition of creating a geek christmas card. As I did last year, the one for this year I typed it in javascript. It is much simpler compared to the game of the 2016 Christmas, but I enjoyed coding it.
+No picture this time, only the link to it: Merry Christmas 2017-2018.
+The card is an HTML5 canvas used as a grid where different pixelled cartoons appear being drawn pixel-a-pixel.</description>
+    </item>
+    
+    <item>
+      <title>Winter Card 2016 - 2017</title>
+      <link>http://212.71.254.23/fun/winter_card_2016-2017/</link>
+      <pubDate>Wed, 21 Dec 2016 16:09:41 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/fun/winter_card_2016-2017/</guid>
+      <description>Following the tradition of the last years, I&amp;rsquo;ve made a _geek christmas card:. This year I typed it in javascript using the improvements of HTML5.
+ Winter card 2016 - 2017: Mr Snowman has lost his hat!
+  The card is a minigame where a small and blue snowman has lost his hat and you need to help him to recover it. The characteristic of the game is that the snowman moves autonomously once the user gave him a direction.</description>
+    </item>
+    
+  </channel>
+</rss>
