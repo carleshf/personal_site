@@ -50,10 +50,9 @@ __`MultiDataSet`__
 #### In development
 
 __`epimutacions`__
- * __Short description__: `MultiDataSet` was released to supply the need for a data-structure in R to manage multiple layers of information for the same set of individuals. Latter on, it was extended as a resource to manage large amounts of multiple and non-complete biomedical-related data while offering a simple and general way of sub-setting features and selecting samples.
- * __Role__: Author (Transferred to [JR Gonzalez](https://www.isglobal.org/en/our-team/-/profiles/18510))
+ * __Short description__: `epimutacions` (the name of the package is in Catalan) is a package that uses microarray DNA methylation data to identify epimutations, defined as a sequence of CpGs with aberrant methylation level but not enough to be discovered in case-control studies. The goal is to implement and collect already published methods, compute the burden of epimutations in a cohort of generally healthy population, and apply the method to accelerate rare disease diagnostic. 
+ * __Role__: Contributor
  * __Type__: R package - _publication process in progress_
- * __Publication__: [C Hernandez-Ferrer; BMC Bioinform.; 2017](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1455-1)
 
 __`Treatabolome DB`__
  * __Short description__: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.
