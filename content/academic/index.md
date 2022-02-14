@@ -6,7 +6,7 @@ draft: false
 
 | __Section__           | __Description__                                                                |  
 |:----------------------|:-------------------------------------------------------------------------------|
-| [Articles](#articles) | List of publiched, acepted, submitted and scientific articles in preparation.  |
+| [Articles](#articles) | List of published, accepted, submitted and scientific articles in preparation.  |
 | [Talks](#talks)       | (Scientific-) Talks I gave during the last years.                              |
 | [Poster](#posters)    | (Scientific-) Posters I presented or I participated in the presented research. |
 | [Teaching](#teaching) | Summary of my experience in teaching.                                          |
