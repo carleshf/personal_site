@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
 
 
 
@@ -35,8 +35,8 @@
 
 <meta itemprop="name" content="Building a Compiler in .Net  (1 of 4)">
 <meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)."><meta itemprop="datePublished" content="2011-12-20T00:00:00+02:00" />
-<meta itemprop="dateModified" content="2011-12-20T00:00:00+02:00" />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly)."><meta itemprop="datePublished" content="2011-12-20T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-12-20T00:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="942"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content=".net,Csharp," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -134,8 +134,9 @@
 <p>A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</p>
 <h2 id="compiling-steps">Compiling steps</h2>
 <p>A compiler is a very complex program. It’s difficult to tell the difference between its own parts:</p>
-<figure><img src="/img/compiler_structure.png"
-         alt="Compiler workflow"/><figcaption>
+<figure>
+    <img src="/img/compiler_structure.png"
+         alt="Compiler workflow"/> <figcaption>
             <p>Compiler workflow</p>
         </figcaption>
 </figure>
@@ -160,10 +161,10 @@
 </ul>
 <p>In fact we should use a context dependent grammar but, using one of this types, we takes a hard task. So, to don’t work so harder, we will use a context free grammar and we will analyse the context in semantic analysis.</p>
 <p>When we define our grammar we need to take care of some kind of details like operations priority. It’s not the same to define a grammar as this:</p>
-<pre tabindex="0"><code>&lt; expression &gt; ::= [ - ] &lt; operand &gt; { ( + | - | * | / ) [ - ] &lt; operand &gt; }
+<pre><code>&lt; expression &gt; ::= [ - ] &lt; operand &gt; { ( + | - | * | / ) [ - ] &lt; operand &gt; }
 &lt; operand &gt; ::= '(' &lt; expression &gt; ')' | identifier | number
 </code></pre><p>As if we do like:</p>
-<pre tabindex="0"><code>&lt; expression &gt; ::= &lt; term &gt; { ( + | - ) &lt; term &gt; }
+<pre><code>&lt; expression &gt; ::= &lt; term &gt; { ( + | - ) &lt; term &gt; }
 &lt; term &gt; ::= &lt; factor &gt; { ( * | / ) &lt; factor &gt; }
 &lt; factor &gt; ::= - &lt; factor &gt; | ( '(' &lt; expression &gt; ')' | identifier | number
 </code></pre><p>Why? Because with the first one a <code>+</code> and a <code>*</code> are in the same evaluation-level and, logically, we want to operate first <code>*</code> then <code>+</code>. We&rsquo;re doing this in the second one.</p>

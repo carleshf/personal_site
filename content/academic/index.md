@@ -152,8 +152,12 @@ draft: false
 
 ## Talks
 
+* __New RD-Connect GPAP features implemented in collaboration with Solve-RD, EJP-RD and ELIXIR enable the diagnosis of rare disease patients with previously negative WES/WGS.__
+  * L Matalonga, D Piscia, ..., _C Hernandez-Ferrer_, ..., I Gut, S Beltran (conductor: L Matalonga)
+  * European Human Genetics Conference 2022 | Hybrid Conference ([program](https://2022.eshg.org/))
+
 * __El re-análisis sistemático de datos genómicos y fenotípicos de mas de 4000 pacientes con enfermedades raras no diagnosticadas contribuye a resolver más de un 8% de los casos__
-  * _L Matalonga Borrel_, C Hernandez-Ferrer, ..., S Beltran
+  * L Matalonga Borrel, _C Hernandez-Ferrer_, ..., A Hoischen, S Beltran
   * III Congreso Interdisciplinar de Genética Humana ([program](https://drive.google.com/file/d/1NhpqpRp5Sng9cUisZ-VbSfzMmRTQ6UTR/view?usp=sharing))
   * from 2021-11-03 to 2021-11-05 (performed: 2021-11-03)
 
@@ -186,7 +190,7 @@ draft: false
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
   * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: A Atalaia)
-  * European Human Genetics Conference Virtual Conference 2021 ([program](https://2021.eshg.org/))
+  * European Human Genetics Conference 2021 | Virtual Conference ([program](https://2021.eshg.org/))
  
 * __Treatabolome: a rare diseases treatment awareness project__
   * A Atalaia, R Thompson, ..., _C Hernandez-Ferrer_, ..., S Beltran, G Bonne (conductor: A Atalaia)

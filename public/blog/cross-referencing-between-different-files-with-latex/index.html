@@ -27,7 +27,7 @@ This can be done using the xr package." />
 
 
 
-<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
 
 
 
@@ -37,8 +37,8 @@ This can be done using the xr package." />
 <meta itemprop="name" content="Cross-referencing between different files with LaTeX">
 <meta itemprop="description" content="Sometimes I want to refer labels I placed in external .tex files. I mean, I want o refer (using the command \ref) a \label from a .tex file I created in another project.
 A valid solution it to use the command \include. But I in this case I don&rsquo;t want to include the .tex, I only want to be able to refer their labels.
-This can be done using the xr package."><meta itemprop="datePublished" content="2017-09-28T00:00:00+02:00" />
-<meta itemprop="dateModified" content="2017-09-28T00:00:00+02:00" />
+This can be done using the xr package."><meta itemprop="datePublished" content="2017-09-28T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2017-09-28T00:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="175"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="LaTeX," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -129,7 +129,7 @@ This can be done using the xr package."/>
 <p>A valid solution it to use the command <code>\include</code>. But I in this case I don&rsquo;t want to include the <code>.tex</code>, I only want to be able to refer their labels.</p>
 <p>This can be done using the <code>xr</code> package. The command <code>\externaldocument</code> allows to <em>include</em> an external <code>.tex</code> file (without adding its content to the current file) and use <code>\ref</code> like normal.</p>
 <p>For example, being in <code>my_doc.tex</code> I want o refer a label in <code>../thesis/thesis.tex</code>. We add into the preamble:</p>
-<pre tabindex="0"><code>\usepackage{xr}
+<pre><code>\usepackage{xr}
 \externaldocument{../thesis/thesis}
 </code></pre><p>And then, in the document we can do <code>\ref{chp1:f:miRNA-mechanism}</code>.</p>
 <p><strong>WARNING</strong>: The package looks for the <code>aux</code> file, so it does not work in all settings and, more importantly, without a full document. So, if I want to refer the labels in <code>chapter1.tex</code>, that is added to <code>thesis.tex</code> with an <code>\include</code>, I still need to run the <code>\externaldocument{../thesis/thesis}</code> instead of <code>\externaldocument{../thesis/chapter1}</code>.</p>

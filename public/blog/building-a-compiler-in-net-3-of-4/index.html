@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
+<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
 
 
 
@@ -35,8 +35,8 @@
 
 <meta itemprop="name" content="Building a Compiler in .Net  (3 of 4)">
 <meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."><meta itemprop="datePublished" content="2012-02-13T00:00:00+02:00" />
-<meta itemprop="dateModified" content="2012-02-13T00:00:00+02:00" />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."><meta itemprop="datePublished" content="2012-02-13T00:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-02-13T00:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="1488"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content=".net,Csharp," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -139,7 +139,7 @@
 <p>We call Common Language Run time ( <strong>CLR</strong> ) the virtual machine component of Microsoft .NET Framework responsible of the execution of .NET programs. It&rsquo;s in charge to compile the common Intermediate Language ( <strong>CIL</strong> ) into machine code during the compilation process known as just-in-time ( <strong>JIT</strong> ). CLR provides additional services related to memory management, type safety,&hellip; and an assembly language to define executable programs. All programs written for the .NET framework are executed by the CLR.</p>
 <p>The CLR uses an abstract stack-based data structure to model code execution, and CIL, to define the operations you can perform on the stack. When a computer program defined using CIL is executed, the CLR simply simulates the operations specified against a stack, pushing and popping data to be executed instruction by instruction.</p>
 <p>Let&rsquo;s see and example where we multiply two numbers (<code>2 * 3</code>):</p>
-<pre tabindex="0"><code>ldc.i4 2
+<pre><code>ldc.i4 2
 ldc.i4 3
 mul
 </code></pre><p>The two firsts instructions (<code>lcd.i4</code>) push an integer onto the stack. The last instruction (<code>mul</code>) multiplies the two pushed integers (popping them from the stack) and push the result onto the stack.</p>
@@ -148,7 +148,7 @@ mul
 <h2 id="implementation">Implementation</h2>
 <h3 id="reflectionemit">Reflection.Emit</h3>
 <p>Our compiler relies heavily on the <code>Reflection.Emit</code> library to produce an executable. In the constructor of the class (shown behind) we set up the necessary infrastructure from <code>Reflection.Emit</code> to start generating code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> CodeGen( InstrStmt p_input, <span style="color:#66d9ef">string</span> p_module_name ) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> CodeGen( InstrStmt p_input, <span style="color:#66d9ef">string</span> p_module_name ) {
     <span style="color:#66d9ef">if</span> ( IO.Path.GetFileName( p_module_name ) != p_module_name ) {
         <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;By the way we can only output into current directory!&#34;</span> );
     }
@@ -183,7 +183,7 @@ mul
 </code></pre></div><p>We start defining the assembly name and passing that to the assembly builder. In this example, we use the source file name as the assembly name. Next is the <code>ModuleBuilder</code> definition this uses the same name as the assembly. After that we define a <code>TypeBuilder</code> on the <code>ModuleBuilder</code> to hold the only type in the assembly. There are no types defined as first class citizens of the our language definition, but at least one type is necessary to hold the method, which will run on startup. We cal it <em>Foo</em>. The <code>MethodBuilder</code> defines a Main method to hold the CIL that will be generated. We need to call <code>SetEntryPoint</code> on this <code>MethodBuilder</code> so it will run on startup when the executable will be runt. The we create the global <code>ILGenerator</code> from the <code>MethodBuilder</code> using the <code>GetILGenerator</code> method.</p>
 <h3 id="geninstr">GenInstr</h3>
 <p>After all this set up step we call the function <code>GenInstr</code>. This function will walk into the syntax-tree generating the necessary CIL code using our <code>ILGenerator</code> instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> GenInstr(<span style="color:#66d9ef">object</span> p_instr, System.Type p_expected_type) { 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> GenInstr(<span style="color:#66d9ef">object</span> p_instr, System.Type p_expected_type) { 
 
     System.Type my_type = <span style="color:#66d9ef">null</span>;
 
@@ -234,13 +234,13 @@ mul
 </code></pre></div><p>As we can see each type of &ldquo;VSL instruction&rdquo; has its own code-generation step. Now we&rsquo;re going to look carefully three of this steps, you can look the other ones at your own time. The three cases discussed below represent the three different types of cases that we are generating code: Code-Generation code in intself, check/modify the Symbol&rsquo;s table and using existing methods.</p>
 <h4 id="numberlt"><code>NumberLt</code></h4>
 <p>Let&rsquo;s start with <code>NumberLt</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) { 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) { 
     <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Ldc_I4, ( (NumberLt) p_instr ).Value ); my_type = <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ); 
 }
 </code></pre></div><p>In this case we&rsquo;re creating the opcode <code>lcd.i4</code> like the opcode seen in the .NET Framework section of this article, pushing to the stack the value of a number literal.</p>
 <h3 id="variable"><code>Variable</code></h3>
 <p>Now we go with <code>Variable</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) { 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) { 
     VarStmt declare = (VarStmt) p_instr; 
     <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.symbol_table.ContainsKey( declare.Identifier ) ) { 
         <span style="color:#75715e">// declare local 
@@ -262,7 +262,7 @@ mul
 </code></pre></div><p>In this case we&rsquo;re creating a variable. First of all we must check if a variable with the same name exists. If not, we add this new variable to the symbol&rsquo;s table with it&rsquo;s type. Then we create an assignment statement to store the first value of the declared variable.</p>
 <h3 id="printstmt"><code>PrintStmt</code></h3>
 <p>The last case of code-generation we&rsquo;re gonna see is <code>PrintStmt</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) { 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) { 
     <span style="color:#75715e">// &#34;print&#34; statement is an alias for System.Console.WriteLine. 
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// it uses the string case System.Type 
 </span><span style="color:#75715e"></span>    expr_type = <span style="color:#66d9ef">this</span>.TypeOf( ( (PrintStmt) p_instr ).Expression ); 
