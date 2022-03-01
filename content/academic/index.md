@@ -121,6 +121,10 @@ draft: false
 
 #### Accepted & Submmited
 
+* __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
+  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
+  * [Human Mutation](https://onlinelibrary.wiley.com/doi/abs/10.1002/humu.24353) (accepted: 2022-02-14)
+
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
   * Cell (submmited: 2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
@@ -139,9 +143,6 @@ draft: false
 
 * __Quantification of epimutation burden in european generally healthy pediatric population__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., LA Jurado
-
-* __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
-  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
 
 #### Aknowledged
 
