@@ -19,6 +19,10 @@ draft: false
 
 #### Published
 
+* __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
+  * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
+  * [eLife](https://elifesciences.org/articles/65310) (submmited: 2022-03-18)
+
 * __Variability of multi-omics profiles in a population-based child cohort__
   * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
   * [BMC Medicine](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-02027-z) (2021-07-22)
@@ -128,10 +132,6 @@ draft: false
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
   * Cell (submmited: 2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
-
-* __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
-  * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
-  * eLife (submmited: 2020-11-05) · [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.05.368076v1) (2020-11-05)
 
 #### In preparation
 
