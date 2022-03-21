@@ -19,7 +19,7 @@ draft: false
 
 #### Published
 
-* __Identification of blood autosomal cis-expression quantitative trait methylation (cis-eQTM) in children__
+* __Identification of autosomal cis expression quantitative trait methylation (cis eQTMs) in children’s blood__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
   * [eLife](https://elifesciences.org/articles/65310) (submmited: 2022-03-18)
 
