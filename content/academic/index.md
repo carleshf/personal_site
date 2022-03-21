@@ -156,6 +156,7 @@ draft: false
 * __New RD-Connect GPAP features implemented in collaboration with Solve-RD, EJP-RD and ELIXIR enable the diagnosis of rare disease patients with previously negative WES/WGS.__
   * L Matalonga, D Piscia, ..., _C Hernandez-Ferrer_, ..., I Gut, S Beltran (conductor: L Matalonga)
   * European Human Genetics Conference 2022 | Hybrid Conference ([program](https://2022.eshg.org/))
+  * from 2022-06-11 to 2022-06-14 (pending)
 
 * __El re-análisis sistemático de datos genómicos y fenotípicos de mas de 4000 pacientes con enfermedades raras no diagnosticadas contribuye a resolver más de un 8% de los casos__
   * L Matalonga Borrel, _C Hernandez-Ferrer_, ..., A Hoischen, S Beltran
