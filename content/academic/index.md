@@ -21,7 +21,11 @@ draft: false
 
 * __Identification of autosomal cis expression quantitative trait methylation (cis eQTMs) in children’s blood__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
-  * [eLife](https://elifesciences.org/articles/65310) (submmited: 2022-03-18)
+  * [eLife](https://elifesciences.org/articles/65310) (2022-03-18)
+
+* __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
+  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
+  * [Human Mutation](https://onlinelibrary.wiley.com/doi/abs/10.1002/humu.24353) (2022-02-17)
 
 * __Variability of multi-omics profiles in a population-based child cohort__
   * M Gallego-Paüls, _C Hernandez-Ferrer_, ..., M Vrijheid, L Maitre
@@ -124,10 +128,6 @@ draft: false
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
 #### Accepted & Submmited
-
-* __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
-  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
-  * [Human Mutation](https://onlinelibrary.wiley.com/doi/abs/10.1002/humu.24353) (accepted: 2022-02-14)
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
