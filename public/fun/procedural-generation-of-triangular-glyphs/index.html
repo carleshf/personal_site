@@ -27,7 +27,7 @@ As you can see there, the challenge was on generating a set of runes, glyphs, or
 
 
 
-<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
 
 
 
@@ -37,8 +37,8 @@ As you can see there, the challenge was on generating a set of runes, glyphs, or
 <meta itemprop="name" content="Procedural generation of triangular glyphs">
 <meta itemprop="description" content="Some triangular glyphs
   Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
-As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL."><meta itemprop="datePublished" content="2020-02-14T00:00:00&#43;02:00" />
-<meta itemprop="dateModified" content="2020-02-14T00:00:00&#43;02:00" />
+As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL."><meta itemprop="datePublished" content="2020-02-14T00:00:00+02:00" />
+<meta itemprop="dateModified" content="2020-02-14T00:00:00+02:00" />
 <meta itemprop="wordCount" content="502"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="haxe,openfl," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -125,9 +125,8 @@ As you can see there, the challenge was on generating a set of runes, glyphs, or
             
 
             <div class="post-content">
-                <figure>
-    <img src="/img/haxe-triangle-glyph-00.png"
-         alt="Some triangular glyphs"/> <figcaption>
+                <figure><img src="/img/haxe-triangle-glyph-00.png"
+         alt="Some triangular glyphs"/><figcaption>
             <p>Some triangular glyphs</p>
         </figcaption>
 </figure>
@@ -136,17 +135,15 @@ As you can see there, the challenge was on generating a set of runes, glyphs, or
 <p>As you can see there, the challenge was on generating a set of <em>runes</em>, <em>glyphs</em>, or <em>symbols</em>. I found the challenge very interesting and starting from one of the pictures they reference (<a href="http://i.imgur.com/haZhAVz.png">this one</a>) I decided to create my own <em>generator</em> as an excuse to learn a bit of <a href="https://haxe.org/">Haxe</a> and <a href="https://www.openfl.org/">OpenFL</a>.</p>
 <p>I focused on the <em>gliphs</em> with triangular forms, the ones called &ldquo;actions&rdquo; in the reference picture. I first sifted the <em>gliphs</em> from the figure in order to have a more clear picture of the type of <em>triangular gliphs</em> I wanted to create. So, I removed &ldquo;connect&rdquo; and &ldquo;reflect&rdquo; since they broke the pyramidal structure of the other ones. I also sifted &ldquo;learn&rdquo;, &ldquo;understand&rdquo;, and &ldquo;protect&rdquo;, because they added two new elements (the circle and the dot) that I dislike.</p>
 <p>I started by placing a triangle in a matrix of 5x5 dots. Then I assigned a probability of 0.9 to a close-base triangle and a probability of 0.1 to an open-base triangle.</p>
-<figure>
-    <img src="/img/haxe-triangle-glyph-01.png"
-         alt="Outline of triangle glyphs"/> <figcaption>
+<figure><img src="/img/haxe-triangle-glyph-01.png"
+         alt="Outline of triangle glyphs"/><figcaption>
             <p>Outline of triangle glyphs</p>
         </figcaption>
 </figure>
 
 <p>With the border already working, I dissected the original <em>glyph</em> and obtained ten small pieces with which to generate the filling of the triangle to create a <em>glyph</em>. I assigned the same probability, to each piece, to be part of the final <em>glyph</em>.</p>
-<figure>
-    <img src="/img/haxe-triangle-glyph-02.png"
-         alt="Content of triangle glyphs"/> <figcaption>
+<figure><img src="/img/haxe-triangle-glyph-02.png"
+         alt="Content of triangle glyphs"/><figcaption>
             <p>Content of triangle glyphs</p>
         </figcaption>
 </figure>
@@ -168,9 +165,8 @@ As you can see there, the challenge was on generating a set of runes, glyphs, or
 <li><em>cloud blue</em>: <code>0xafd8df</code></li>
 <li><em>ink blue</em>: <code>0x000f55</code></li>
 </ul>
-<figure>
-    <img src="/img/haxe-triangle-glyph-03.png"
-         alt="Colors for triangular glyphs"/> <figcaption>
+<figure><img src="/img/haxe-triangle-glyph-03.png"
+         alt="Colors for triangular glyphs"/><figcaption>
             <p>Colors for triangular glyphs</p>
         </figcaption>
 </figure>

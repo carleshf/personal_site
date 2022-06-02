@@ -15,8 +15,8 @@
       
       <guid>http://212.71.254.23/software/</guid>
       <description>The following is a detailed list of software I created or which I contributed in any way. The order follows my contribution time to them and not their release time.
-Released RD-Connect Genome-Phenome Analysis Platform
- Short description: The &amp;ldquo;RD-Connect GPAP&amp;rdquo; was a result of the European Union FP7 funded RD-Connect project. It&amp;rsquo;s goal is to accelerate rare disease research by connecting databases, patient registries, biobanks and clinical data through an intuitive user-friendly platform.</description>
+Released Treatabolome DB
+ Short description: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ If you press on the following picture you&amp;rsquo;ll be moved to itch.io so yo
       
       <guid>http://212.71.254.23/about/</guid>
       <description>Trajectory I am a researcher at the Data Analysis Team at the Centre Nacional d’Anàlisi Genòmica (CNAG-CRG). I mainly work as a data and software engineer developing new software and improving our existing pipelines for genomic and genomic-related data analyses. I am also a collaborator directing master thesis from the MSc. in Bioinformatics &amp;amp; Biostatitics at the Universitat Oberta de Catalunya.
-  Welcome to CNAG-CRG
+ Welcome to CNAG-CRG
   Before working at the Centre Nacional d’Anàlisi Genòmica, my research interests included the study of the relations between environmental factors and internal omic perturbations and development of applications to integrate multiple layers of molecular data.</description>
     </item>
     
@@ -81,7 +81,7 @@ You can play it clicking the previous picture.</description>
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
- .container2 { height: 100px; width: 100px; position: relative; top: 60px; bottom: 60px; left: 0; right: 0; margin: auto; } .caption2 { height: 100px; width: 500px; position: relative; top: 125px; bottom: 0; left: 0; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 48px; } .subcaption2 { height: 100px; width: 500px; position: relative; top: 100px; bottom: 50px; left: 45%; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 23px; } .</description>
+.container2 {height: 100px;width: 100px;position: relative;top: 60px;bottom: 60px;left: 0;right: 0;margin: auto;}.caption2 {height: 100px;width: 500px;position: relative;top: 125px;bottom: 0;left: 0;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 48px;}.subcaption2 {height: 100px;width: 500px;position: relative;top: 100px;bottom: 50px;left: 45%;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 23px;}.</description>
     </item>
     
     <item>
@@ -210,7 +210,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;quot;Index&amp;quot; instead of &amp;quot;Content&amp;quot; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;quot;Index&amp;quot; instead of &amp;quot;Content&amp;quot;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document}With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
     <item>
@@ -242,8 +242,8 @@ Anyway, the package is in GitHub and it can be installed from the repository. Th
       
       <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
       <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
-{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } { &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: true } } I like it to behave like this:
-{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } }{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: true } }I like it to behave like this:
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } }So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
     </item>
     
     <item>
@@ -254,7 +254,7 @@ Anyway, the package is in GitHub and it can be installed from the repository. Th
       <guid>http://212.71.254.23/fun/winter_card_2015-2016/</guid>
       <description>It&amp;rsquo;s time for the geek christmas card. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.
 It is the simplest card I coded but I made it thinking in simplicity.
-  Winter card 2015 - 2014: ASCI art
+ Winter card 2015 - 2014: ASCI art
   The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
     </item>
     
@@ -276,8 +276,8 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
       <guid>http://212.71.254.23/fun/winter_card_2014-2015/</guid>
       <description>Like the previous years, I continued with the tradition of sending a geek christmas card to my workmates.
 This year I wrote it in R since it is one of the most used languages at my workplace, CREAL.
-  Winter card 2014 - 2015: snowflake recursion!
-  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above.</description>
+ Winter card 2014 - 2015: snowflake recursion!
+  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above. The source code for that can be found at my christmas-card&amp;rsquo;s github (link) as mc201415.</description>
     </item>
     
     <item>
@@ -288,7 +288,7 @@ This year I wrote it in R since it is one of the most used languages at my workp
       <guid>http://212.71.254.23/fun/winter_card_2013_2014/</guid>
       <description>This year I decided to continue with the tradition I started last year and sending a Christmas Card to my workmates written in python.
 The result of running the script I sent is seen below.
-  Winter card 2013 - 2014: santa claus is coming to town
+ Winter card 2013 - 2014: santa claus is coming to town
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     
@@ -300,7 +300,7 @@ The result of running the script I sent is seen below.
       <guid>http://212.71.254.23/fun/winter_card_2012-2013/</guid>
       <description>This year I&amp;rsquo;ve decided to send a Christmas&#39; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
 The result of running the script is this:
-  Winter card 2012 - 2013: snowflake
+ Winter card 2012 - 2013: snowflake
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     

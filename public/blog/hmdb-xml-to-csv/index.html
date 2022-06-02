@@ -26,7 +26,7 @@ T3DB offers a series of downloadable resources that can be easy integrated into 
 
 
 
-<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
 
 
 
@@ -35,8 +35,8 @@ T3DB offers a series of downloadable resources that can be easy integrated into 
 
 <meta itemprop="name" content="Exploiting XML data from Human Metabolome Data Base">
 <meta itemprop="description" content="I am currently working on a project where I need to annotate exogenous chemicals measured in plasma using GC-MS/MS to the Human Metabolome Data Base (HMDB) and to the Toxin and Toxin Target Database (T3DB).
-T3DB offers a series of downloadable resources that can be easy integrated into R as a CSV file after being parsed using bash. On the other hand, HMDB only offers XML sources that are to heavy to be parsed using the XML R package in my laptop."><meta itemprop="datePublished" content="2018-09-18T00:00:00&#43;02:00" />
-<meta itemprop="dateModified" content="2018-09-18T00:00:00&#43;02:00" />
+T3DB offers a series of downloadable resources that can be easy integrated into R as a CSV file after being parsed using bash. On the other hand, HMDB only offers XML sources that are to heavy to be parsed using the XML R package in my laptop."><meta itemprop="datePublished" content="2018-09-18T00:00:00+02:00" />
+<meta itemprop="dateModified" content="2018-09-18T00:00:00+02:00" />
 <meta itemprop="wordCount" content="529"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="python," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -126,7 +126,7 @@ T3DB offers a series of downloadable resources that can be easy integrated into 
 <p>T3DB offers a series of downloadable resources that can be easy integrated into R as a CSV file after being parsed using bash. On the other hand, HMDB only offers XML sources that are to heavy to be parsed using the <code>XML</code> R package in my laptop.</p>
 <p>In my case I was interested in obtaining the chemical class of each exogenous chemical as well as their sources and routes of exposure.</p>
 <p>The following is the python code I used to parse the XML file and create a CSV file with the information I required for my project.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e">#!/usr/bin/env python3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e">#!/usr/bin/env python3</span>
     <span style="color:#75715e"># -*- coding: utf-8 -*-</span>
     
     <span style="color:#f92672">import</span> csv
@@ -214,7 +214,7 @@ T3DB offers a series of downloadable resources that can be easy integrated into 
     
         elm<span style="color:#f92672">.</span>clear()
         <span style="color:#66d9ef">for</span> ancestor <span style="color:#f92672">in</span> elm<span style="color:#f92672">.</span>xpath( <span style="color:#e6db74">&#39;ancestor-or-self::*&#39;</span> ):
-            <span style="color:#66d9ef">while</span> ancestor<span style="color:#f92672">.</span>getprevious() <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
+            <span style="color:#66d9ef">while</span> ancestor<span style="color:#f92672">.</span>getprevious() <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
                 <span style="color:#66d9ef">del</span> ancestor<span style="color:#f92672">.</span>getparent()[ <span style="color:#ae81ff">0</span> ]
     
     <span style="color:#66d9ef">del</span> context

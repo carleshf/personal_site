@@ -135,14 +135,11 @@ draft: false
 
 #### In preparation
 
-* __epimutacions: a Bioconductor package to identify DNA methylation outliers__
+* __Epimutations detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * L Abarrategui, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
 
 * __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based diseases__
   * _C Hernandez-Ferrer_, ..., S Beltran
-
-* __Quantification of epimutation burden in european generally healthy pediatric population__
-  * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., LA Jurado
 
 #### Aknowledged
 

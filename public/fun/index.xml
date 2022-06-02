@@ -50,7 +50,7 @@ You can play it clicking the previous picture.</description>
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
- .container2 { height: 100px; width: 100px; position: relative; top: 60px; bottom: 60px; left: 0; right: 0; margin: auto; } .caption2 { height: 100px; width: 500px; position: relative; top: 125px; bottom: 0; left: 0; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 48px; } .subcaption2 { height: 100px; width: 500px; position: relative; top: 100px; bottom: 50px; left: 45%; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 23px; } .</description>
+.container2 {height: 100px;width: 100px;position: relative;top: 60px;bottom: 60px;left: 0;right: 0;margin: auto;}.caption2 {height: 100px;width: 500px;position: relative;top: 125px;bottom: 0;left: 0;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 48px;}.subcaption2 {height: 100px;width: 500px;position: relative;top: 100px;bottom: 50px;left: 45%;right: 0;margin: auto;font-family: &#39;Sacramento&#39;, serif;font-size: 23px;}.</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@ The card is an HTML5 canvas used as a grid where different pixelled cartoons app
       <guid>http://212.71.254.23/fun/winter_card_2015-2016/</guid>
       <description>It&amp;rsquo;s time for the geek christmas card. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.
 It is the simplest card I coded but I made it thinking in simplicity.
-  Winter card 2015 - 2014: ASCI art
+ Winter card 2015 - 2014: ASCI art
   The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
     </item>
     
@@ -138,8 +138,8 @@ It is the simplest card I coded but I made it thinking in simplicity.
       <guid>http://212.71.254.23/fun/winter_card_2014-2015/</guid>
       <description>Like the previous years, I continued with the tradition of sending a geek christmas card to my workmates.
 This year I wrote it in R since it is one of the most used languages at my workplace, CREAL.
-  Winter card 2014 - 2015: snowflake recursion!
-  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above.</description>
+ Winter card 2014 - 2015: snowflake recursion!
+  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above. The source code for that can be found at my christmas-card&amp;rsquo;s github (link) as mc201415.</description>
     </item>
     
     <item>
@@ -150,7 +150,7 @@ This year I wrote it in R since it is one of the most used languages at my workp
       <guid>http://212.71.254.23/fun/winter_card_2013_2014/</guid>
       <description>This year I decided to continue with the tradition I started last year and sending a Christmas Card to my workmates written in python.
 The result of running the script I sent is seen below.
-  Winter card 2013 - 2014: santa claus is coming to town
+ Winter card 2013 - 2014: santa claus is coming to town
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     
@@ -162,7 +162,7 @@ The result of running the script I sent is seen below.
       <guid>http://212.71.254.23/fun/winter_card_2012-2013/</guid>
       <description>This year I&amp;rsquo;ve decided to send a Christmas&#39; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
 The result of running the script is this:
-  Winter card 2012 - 2013: snowflake
+ Winter card 2012 - 2013: snowflake
   You can see the gallery of cards here and you have the source code here.</description>
     </item>
     

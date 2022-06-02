@@ -8,6 +8,15 @@ The following is a detailed list of software I created or which I contributed in
 
 #### Released
 
+__`Treatabolome DB`__
+ * __Short description__: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.
+ * __Role__: Author (Transferred to [S Beltran and A Corvo](https://cnag.es/teams/bioinformatics-unit/data-analysis))
+ * __Type__: [Web application](https://treatabolome.org/)
+ * __Publication(s)__:
+    - [G Bonne, J Neuromuscul Dis., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203244/)
+    - [A Atalaya; J Neuromuscul Dis.; 2021](https://pubmed.ncbi.nlm.nih.gov/33682723/)
+    - [R Thompson;  Emerg Top Life Sci.; 2019](https://pubmed.ncbi.nlm.nih.gov/30931400/)
+
 __RD-Connect Genome-Phenome Analysis Platform__ 
  * __Short description__: The "RD-Connect GPAP" was a result of the European Union FP7 funded RD-Connect project. It's goal is to accelerate rare disease research by connecting databases, patient registries, biobanks and clinical data through an intuitive user-friendly platform.
  * __Role__: Maintainer/Contributor
@@ -53,15 +62,6 @@ __`epimutacions`__
  * __Short description__: `epimutacions` (the name of the package is in Catalan) is a package that uses microarray DNA methylation data to identify epimutations, defined as a sequence of CpGs with aberrant methylation level but not enough to be discovered in case-control studies. The goal is to implement and collect already published methods, compute the burden of epimutations in a cohort of generally healthy population, and apply the method to accelerate rare disease diagnostic. 
  * __Role__: Contributor
  * __Type__: R package - _publication process in progress_
-
-__`Treatabolome DB`__
- * __Short description__: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.
- * __Role__: Author
- * __Type__: Web application (in _private beta_)
- * __Publication(s)__:
-    - [G Bonne, J Neuromuscul Dis., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203244/)
-    - [A Atalaya; J Neuromuscul Dis.; 2021](https://pubmed.ncbi.nlm.nih.gov/33682723/)
-    - [R Thompson;  Emerg Top Life Sci.; 2019](https://pubmed.ncbi.nlm.nih.gov/30931400/)
 
 #### Deprecated or discontinued
 

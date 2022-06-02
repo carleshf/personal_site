@@ -27,7 +27,7 @@ The following (rudimentary) code, queries the database in batches of ten compoun
 
 
 
-<link rel="stylesheet" href="/main.eaf4f2571fc0260b30532ce37bc0e1c2107885bfec3b592755f30dba7741301e.css">
+<link rel="stylesheet" href="/main.0dbe19bf135ce9f0272c4f7c4b805c55427a2a421a96241af7daa8532e45dea9.css">
 
 
 
@@ -37,8 +37,8 @@ The following (rudimentary) code, queries the database in batches of ten compoun
 <meta itemprop="name" content="Annotating KEGG compounds to pathway">
 <meta itemprop="description" content="To annotate a list of KEGG compounds to the KEGG pathways where they are involved I used the R package KEGGREST from Bioconductor.
 library(KEGGREST) So, having a list of KEGG compounds saved in a character vector like kegg_compounds, we use the method keggGet in batches of maximum 10 compounds to annotate them.
-The following (rudimentary) code, queries the database in batches of ten compounds fiddling a list (pathways) where it creates an entry per pathway and updates the field compounds with the compounds from kegg_compounds for each pathway."><meta itemprop="datePublished" content="2018-03-27T00:00:00&#43;02:00" />
-<meta itemprop="dateModified" content="2018-03-27T00:00:00&#43;02:00" />
+The following (rudimentary) code, queries the database in batches of ten compounds fiddling a list (pathways) where it creates an entry per pathway and updates the field compounds with the compounds from kegg_compounds for each pathway."><meta itemprop="datePublished" content="2018-03-27T00:00:00+02:00" />
+<meta itemprop="dateModified" content="2018-03-27T00:00:00+02:00" />
 <meta itemprop="wordCount" content="164"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content="R," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -126,10 +126,10 @@ The following (rudimentary) code, queries the database in batches of ten compoun
 
             <div class="post-content">
                 <p>To annotate a list of <a href="http://www.genome.jp/kegg/compound/">KEGG compounds</a> to the <a href="http://www.genome.jp/kegg/pathway.html">KEGG pathways</a> where they are involved I used the R package <a href="https://bioconductor.org/packages/release/bioc/html/KEGGREST.html">KEGGREST</a> from Bioconductor.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(KEGGREST)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(KEGGREST)
 </code></pre></div><p>So, having a list of KEGG compounds saved in a character vector like <code>kegg_compounds</code>, we use the method <code>keggGet</code> in batches of maximum 10 compounds to annotate them.</p>
 <p>The following (<em>rudimentary</em>) code, queries the database in batches of ten compounds fiddling a list (<code>pathways</code>) where it creates an entry per pathway and updates the field <code>compounds</code> with the compounds from <code>kegg_compounds</code> for each pathway.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">pathways <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">pathways <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
 sequence <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">length</span>(kegg_compounds), by<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
 <span style="color:#a6e22e">for</span>(ii in sequence) {
     jj <span style="color:#f92672">&lt;-</span> ii <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>
