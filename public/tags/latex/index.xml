@@ -27,7 +27,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;quot;Index&amp;quot; instead of &amp;quot;Content&amp;quot;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document}With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
   </channel>

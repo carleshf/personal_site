@@ -32,7 +32,7 @@ draft: false
   * [BMC Medicine](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-02027-z) (2021-07-22)
 
 * __The early-life exposome and epigenetic age acceleration in children__
-  * P Prado-Bert, M Vives-Usano, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
+  * P Prado-Bert, C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ... M Vrijheid, M Bustamante
   * [Environmental International](https://www.sciencedirect.com/science/article/pii/S0160412021003081) (2021-06-15)
 
 * __Solving patients with rare diseases through programmatic reanalysis of genome-phenome data__
@@ -127,13 +127,16 @@ draft: false
   * _C Hernandez-Ferrer_, I Quintela Garcia, ..., LA Pérez-Jurado, JR Gonzalez
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
-#### Accepted & Submmited
+#### Accepted or Submmited
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
   * Cell (submmited: 2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
 
 #### In preparation
+
+* __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
+  * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, JR González, A Cortés
 
 * __Epimutations detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * L Abarrategui, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
