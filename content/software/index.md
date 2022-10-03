@@ -11,7 +11,7 @@ The following is a detailed list of software I created or which I contributed in
 __`Treatabolome DB`__
  * __Short description__: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.
  * __Role__: Author (Transferred to [S Beltran and A Corvo](https://cnag.es/teams/bioinformatics-unit/data-analysis))
- * __Type__: [Web application](https://treatabolome.org/)
+ * __Type__: Web application ([access](https://treatabolome.org/))
  * __Publication(s)__:
     - [G Bonne, J Neuromuscul Dis., 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203244/)
     - [A Atalaya; J Neuromuscul Dis.; 2021](https://pubmed.ncbi.nlm.nih.gov/33682723/)
