@@ -131,12 +131,13 @@ draft: false
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
-  * Cell (submmited: 2021-02-03) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1) (2021-06-07)
-
-#### In preparation
+  * Nature Communications (accepted: 2022-10-04) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1)
 
 * __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
   * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, JR González, A Cortés
+  * Microbiology Spectrum (submitted: 2022-08-04)
+
+#### In preparation
 
 * __Epimutations detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * L Abarrategui, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
