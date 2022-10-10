@@ -127,7 +127,6 @@ draft: false
   * _C Hernandez-Ferrer_, I Quintela Garcia, ..., LA Pérez-Jurado, JR Gonzalez
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
-
 * __The PAU camera and the PAU survey at the William Herschel Telescope__
   * FJ Castander, O Ballester, ..., _C Hernandez-Ferrer_, ..., N Tonello; J de Vicente
   * [SPIE, Ground-based and Airborne Instrumentation for Astronomy IV](https://spie.org/Publications/Proceedings/Volume/8446?SSO=1) (2012-09-24)
