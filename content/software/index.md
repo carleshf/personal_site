@@ -61,7 +61,7 @@ __`MultiDataSet`__
 __`epimutacions`__
  * __Short description__: `epimutacions` (the name of the package is in Catalan) is a package that uses microarray DNA methylation data to identify epimutations, defined as a sequence of CpGs with aberrant methylation level but not enough to be discovered in case-control studies. The goal is to implement and collect already published methods, compute the burden of epimutations in a cohort of generally healthy population, and apply the method to accelerate rare disease diagnostic. 
  * __Role__: Contributor
- * __Type__: R package - see `MultiDataSet` at [Bioconductor](https://bioconductor.org/packages/release/bioc/html/epimutacions.html)
+ * __Type__: R package - see `epimutacions` at [Bioconductor](https://bioconductor.org/packages/release/bioc/html/epimutacions.html)
  * __Publication__: _in development_
 
 #### Deprecated or discontinued
