@@ -127,6 +127,19 @@ draft: false
   * _C Hernandez-Ferrer_, I Quintela Garcia, ..., LA Pérez-Jurado, JR Gonzalez
   * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0608-y) (2015-05-20)
 
+
+* __The PAU camera and the PAU survey at the William Herschel Telescope__
+  * FJ Castander, O Ballester, ..., _C Hernandez-Ferrer_, ..., N Tonello; J de Vicente
+  * [SPIE, Ground-based and Airborne Instrumentation for Astronomy IV](https://spie.org/Publications/Proceedings/Volume/8446?SSO=1) (2012-09-24)
+
+* __A motion control networked solution for the PAUCam slow control__
+  * O Ballester, C Pio, _C Hernandez-Ferrer_, M Albareda-Sirvent
+  * [SPIE, Software and Cyberinfrastructure for Astronomy II](https://spie.org/Publications/Proceedings/Volume/8451) (2012-09-24)
+
+* __Design and implementation of a distributed system for the PAUCam camera control system__
+  * O Ballester, C Pio, _C Hernandez-Ferrer_, S Serrano, N Tonello
+  * [SPIE, Software and Cyberinfrastructure for Astronomy II](https://spie.org/Publications/Proceedings/Volume/8451) (2012-09-24)
+
 #### Accepted or Submmited
 
 * __Multi-omics signatures of the human early life exposome__
