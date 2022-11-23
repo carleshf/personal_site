@@ -147,7 +147,7 @@ draft: false
 #### Accepted or Submmited
 
 * __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
-  * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, JR González, A Cortés
+  * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, ..., JR González, A Cortés
   * Microbiology Spectrum (accepted: 2022-11-23)
 
 * __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
