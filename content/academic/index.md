@@ -19,6 +19,11 @@ draft: false
 
 #### Published
 
+
+* __Multi-omics signatures of the human early life exposome__
+  * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
+  * [Nature Communications](https://www.nature.com/articles/s41467-022-34422-2) (2022-11-21)
+
 * __Identification of autosomal cis expression quantitative trait methylation (cis eQTMs) in children’s blood__
   * C Ruiz-Arenas, _C Hernandez-Ferrer_, ..., JR Gonzalez, M Bustamante
   * [eLife](https://elifesciences.org/articles/65310) (2022-03-18)
@@ -141,18 +146,15 @@ draft: false
 
 #### Accepted or Submmited
 
-* __Multi-omics signatures of the human early life exposome__
-  * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
-  * Nature Communications (accepted: 2022-10-04) · [medRxiv](https://www.medrxiv.org/content/10.1101/2021.05.04.21256605v1)
-
 * __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
   * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, JR González, A Cortés
-  * Microbiology Spectrum (submitted: 2022-08-04)
+  * Microbiology Spectrum (accepted: 2022-11-23)
+
+* __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
+  * C Ruiz-Arenas, L Abarrategui, _C Hernandez-Ferrer_, ..., LA Pérez-Jurado, JR Gonzalez
+  * Genome Medicine (submitted: 2022-11-23)
 
 #### In preparation
-
-* __Epimutations detection in the clinical context: guidelines and a use case from a new Bioconductor package__
-  * L Abarrategui, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
 
 * __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based diseases__
   * _C Hernandez-Ferrer_, ..., S Beltran
