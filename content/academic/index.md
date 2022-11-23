@@ -151,7 +151,7 @@ draft: false
   * Microbiology Spectrum (accepted: 2022-11-23)
 
 * __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
-  * C Ruiz-Arenas, L Abarrategui, _C Hernandez-Ferrer_, ..., LA Pérez-Jurado, JR Gonzalez
+  * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
   * Genome Medicine (submitted: 2022-11-23)
 
 #### In preparation
