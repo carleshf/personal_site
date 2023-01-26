@@ -57,9 +57,9 @@ Published Multi-omics signatures of the human early life exposome</description>
       <pubDate>Sat, 17 Apr 2021 21:59:10 +0200</pubDate>
       
       <guid>http://212.71.254.23/about/</guid>
-      <description>Trajectory I am a researcher at the Data Analysis Team at the Centre Nacional d’Anàlisi Genòmica (CNAG-CRG). I mainly work as a data and software engineer developing new software and improving our existing pipelines for genomic and genomic-related data analyses. I am also a collaborator directing master thesis from the MSc. in Bioinformatics &amp;amp; Biostatitics at the Universitat Oberta de Catalunya.
+      <description>Trajectory I am a senior research engeneer at the Barcelona Supercomputing Center (BSC) mainly developing new infraestructure for european collaborative projects (ELIXIR) in biomedical sciences. I am also a collaborator directing master thesis from the MSc. in Bioinformatics &amp;amp; Biostatitics at the Universitat Oberta de Catalunya.
 Welcome to CNAG-CRG
-Before working at the Centre Nacional d’Anàlisi Genòmica, my research interests included the study of the relations between environmental factors and internal omic perturbations and development of applications to integrate multiple layers of molecular data.</description>
+Before turning into a research engeneer, my research interests included the study of the relations between environmental factors and internal omic perturbations and development of applications to integrate multiple layers of molecular data.</description>
     </item>
     
     <item>
@@ -81,7 +81,7 @@ You can play it clicking the previous picture. You can find the code of this car
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
-Feliç Sant JordiBarcelona 2020More information on this festivity:
+Feliç Sant Jordi Barcelona 2020 More information on this festivity:
 Sant Jordi - Day of the Book and the Rose: Explanation of this festivity in Catalonia by Barcelona&amp;rsquo;s City council. Wikpiedia Saint George&amp;rsquo;s Day (Spain): Short explanation of this festivity in Aragon, Catalonia, and Valencia. </description>
     </item>
     
@@ -211,7 +211,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
     <item>
@@ -243,7 +243,7 @@ The card is a minigame where a small and blue snowman has lost his hat and you n
       
       <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
       <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
-{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } }{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
+{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } { &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
 { &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+c&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
     </item>
     

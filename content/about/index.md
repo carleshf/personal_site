@@ -6,18 +6,18 @@ draft: false
 
 ## Trajectory
 
-I am a researcher at the [Data Analysis Team](https://cnag.es/teams/bioinformatics-unit/data-analysis) at the [Centre Nacional d’Anàlisi Genòmica (CNAG-CRG)](https://www.cnag.crg.eu). I mainly work as a data and software engineer developing new software and improving our existing pipelines for genomic and genomic-related data analyses. I am also a collaborator [directing master thesis](http://carleshf.com/academic/#teaching) from the [MSc. in Bioinformatics & Biostatitics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion) at the [Universitat Oberta de Catalunya](https://uoc.edu).
+I am a senior research engeneer at the [Barcelona Supercomputing Center (BSC)](www.bsc.es) mainly developing new infraestructure for european collaborative projects ([ELIXIR](https://elixir-europe.org)) in  biomedical sciences.  I am also a collaborator [directing master thesis](http://carleshf.com/academic/#teaching) from the [MSc. in Bioinformatics & Biostatitics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion) at the [Universitat Oberta de Catalunya](https://uoc.edu).
 
 {{< figure src="/img/portrait.png" caption="Welcome to CNAG-CRG" >}}
 
-Before working at the Centre Nacional d’Anàlisi Genòmica, my research interests included the study of the relations between environmental factors and internal omic perturbations and development of applications to integrate multiple layers of molecular data. I have previously been at the Computational Health Informatics Program, located at [Boston Children’s Hospital](https://www.childrenshospital.org), and the [Pediatrics Department](https://connects.catalyst.harvard.edu/Profiles/display/Person/171981) of the Harvard Medical School as a research fellow elucidating the relationship between environmental factors and autism severity. Earlier, I performed my Ph.D. thesis at the [Bioinformatic Research Group in Epidemiology](http://brge.isglobal.org/) from [Barcelona Institute for Global Health](https://www.isglobal.org/), as well at [Universitat Pompeu Fabra](https://www.upf.edu/), depicting the impact of ultraviolet light (UV-A + UV-B) on human health, as well as working as a bioinformatic analyst studying the impact of multiple environmental factors on human internal molecular signatures (also known as omic data, including genome, methylome, transcriptome, proteome, and metabolome) within the framework of [HELIX | Building the early life exposome](https://www.projecthelix.eu).
+Before turning into a research engeneer, my research interests included the study of the relations between environmental factors and internal omic perturbations and development of applications to integrate multiple layers of molecular data. I worked at the [Centre Nacional d’Anàlisi Genòmica (CNAG-CRG)](https://cnag.es/) I have previously been at the Computational Health Informatics Program, located at [Boston Children’s Hospital](https://www.childrenshospital.org), and the [Pediatrics Department](https://connects.catalyst.harvard.edu/Profiles/display/Person/171981) of the Harvard Medical School as a research fellow elucidating the relationship between environmental factors and autism severity. Earlier, I performed my Ph.D. thesis at the [Bioinformatic Research Group in Epidemiology](http://brge.isglobal.org/) from [Barcelona Institute for Global Health](https://www.isglobal.org/), as well at [Universitat Pompeu Fabra](https://www.upf.edu/), depicting the impact of ultraviolet light (UV-A + UV-B) on human health, as well as working as a bioinformatic analyst studying the impact of multiple environmental factors on human internal molecular signatures (also known as omic data, including genome, methylome, transcriptome, proteome, and metabolome) within the framework of [HELIX | Building the early life exposome](https://www.projecthelix.eu).
 
-Former turning into research, I studied my [BSc. Computer Engineering](https://www.uab.cat/web/estudiar/ehea-degrees/general-information/computer-engineering-1216708259085.html?param1=1263367146646) at [Universitat Autònoma de Barcelona](https://www.uab.cat/), as well as my [MSc. in Bioinformatics](http://mscbioinformatics.uab.cat), and worked as a computer engineer and as a software developer elsewhere.
+Former turning into research, I studied my [BSc. Computer Engineering](https://www.uab.cat/web/estudiar/ehea-degrees/general-information/computer-engineering-1216708259085.html?param1=1263367146646) at [Universitat Autònoma de Barcelona](https://www.uab.cat/), as well as my [MSc. in Bioinformatics](http://mscbioinformatics.uab.cat), and worked as a computer engineer and as a software developer at [Departament de Telecomunicació i d'Enginyeria de Sistemes](https://www.uab.cat/departament/telecomunicacio-enginyeria-sistemes/) from [Universitat Autònoma de Barcelona](https://www.uab.cat/), at [Institut de Física d’Altes Energies (IFAE)](https://www.ifae.es), and at [Microsoft](https://www.microsoft.com/)'s [Rewards](https://www.microsoft.com/rewards).
 
 ## Contact
 
-   * __E-mail__: carles.hernandez/@\cnag.crg.eu
-   * __Location__: Centre Nacional d'Anàlisi Genòmica (CNAG-CRG); Parc Científic de Barcelona; Carrer de Baldiri Reixac, 4, 08028 Barcelona, Spain
+   * __E-mail__: carles.hernandez2/@\bsc.es
+   * __Location__: Barcelona Supercomputing Center (BSC) - Centro Nacional de Supercomputación (CNS); Jordi Girona, 29. 08034 Barcelona, Spain
  
 
 {{< rawhtml >}}
@@ -32,13 +32,12 @@ Former turning into research, I studied my [BSc. Computer Engineering](https://w
   </style>
   <div id="map"></div>
   <script>
-    // initialize Leaflet
-    var map = L.map('map').setView({lat: 41.381830, lon: 2.116485}, 16);
+    var map = L.map('map').setView({lat: 41.389903, lon: 2.115419}, 16);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
       }).addTo(map)
       L.control.scale().addTo(map)
-      L.marker({lat: 41.381830, lon: 2.116485}).bindPopup("Centre Nacional d'Anàlisi Genòmica (CNAG-CRG)").addTo(map)
+      L.marker({lat: 41.389903, lon: 2.115419}).bindPopup("Barcelona Supercomputing Center").addTo(map)
   </script>
 {{< /rawhtml >}}
