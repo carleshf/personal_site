@@ -248,12 +248,13 @@ draft: false
 
 Acting as final master thesis director:
 
-  1. _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
-  2. _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
-  3. _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
-  4. _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
-  5. _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and conducted during 2nd semester of 2020-2021 (grade: B, score: 8.8/10)
-  6. _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of 8.7/10)
+  * _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of 8.7/10)
+  * _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and conducted during 2nd semester of 2020-2021 (grade: B, score: 8.8/10)
+  * _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
+  * _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
+  * _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
+  * _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
+
 
 #### Biotools for biostatistics and bioinformatics (1st edition)
   * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
@@ -267,30 +268,30 @@ Acting as final master thesis director:
 
 The institution was collaborating with the regional government in order to host some students in an internship during their last year of high school, allowing them to conduct a research project.
 
-  1. _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of 10/10)
-  2. _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of 10/10)
-
+  * _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of 10/10)
+  * _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of 10/10)
+  
 #### Statistical analysis of omic data in R (3th edition)
   * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
-  * 2016-05 as _Instructor_
+  * 2016-05 as _Instructor_ (2 days)
 
 6h: RNASeq data analysis using R and Bioconductor packages
 
 #### Statistical analysis of omic data in R (2nd edition)
   * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology
-  * 2015-05 as _Instructor_
+  * 2015-05 as _Instructor_ (1 day)
 
 2h: Genomic data visualization
 
 #### Introduction to R
   * Barcelona Institute for Global Health
-  * 2014-04 as _Instructor_
+  * 2014-04 as _Instructor_ (1 day)
 
 4h: Algorithms and programming structures
 
 #### Introduction to python for bioinformatics
-* Centre for Research in Agricultural Genomics // Statistical and population genomics
-* 2013-06 as _Instructor_
+  * Centre for Research in Agricultural Genomics // Statistical and population genomics
+  * 2013-06 as _Instructor_ (2 days)
 
 8h: Basic introduction to python programming for non-programmers in bioinformatics in the field of plant and animal genomics. The session covered from languages description to small bioinformatics exercises.
 
