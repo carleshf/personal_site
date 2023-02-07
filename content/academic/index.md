@@ -19,6 +19,9 @@ draft: false
 
 #### Published
 
+* __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
+  * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, ..., JR González, A Cortés
+  * [Microbiology Spectrum](https://journals.asm.org/doi/10.1128/spectrum.03049-22) (2022-12-14)
 
 * __Multi-omics signatures of the human early life exposome__
   * L Maitre, M Bustamante, _C Hernandez-Ferrer_, ..., HC Keun, M Vrijheid
@@ -145,10 +148,6 @@ draft: false
   * [SPIE, Software and Cyberinfrastructure for Astronomy II](https://spie.org/Publications/Proceedings/Volume/8451) (2012-09-24)
 
 #### Accepted or Submmited
-
-* __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
-  * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, ..., JR González, A Cortés
-  * Microbiology Spectrum (accepted: 2022-11-23)
 
 * __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
