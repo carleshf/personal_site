@@ -27,7 +27,7 @@ __`WEScover`__
  * __Short description__: While whole exome sequencing is widely adopted in clinical and research settings, the potential false negatives due to incomplete breadth and depth of coverage for several exons in clinically implicated genes is a major concern. `WEScover` is a tool to quickly identify if all genes of interest would be reliably covered by WES or a targeted gene panel testing should be prioritized.
  * __Role__: Contributor
  * __Type__: Web application ([access](https://tom.tch.harvard.edu/shinyapps/WEScover/))
- * __Publication__: [IH Lee; BMC Bioinform; 2021](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5)
+ * __Publication__: [IH Lee; BMC Bioinform.; 2021](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04178-5)
 
 __Clinical Genome and Ancestry Report__
  * __Short description__: The "CGAR" was developed to enables users with no knowledge on genomic annotation to identify and prioritize phenotype-associated variants from exome and genome sequencing data through a user-friendly online platform.
@@ -41,13 +41,15 @@ __`rexposome` and `omicRexposome`__
  * __Type__: R package
     - Access to `rexposome` at [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/rexposome.html)
     - Access to `omicRexposome` at [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/omicRexposome.html)
- * __Publication__: [C Hernandez-Ferrer; Bioinformatics.; 2019](https://academic.oup.com/bioinformatics/article/35/24/5344/5523848)
+ * __Publication(s)__:
+    - [C Hernandez-Ferrer; Bioinformatics; 2019](https://academic.oup.com/bioinformatics/article/35/24/5344/5523848)
+    - [L Maitre; Nat.Com.; 2020](https://www.nature.com/articles/s41467-022-34422-2)
 
 __`psygenet2r`__
  * __Short description__: While psychiatric disorders have a great impact on morbidity and genotype–phenotype resources for psychiatric diseases are key to enable the translation of research findings to a better care of patients, the `psygenet2r` packages allows to integrate the data from PsyGeNET (a knowledge resource on psychiatric diseases and their genes) in downstream network-medicine analysis of psychiatric disorders.
  * __Role__: Author/Contributor
  * __Type__: R package - see `psygenet2r` at [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/psygenet2r.html)
- * __Publication__: [A Gutierrez-Sacristan; Bioinformatics.; 2017](https://www.sciencedirect.com/science/article/abs/pii/S001393511730631X?via%3Dihub)
+ * __Publication__: [A Gutierrez-Sacristan; Bioinformatics; 2017](https://academic.oup.com/bioinformatics/article/33/24/4004/4083576)
 
 __`MultiDataSet`__
  * __Short description__: `MultiDataSet` was released to supply the need for a data-structure in R to manage multiple layers of information for the same set of individuals. Latter on, it was extended as a resource to manage large amounts of multiple and non-complete biomedical-related data while offering a simple and general way of sub-setting features and selecting samples.
