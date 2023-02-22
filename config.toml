@@ -61,7 +61,3 @@ name = "Carles Hernandez-Ferrer"
     identifier = "blog"
     name       = "Blog"
     url        = "/blog"
-  [[menu.main]]
-    identifier = "fun"
-    name       = "Fun"
-    url        = "/fun"
