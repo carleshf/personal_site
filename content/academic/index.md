@@ -4,12 +4,13 @@ date: 2021-04-17T22:01:41+02:00
 draft: false
 ---
 
-| __Section__           | __Description__                                                                |  
-|:----------------------|:-------------------------------------------------------------------------------|
-| [Articles](#articles) | List of published, accepted, submitted and scientific articles in preparation.  |
-| [Talks](#talks)       | (Scientific-) Talks I gave during the last years.                              |
-| [Poster](#posters)    | (Scientific-) Posters I presented or I participated in the presented research. |
-| [Teaching](#teaching) | Summary of my experience in teaching.                                          |
+| __Section__                   | __Description__                                                                |  
+|:------------------------------|:-------------------------------------------------------------------------------|
+| [Articles](#articles)         | List of published, accepted, submitted and scientific articles in preparation. |
+| [Talks](#talks)               | (Scientific-) Talks I gave during the last years.                              |
+| [Poster](#posters)            | (Scientific-) Posters I presented or I participated in the presented research. |
+| [Teaching](#teaching)         | Summary of my experience in teaching.                                          |
+| [Certificates](#certificates) | List of academic accreditation and certificates (Spain and Catalonia).         |
 
 ---
 
@@ -147,7 +148,7 @@ draft: false
   * O Ballester, C Pio, _C Hernandez-Ferrer_, S Serrano, N Tonello
   * [SPIE, Software and Cyberinfrastructure for Astronomy II](https://spie.org/Publications/Proceedings/Volume/8451) (2012-09-24)
 
-#### Accepted or Submmited
+#### Accepted or Submitted
 
 * __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
@@ -299,4 +300,8 @@ The institution was collaborating with the regional government in order to host 
   * Universitat Autonoma de Barcelona // [Bachelor's Degree in Computer Engineering](https://guies.uab.cat/guies_docents/public/portal/html/2020/assignatura/102765/en)
   * From 2010-09 to 2011-06 as _Teaching Assistant_
 
-100h: Computer laboratory sessions covering the three main blocks of the subject (Combinational Circuits, Sequential Circuits, and Process Unit-Control Unit architecture and processors) as well as individual tutorship on student's demand.
+100h: Computer laboratory sessions covering the three main blocks of the subject (Combinatorial Circuits, Sequential Circuits, and Process Unit-Control Unit architecture and processors) as well as individual tutorship on student's demand.
+
+## Certificates
+
+ * Associate Professor ([Professor lector](https://recercaiuniversitats.gencat.cat/ca/03_ambits_dactuacio/treballar_al_sistema_dunis/personal_docent_i_investigador/que-es-el-pdi/categories_acces_a_les_figures_de_professorat/)), AQU (Catalan Government), January 2023
