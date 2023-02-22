@@ -165,7 +165,6 @@ draft: false
   * CL Johnson, E Jazan, SW Kong, KD Pennell
   * [Environmental Science and Pollution Research](https://link.springer.com/article/10.1007/s11356-020-10702-6) (2020-09-10)
 
-
 ## Talks
 
 * __New RD-Connect GPAP features implemented in collaboration with Solve-RD, EJP-RD and ELIXIR enable the diagnosis of rare disease patients with previously negative WES/WGS.__
@@ -202,7 +201,7 @@ draft: false
   * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez
   * The Emory Exposome Summer Course  ([highlights](https://emoryhercules.com/news/highlights-emorys-exposome-summer-course/), [agenda](#))
   * to 2016-06-17 (performed: 2016-06-12)
- 
+
 ## Posters
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
@@ -240,7 +239,7 @@ draft: false
 * __Detection of cancer signatures by integrating different features from omics data combining multi-block and path modelling methods__
   * JR Gonzalez, M Esnaola, A Caceres, _C Hernandez-Ferrer_, M Lopez-Sanchez, LA Perez-Jurado (conductor: JR Gonzalez)
   * Integrative and Computational Biology Joint Symposium
- 
+
 ## Teaching
 
 #### Direction of master thesis in bioinformatics
