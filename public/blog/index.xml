@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using XGBoost models with python&#39;s Flower</title>
+      <link>http://212.71.254.23/blog/using-xgboost-models-with-python-flower/</link>
+      <pubDate>Fri, 03 Mar 2023 00:00:00 +0200</pubDate>
+      
+      <guid>http://212.71.254.23/blog/using-xgboost-models-with-python-flower/</guid>
+      <description>The idea here is to use Flower to create a federated infrastructure to run an XGBClassifier in a series of datasets located in exclusive-access nodes.
+This means that a central server, the one that will connect and aggregate the models, is required as well as the local client, the one training the models on the exclusive-access datasets.
+Client code The code assumes that there is an environment-variables called DATA_PATH pointing to a CSV-file having the data to be used.</description>
+    </item>
+    
     <item>
       <title>Some &#39;must&#39; methods for JavaScript array</title>
       <link>http://212.71.254.23/blog/must-javascript-array/</link>

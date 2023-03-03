@@ -2,11 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://212.71.254.23/software/</loc>
-    <lastmod>2022-01-23T16:46:07+01:00</lastmod>
+    <loc>http://212.71.254.23/blog/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/</loc>
-    <lastmod>2021-12-16T10:10:01+49:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/fl/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/ml/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/python/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/tags/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/blog/using-xgboost-models-with-python-flower/</loc>
+    <lastmod>2023-03-03T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://212.71.254.23/software/</loc>
+    <lastmod>2022-01-23T16:46:07+01:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/fun/</loc>
     <lastmod>2021-12-16T10:10:01+49:00</lastmod>
@@ -18,9 +36,6 @@
     <lastmod>2021-12-16T10:10:01+49:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/tags/p5js/</loc>
-    <lastmod>2021-12-16T10:10:01+49:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/tags/</loc>
     <lastmod>2021-12-16T10:10:01+49:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/fun/winter_card_2021-2022/</loc>
@@ -56,9 +71,6 @@
     <loc>http://212.71.254.23/fun/winter_card_2019-2020/</loc>
     <lastmod>2019-12-30T15:17:29+02:00</lastmod>
   </url><url>
-    <loc>http://212.71.254.23/blog/</loc>
-    <lastmod>2019-11-07T00:00:00+02:00</lastmod>
-  </url><url>
     <loc>http://212.71.254.23/blog/must-javascript-array/</loc>
     <lastmod>2019-11-07T00:00:00+02:00</lastmod>
   </url><url>
@@ -66,9 +78,6 @@
     <lastmod>2019-06-03T00:00:00+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/tags/hackathon/</loc>
-    <lastmod>2019-06-03T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>http://212.71.254.23/tags/python/</loc>
     <lastmod>2019-06-03T00:00:00+02:00</lastmod>
   </url><url>
     <loc>http://212.71.254.23/fun/book-and-rose-2019/</loc>
