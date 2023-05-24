@@ -215,7 +215,11 @@ draft: false
 * __Improving the RD-Connect GPAP usability to facilitate rare disease diagnosis and gene discovery__
   * A Corvò, L Matalonga, ..., _C Hernandez-Ferrer_, ..., I Gut, S Beltran (conductor: A Corvò)
   * VII Jornada de Bioinformàtica i Genòmica ([program](https://drive.google.com/file/d/16CQLjPxkKD54jGpZVQQbyYhAzGert44l/view?usp=sharing))
- 
+
+* __rexposome: A bioinformatic tool for characterizing multiple environmental factors and its association with different omics biomarkers and disease__
+  * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez (conductor: C Hernandez-Ferrer)
+  * Emory Exposome Summer Course · 2016  ([poster](https://f1000research.com/posters/5-1538), [Highlights](https://emoryhercules.com/news/highlights-emorys-exposome-summer-course/))
+
 * __MEAL: Methylation and Expression AnaLyzer__
   * C Ruiz Arenas, _C Hernandez-Ferrer_, JR Gonzalez (conductor: C Ruiz Arenas)
   * XIII Symposium on Bioinformatics
