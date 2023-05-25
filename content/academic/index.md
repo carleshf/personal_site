@@ -204,6 +204,10 @@ draft: false
 
 ## Posters
 
+* __OpenEBench 2023 update: better support and deeper interactions with benchmarking scientific communities__
+  * C Hernandez-Ferrer, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí,S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
+  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda))
+
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
   * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: A Atalaia)
   * European Human Genetics Conference 2021 | Virtual Conference ([program](https://2021.eshg.org/))
