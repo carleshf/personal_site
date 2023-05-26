@@ -173,39 +173,43 @@ draft: false
   * from 2022-06-11 to 2022-06-14 (pending)
 
 * __El re-análisis sistemático de datos genómicos y fenotípicos de mas de 4000 pacientes con enfermedades raras no diagnosticadas contribuye a resolver más de un 8% de los casos__
-  * L Matalonga Borrel, _C Hernandez-Ferrer_, ..., A Hoischen, S Beltran
+  * L Matalonga Borrel, _C Hernandez-Ferrer_, ..., A Hoischen, S Beltran (conductor: L Matalonga)
   * III Congreso Interdisciplinar de Genética Humana ([program](https://drive.google.com/file/d/1NhpqpRp5Sng9cUisZ-VbSfzMmRTQ6UTR/view?usp=sharing))
   * from 2021-11-03 to 2021-11-05 (performed: 2021-11-03)
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
-  * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran
+  * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: C Hernandez-Ferrer)
   * Solve-RD Annual Meeting 2021  ([program](https://drive.google.com/file/d/1wVjb-UuVJhPpcQtS9k4sM4F4XAiCOdfF/view?usp=sharing))
   * from 2021-04-19 to 2021-04-21 (performed: 2021-04-21)
  
 * __Exposome-Wide Association Study in Autism Spectrum Disorder Using Targeted and Untargeted Metabolomics Platforms__
-  * _C Hernandez-Ferrer_, DI Walker, ..., DP Jones, SW Kong
+  * _C Hernandez-Ferrer_, DI Walker, ..., DP Jones, SW Kong (conductor: C Hernandez-Ferrer)
   * 2019 International Society for Autism Research Annual Meeting (INSAR 2019)  ([program](https://drive.google.com/file/d/1jJPjtjHiyJEZEUaRvNWV-hXV9mOqRaUo/view?usp=sharing), [abstracts](https://drive.google.com/file/d/1jJPjtjHiyJEZEUaRvNWV-hXV9mOqRaUo/view?usp=sharing))
   * from 2019-05-01 to 2019-05-04 (performed: 2019-05-02)
  
 * __Extending Bioconductor To Exposome Data Analysis__
-  * _C Hernandez-Ferrer_, JR Gonzalez
+  * _C Hernandez-Ferrer_, JR Gonzalez (conductor: C Hernandez-Ferrer)
   * BioC 2017: Where Software and Biology Connect ([program](https://bioconductor.org/help/course-materials/2017/BioC2017/#developer-day))
   * from 2017-07-26 to 2017-07-28 (performed: 2017-07-26)
  
 * __rexposome: a Bioconductor package for characterizing multiple environmental factors and its association with different omics biomarkers and diseases__
-  * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez
+  * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez (conductor: C Hernandez-Ferrer)
   * Bioconductor European Developers’ Workshop  ([program](https://bioconductor.github.io/EuroBioc2016/))
   * from 2016-12-06 to 2016-12-07 (performed: 2016-12-06)
  
 * __rexposome: a bioinformatic tool for characterizing multiple environmental factors and its association with different omics biomarkers and diseases__
-  * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez
+  * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez (conductor: C Hernandez-Ferrer)
   * The Emory Exposome Summer Course  ([highlights](https://emoryhercules.com/news/highlights-emorys-exposome-summer-course/), [agenda](#))
   * to 2016-06-17 (performed: 2016-06-12)
 
 ## Posters
 
 * __OpenEBench 2023 update: better support and deeper interactions with benchmarking scientific communities__
-  * C Hernandez-Ferrer, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí,S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
+  * _C Hernandez-Ferrer_, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí,S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
+  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda))
+
+* __Federated Learning: General Review and Future Directions__
+  * M Chavero-Díez, S Jouide, _C Hernandez-Ferrer_, L Codó, S Capella-Gutierrez, K Lekadir, JL Gelpí  (conductor: M Chavero-Díez)
   * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda))
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
