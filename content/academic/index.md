@@ -206,7 +206,7 @@ draft: false
 
 * __OpenEBench 2023 update: better support and deeper interactions with benchmarking scientific communities__
   * _C Hernandez-Ferrer_, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí,S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
-  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda))
+  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda), [poster](https://f1000research.com/posters/12-580))
 
 * __Federated Learning: General Review and Future Directions__
   * M Chavero-Díez, S Jouide, _C Hernandez-Ferrer_, L Codó, S Capella-Gutierrez, K Lekadir, JL Gelpí  (conductor: M Chavero-Díez)
