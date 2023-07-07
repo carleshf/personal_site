@@ -20,6 +20,10 @@ draft: false
 
 #### Published
 
+* __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
+  * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
+  * [Epigenetics](https://www.tandfonline.com/doi/full/10.1080/15592294.2023.2230670) (2023-07-06)
+
 * __Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes__
   * L Michel-Todó, C Bancells, ..., _C Hernandez-Ferrer_, ..., JR González, A Cortés
   * [Microbiology Spectrum](https://journals.asm.org/doi/10.1128/spectrum.03049-22) (2022-12-14)
@@ -150,9 +154,7 @@ draft: false
 
 #### Accepted or Submitted
 
-* __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
-  * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
-  * Genome Medicine (submitted: 2022-11-23)
+-
 
 #### In preparation
 
