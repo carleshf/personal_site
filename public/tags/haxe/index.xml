@@ -15,7 +15,7 @@
       
       <guid>http://212.71.254.23/fun/procedural-generation-of-triangular-glyphs/</guid>
       <description>Some triangular glyphs
-  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
 As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL.</description>
     </item>
     

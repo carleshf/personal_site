@@ -125,29 +125,29 @@ The following (rudimentary) code, queries the database in batches of ten compoun
 
             <div class="post-content">
                 <p>To annotate a list of <a href="http://www.genome.jp/kegg/compound/">KEGG compounds</a> to the <a href="http://www.genome.jp/kegg/pathway.html">KEGG pathways</a> where they are involved I used the R package <a href="https://bioconductor.org/packages/release/bioc/html/KEGGREST.html">KEGGREST</a> from Bioconductor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(KEGGREST)
-</code></pre></div><p>So, having a list of KEGG compounds saved in a character vector like <code>kegg_compounds</code>, we use the method <code>keggGet</code> in batches of maximum 10 compounds to annotate them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(KEGGREST)
+</span></span></code></pre></div><p>So, having a list of KEGG compounds saved in a character vector like <code>kegg_compounds</code>, we use the method <code>keggGet</code> in batches of maximum 10 compounds to annotate them.</p>
 <p>The following (<em>rudimentary</em>) code, queries the database in batches of ten compounds fiddling a list (<code>pathways</code>) where it creates an entry per pathway and updates the field <code>compounds</code> with the compounds from <code>kegg_compounds</code> for each pathway.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">pathways <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
-sequence <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">length</span>(kegg_compounds), by<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
-<span style="color:#a6e22e">for</span>(ii in sequence) {
-    jj <span style="color:#f92672">&lt;-</span> ii <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>
-    <span style="color:#a6e22e">if</span>(jj <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">length</span>(kegg_compounds)) jj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">length</span>(kegg_compounds)
-    query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">keggGet</span>(<span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;cpd:&#34;</span>, kegg_compounds<span style="color:#a6e22e">[seq</span>(ii, jj)]))
-    <span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;Query / &#34;</span>, ii, <span style="color:#e6db74">&#34; - &#34;</span>, jj, <span style="color:#e6db74">&#34; / &#34;</span>, <span style="color:#a6e22e">length</span>(query))
-    <span style="color:#a6e22e">for</span>(kk in <span style="color:#a6e22e">seq</span>(<span style="color:#a6e22e">length</span>(query))) {
-        <span style="color:#a6e22e">for</span>(id in <span style="color:#a6e22e">names</span>(query[[kk]]<span style="color:#f92672">$</span>PATHWAY)) {
-            <span style="color:#a6e22e">if</span>(id <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">names</span>(pathways)) {
-                pathways[[id]]<span style="color:#f92672">$</span>compounds <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">c</span>(pathways[[id]]<span style="color:#f92672">$</span>compounds , <span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>ENTRY)))
-            } else {
-                pathways[[id]] <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(name <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>PATHWAY[id]),
-                    id <span style="color:#f92672">=</span> id, compounds <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>ENTRY))
-                )
-            }
-        }
-    }
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>pathways <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
+</span></span><span style="display:flex;"><span>sequence <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">length</span>(kegg_compounds), by<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for</span>(ii in sequence) {
+</span></span><span style="display:flex;"><span>    jj <span style="color:#f92672">&lt;-</span> ii <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">if</span>(jj <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">length</span>(kegg_compounds)) jj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">length</span>(kegg_compounds)
+</span></span><span style="display:flex;"><span>    query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">keggGet</span>(<span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;cpd:&#34;</span>, kegg_compounds<span style="color:#a6e22e">[seq</span>(ii, jj)]))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;Query / &#34;</span>, ii, <span style="color:#e6db74">&#34; - &#34;</span>, jj, <span style="color:#e6db74">&#34; / &#34;</span>, <span style="color:#a6e22e">length</span>(query))
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for</span>(kk in <span style="color:#a6e22e">seq</span>(<span style="color:#a6e22e">length</span>(query))) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">for</span>(id in <span style="color:#a6e22e">names</span>(query[[kk]]<span style="color:#f92672">$</span>PATHWAY)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">if</span>(id <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">names</span>(pathways)) {
+</span></span><span style="display:flex;"><span>                pathways[[id]]<span style="color:#f92672">$</span>compounds <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">c</span>(pathways[[id]]<span style="color:#f92672">$</span>compounds , <span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>ENTRY)))
+</span></span><span style="display:flex;"><span>            } else {
+</span></span><span style="display:flex;"><span>                pathways[[id]] <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(name <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>PATHWAY[id]),
+</span></span><span style="display:flex;"><span>                    id <span style="color:#f92672">=</span> id, compounds <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">as.character</span>(query[[kk]]<span style="color:#f92672">$</span>ENTRY))
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
             </div>
         </article>
 
@@ -192,7 +192,7 @@ sequence <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">se
 
 
 
-<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

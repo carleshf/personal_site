@@ -257,16 +257,19 @@ draft: false
 
 #### Direction of master thesis in bioinformatics
   * Open University of Catalonia // [Master in Bioinformatics and Biostatistics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion)
-  * from 2019-09 to 2021-06 as _External Collaborator_
+  * from 2019-09 as _External Collaborator_
 
 Acting as final master thesis director:
 
-  * _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of 8.7/10)
-  * _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and conducted during 2nd semester of 2020-2021 (grade: B, score: 8.8/10)
-  * _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of 9.2/10)
-  * _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of 9.4/10)
-  * _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of 8.9/10)
-  * _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of 9.2/10)
+  * _Federated machine learning applied to biomedical analysis; a bibliographic review_; by María Chavero and conducted during 2nd semester of 2022-2023 (grade: A+; score of `10/10`)
+  * _Enhanced production of Monoclonal Antibodies with Artificial Intelligence and data-driven modelling_; by Irene Martínez and conducted during 2nd semester of 2022-2023 (grade: B; score of `8.5/10`)
+  * _Caracterización de paneles génicos para la clasificación de pacientes en Glioblastoma_; by  Olatz Sanz and conducted during 2nd semester of 2022-2023 (grade: A; score of `9.7/10`)
+  * _Identificación de biomarcadores de la expresión génica específicos de glioma y clasificación de pacientes por machine learning_; by Aitor Gómez and conducted during 2nd semester of 2020-2021 (grade: B; score of `8.7/10`)
+  * _Estudio sobre la repercusión de la contaminación ambiental en general y de las emisiones diésel en particular sobre el transcriptoma humano_; by Laura Pauner and conducted during 2nd semester of 2020-2021 (grade: B, score: `8.8/10`)
+  * _Implementación de un paquete de python para el análisis de datos genómicos en enfermedades raras_; by Irene Sánchez López and conducted during 1st semester of 2020-2021 (grade: A; score of `9.2/10`)
+  * _Búsqueda de correlaciones entre metilación de sitios CpG y expresión de genes a lo largo del genoma humano_; by Óscar Crespo and conducted during 1st semester of 2020-2021 (grade: A; score of `9.4/10`)
+  * _Impacto de la polución ambiental aérea en la metilación del DNA y microRNAs en ictus isquémico_; by Carolina Soriano and conducted during 2nd semester of 2019-2020 (grade: B; score of `8.9/10`)
+  * _Multi-Omic Data clustering in Brain Cancer_; by Paula Fernández and conducted during 1st semester of 2019-2020 (grade: A; score of `9.2/10`)
 
 
 #### Biotools for biostatistics and bioinformatics (1st edition)
@@ -281,8 +284,8 @@ Acting as final master thesis director:
 
 The institution was collaborating with the regional government in order to host some students in an internship during their last year of high school, allowing them to conduct a research project.
 
-  * _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of 10/10)
-  * _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of 10/10)
+  * _Aproximació als TADs com unitat funcional i la seva associació amb malalties humanes_; by David Morón and Maria Solà, from INS Estany de la Ricarda, and conducted during summer of 2017 (grade: A+; a score of `10/10`)
+  * _Relació entre desenvolupament cognitiu i metilació genética: Una anàlisi exploratòria_; by Alba Cabús, from IES Can Puig, and conducted during summer of 2016 (grade: A; score of `10/10`)
   
 #### Statistical analysis of omic data in R (3th edition)
   * Barcelona Institute for Global Health // Bioinformatic Research Group in Epidemiology

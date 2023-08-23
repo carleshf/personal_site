@@ -26,8 +26,8 @@ Client code The code assumes that there is an environment-variables called DATA_
       
       <guid>http://212.71.254.23/software/</guid>
       <description>The following is a detailed list of software I created or which I contributed in any way. The order follows my contribution time to them and not their release time.
-Released Treatabolome DB
- Short description: Although next-generation sequencing drastically improved diagnosis for patients with rare diseases, access to knowledge of effective treatments is still sparse and often unclear. Treatabolome DB is a database of rare disease-specific treatments mapped at gene and variant level to speed upt the identification of existing therapies at the time of clinical diagnosis.</description>
+Released epimutacions
+Short description: epimutacions (the name of the package is in Catalan) is a package that uses microarray DNA methylation data to identify epimutations, defined as a sequence of CpGs with aberrant methylation level but not enough to be discovered in case-control studies.</description>
     </item>
     
     <item>
@@ -37,8 +37,8 @@ Released Treatabolome DB
       
       <guid>http://212.71.254.23/fun/winter_card_2021-2022/</guid>
       <description>Again, this year has been challanging and we all have been busy coping with all the difulties that the pandeic rasied in our everyday. So, makeing a diference with the last year, this one I created a new small game where you help Noelle collect the presents for her workmakes, scattered accross the office by her clumsy boss.
- Winter card 2021 - 2022: Happy Yultide!
-  You can play it clicking the previous picture and find the code of this card here.</description>
+Winter card 2021 - 2022: Happy Yultide!
+You can play it clicking the previous picture and find the code of this card here.</description>
     </item>
     
     <item>
@@ -49,8 +49,7 @@ Released Treatabolome DB
       <guid>http://212.71.254.23/fun/book-and-rose-2021/</guid>
       <description>Once again I am coding a digital rose to offer to my wife. This time I&amp;rsquo;m bringing some changes since it is not a &amp;ldquo;static one&amp;rdquo; 😉.
 If you press on the following picture you&amp;rsquo;ll be moved to itch.io so you can play this super-minigame where you have to find the 5 hidden roses in the garden.
- St. Jordi 2021: can you find the 5 hidden roses?
-  </description>
+St. Jordi 2021: can you find the 5 hidden roses?</description>
     </item>
     
     <item>
@@ -59,7 +58,9 @@ If you press on the following picture you&amp;rsquo;ll be moved to itch.io so yo
       <pubDate>Sat, 17 Apr 2021 22:01:41 +0200</pubDate>
       
       <guid>http://212.71.254.23/academic/</guid>
-      <description>Section Description     Articles List of published, accepted, submitted and scientific articles in preparation.   Talks (Scientific-) Talks I gave during the last years.   Poster (Scientific-) Posters I presented or I participated in the presented research.   Teaching Summary of my experience in teaching.   Certificates List of academic accreditation and certificates (Spain and Catalonia).     Articles ♠ : This symbol denotes that the authors consider that the two first authors should be regarded as “joint first authors”.</description>
+      <description>Sections Articles Talks Poster Teaching Certificates Articles ♠ : This symbol denotes that the authors consider that the two first authors should be regarded as “joint first authors”.
+Published Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package
+C Ruiz-Arenas, &amp;hellip;, C Hernandez-Ferrer, &amp;hellip;, JR Gonzalez Epigenetics (2023-07-06) Patterns of heterochromatin transitions linked to changes in the expression of Plasmodium falciparum clonally variant genes</description>
     </item>
     
     <item>
@@ -69,8 +70,8 @@ If you press on the following picture you&amp;rsquo;ll be moved to itch.io so yo
       
       <guid>http://212.71.254.23/about/</guid>
       <description>Trajectory I am a senior research engineer at the Barcelona Supercomputing Center (BSC) mainly developing new infrastructure for European collaborative projects (ELIXIR) in biomedical sciences. I am also a collaborator directing master thesis from the MSc. in Bioinformatics &amp;amp; Biostatitics at the Universitat Oberta de Catalunya.
- Welcome to BSC&amp;rsquo;s MareNostrum 4
-  Before turning into a research engineer, my research interests included the study of the relations between environmental factors and internal omic perturbations and the development of applications to integrate multiple layers of molecular data.</description>
+Welcome to BSC&amp;rsquo;s MareNostrum 4
+Before turning into a research engineer, my research interests included the study of the relations between environmental factors and internal omic perturbations and the development of applications to integrate multiple layers of molecular data.</description>
     </item>
     
     <item>
@@ -80,9 +81,9 @@ If you press on the following picture you&amp;rsquo;ll be moved to itch.io so yo
       
       <guid>http://212.71.254.23/fun/winter_card_2020-2021/</guid>
       <description>This past year has been a really significant one with many challenges. Therefore I wanted to make a winter card that shows the opposite: simplicity, elegance, and, specially, joy.
- Winter card 2020 - 2021: Happy Yultide!
-  So, the winter card it is juts a snowing page that allows you to discover your present, from a possible random set of 35 different drawings.
-You can play it clicking the previous picture.</description>
+Winter card 2020 - 2021: Happy Yultide!
+So, the winter card it is juts a snowing page that allows you to discover your present, from a possible random set of 35 different drawings.
+You can play it clicking the previous picture. You can find the code of this card here.</description>
     </item>
     
     <item>
@@ -92,7 +93,8 @@ You can play it clicking the previous picture.</description>
       
       <guid>http://212.71.254.23/fun/book-and-rose-2020/</guid>
       <description>As I did last year (fun-post here), I come again with a digital rose for my wife. This time, a pure-CSS rose.
- .container2 { height: 100px; width: 100px; position: relative; top: 60px; bottom: 60px; left: 0; right: 0; margin: auto; } .caption2 { height: 100px; width: 500px; position: relative; top: 125px; bottom: 0; left: 0; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 48px; } .subcaption2 { height: 100px; width: 500px; position: relative; top: 100px; bottom: 50px; left: 45%; right: 0; margin: auto; font-family: &#39;Sacramento&#39;, serif; font-size: 23px; } .</description>
+Feliç Sant Jordi Barcelona 2020 More information on this festivity:
+Sant Jordi - Day of the Book and the Rose: Explanation of this festivity in Catalonia by Barcelona&amp;rsquo;s City council. Wikpiedia Saint George&amp;rsquo;s Day (Spain): Short explanation of this festivity in Aragon, Catalonia, and Valencia. </description>
     </item>
     
     <item>
@@ -102,7 +104,7 @@ You can play it clicking the previous picture.</description>
       
       <guid>http://212.71.254.23/fun/procedural-generation-of-triangular-glyphs/</guid>
       <description>Some triangular glyphs
-  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
 As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL.</description>
     </item>
     
@@ -155,8 +157,8 @@ This is the first year outside Catalonia for this day. So, I made this super sim
       
       <guid>http://212.71.254.23/fun/winter_card_2018-2019/</guid>
       <description>Following the tradition, I&amp;rsquo;ve made the geek christmas card for this year. As it is being the trend lately, it is coded in javascript and HTML5.
- Winter card 2018 - 2019: Mike has lost his presents for Santaclaus!
-  The card is, again, a minigame where Mike &amp;lsquo;the elf&amp;rsquo; has lost the present he crafter for this Christmas and we need to help him to find them all. Make a click on the picture to play the game.</description>
+Winter card 2018 - 2019: Mike has lost his presents for Santaclaus!
+The card is, again, a minigame where Mike &amp;rsquo;the elf&amp;rsquo; has lost the present he crafter for this Christmas and we need to help him to find them all. Make a click on the picture to play the game.</description>
     </item>
     
     <item>
@@ -221,7 +223,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;quot;Index&amp;quot; instead of &amp;quot;Content&amp;quot; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
     <item>
@@ -232,7 +234,7 @@ Without babel The title of the table of contents can be changed using the comman
       <guid>http://212.71.254.23/blog/spell-checking-and-dictionaries-in-sublime-text-3/</guid>
       <description>I was a fan of the package Dictionaries but is seems that it is no available and that will not be re-included. The package&amp;rsquo;s page in package control is here, indicating that the package was removed.
 Anyway, the package is in GitHub and it can be installed from the repository. The steps follows:
- Download the package as a ZIP file Open a terminal on your Downloads folder Unzip the file with unzip Dictionaries-master.</description>
+Download the package as a ZIP file Open a terminal on your Downloads folder Unzip the file with unzip Dictionaries-master.</description>
     </item>
     
     <item>
@@ -242,8 +244,8 @@ Anyway, the package is in GitHub and it can be installed from the repository. Th
       
       <guid>http://212.71.254.23/fun/winter_card_2016-2017/</guid>
       <description>Following the tradition of the last years, I&amp;rsquo;ve made a _geek christmas card:. This year I typed it in javascript using the improvements of HTML5.
- Winter card 2016 - 2017: Mr Snowman has lost his hat!
-  The card is a minigame where a small and blue snowman has lost his hat and you need to help him to recover it. The characteristic of the game is that the snowman moves autonomously once the user gave him a direction.</description>
+Winter card 2016 - 2017: Mr Snowman has lost his hat!
+The card is a minigame where a small and blue snowman has lost his hat and you need to help him to recover it. The characteristic of the game is that the snowman moves autonomously once the user gave him a direction.</description>
     </item>
     
     <item>
@@ -253,8 +255,8 @@ Anyway, the package is in GitHub and it can be installed from the repository. Th
       
       <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
       <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
-{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } { &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: true } } I like it to behave like this:
-{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
+{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } { &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
+{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+c&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
     </item>
     
     <item>
@@ -265,8 +267,8 @@ Anyway, the package is in GitHub and it can be installed from the repository. Th
       <guid>http://212.71.254.23/fun/winter_card_2015-2016/</guid>
       <description>It&amp;rsquo;s time for the geek christmas card. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.
 It is the simplest card I coded but I made it thinking in simplicity.
- Winter card 2015 - 2014: ASCI art
-  The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
+Winter card 2015 - 2014: ASCI art
+The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
     </item>
     
     <item>
@@ -287,8 +289,8 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
       <guid>http://212.71.254.23/fun/winter_card_2014-2015/</guid>
       <description>Like the previous years, I continued with the tradition of sending a geek christmas card to my workmates.
 This year I wrote it in R since it is one of the most used languages at my workplace, CREAL.
- Winter card 2014 - 2015: snowflake recursion!
-  The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above. The source code for that can be found at my christmas-card&amp;rsquo;s github (link) as mc201415.</description>
+Winter card 2014 - 2015: snowflake recursion!
+The result of running the script I sent (just a source code that loaded a file on the cloud) is seen above. The source code for that can be found at my christmas-card&amp;rsquo;s github (link) as mc201415.</description>
     </item>
     
     <item>
@@ -299,8 +301,8 @@ This year I wrote it in R since it is one of the most used languages at my workp
       <guid>http://212.71.254.23/fun/winter_card_2013_2014/</guid>
       <description>This year I decided to continue with the tradition I started last year and sending a Christmas Card to my workmates written in python.
 The result of running the script I sent is seen below.
- Winter card 2013 - 2014: santa claus is coming to town
-  You can see the gallery of cards here and you have the source code here.</description>
+Winter card 2013 - 2014: santa claus is coming to town
+You can see the gallery of cards here and you have the source code here.</description>
     </item>
     
     <item>
@@ -309,10 +311,10 @@ The result of running the script I sent is seen below.
       <pubDate>Sat, 15 Dec 2012 22:18:44 +0200</pubDate>
       
       <guid>http://212.71.254.23/fun/winter_card_2012-2013/</guid>
-      <description>This year I&amp;rsquo;ve decided to send a Christmas&#39; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
+      <description>This year I&amp;rsquo;ve decided to send a Christmas&amp;rsquo; card to my classmates. And since we are a bunch a little geeks, and I&amp;rsquo;m not an exception, here you have the postcard I sent them: A source-code-postcard in python.
 The result of running the script is this:
- Winter card 2012 - 2013: snowflake
-  You can see the gallery of cards here and you have the source code here.</description>
+Winter card 2012 - 2013: snowflake
+You can see the gallery of cards here and you have the source code here.</description>
     </item>
     
     <item>
@@ -322,7 +324,7 @@ The result of running the script is this:
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-4-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this forth post I am going to expose some utilities I have implemented for my version of VSLcompiler.</description>
+Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this forth post I am going to expose some utilities I have implemented for my version of VSLcompiler. I have designed them thinking in my first university&amp;rsquo;s subject related with compilers.</description>
     </item>
     
     <item>
@@ -332,7 +334,7 @@ The result of running the script is this:
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler.</description>
+Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler.</description>
     </item>
     
     <item>
@@ -342,7 +344,7 @@ The result of running the script is this:
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-2-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens.</description>
+Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens.</description>
     </item>
     
     <item>
@@ -352,7 +354,7 @@ The result of running the script is this:
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
- Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</description>
+Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</description>
     </item>
     
   </channel>
