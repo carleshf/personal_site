@@ -153,8 +153,10 @@ draft: false
 
 #### Accepted or Submitted
 
--
-
+* __Systematic assessment of long-read RNA-seq methods for transcript identification and quantification__
+  *  F Pardo-Palacios, ..., _C Hernandez-Ferrer_, ..., Rene Maehr
+  *  Nature Methods (Submitted: 2021-07-02)
+    
 #### In preparation
 
 * __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based diseases__
