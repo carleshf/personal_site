@@ -5,7 +5,7 @@
     <link>http://212.71.254.23/blog/</link>
     <description>Recent content in Blogs on Carles Hernandez-Ferrer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -91,7 +91,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ Download the package as a ZIP file Open a terminal on your Downloads folder Unzi
       
       <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
       <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
-{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } { &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
+{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } }{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
 { &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+c&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
     </item>
     
