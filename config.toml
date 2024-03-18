@@ -1,6 +1,6 @@
 baseURL         = "http://212.71.254.23"
 languageCode    = "en-us"
-#title           = "carles hernandez ferrer"
+#title          = "carles hernandez ferrer"
 theme           = "hello-friend-ng"
 
 [Author]
