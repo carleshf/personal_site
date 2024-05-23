@@ -160,7 +160,7 @@ draft: false
 #### In preparation
 
 * __A review of federated processing for model training and inference in biomedical research environments__
-  * M Chavero-Díez, _C Hernandez-Ferrer_, ..., S Beltran
+  * M Chavero-Díez, _C Hernandez-Ferrer_, ..., S Capella-Gutierrez, JL Gelpí
 
 * __Treatabolome DB: a knowledge platform on treatments and interventions for genetic-based diseases__
   * _C Hernandez-Ferrer_, ..., S Beltran
