@@ -5,7 +5,7 @@
     <link>http://212.71.254.23/blog/</link>
     <description>Recent content in Blogs on Carles Hernandez-Ferrer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -91,7 +91,7 @@ This can be done using the xr package.</description>
       <guid>http://212.71.254.23/blog/change-the-title-of-table-of-contents-toc-in-latex/</guid>
       <description>The steps to change the title of the table of contents (ToC) depends on if you are using the babel package or not.
 Without babel The title of the table of contents can be changed using the command \contentsname. Let&amp;rsquo;s see a small example:
-\documentclass{article}\renewcommand{\contentsname}{Index} % ToC will show &amp;#34;Index&amp;#34; instead of &amp;#34;Content&amp;#34;\begin{document}\tableofcontents\section{Section}\subsection{Subsection}\end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
+\documentclass{article} \renewcommand{\contentsname}{Index} % ToC will show &amp;quot;Index&amp;quot; instead of &amp;quot;Content&amp;quot; \begin{document} \tableofcontents \section{Section} \subsection{Subsection} \end{document} With babel When using babel package the name of the table of contents needs to be changed for the particular language used with babel.</description>
     </item>
     
     <item>
@@ -102,7 +102,7 @@ Without babel The title of the table of contents can be changed using the comman
       <guid>http://212.71.254.23/blog/spell-checking-and-dictionaries-in-sublime-text-3/</guid>
       <description>I was a fan of the package Dictionaries but is seems that it is no available and that will not be re-included. The package&amp;rsquo;s page in package control is here, indicating that the package was removed.
 Anyway, the package is in GitHub and it can be installed from the repository. The steps follows:
-Download the package as a ZIP file Open a terminal on your Downloads folder Unzip the file with unzip Dictionaries-master.</description>
+ Download the package as a ZIP file Open a terminal on your Downloads folder Unzip the file with unzip Dictionaries-master.</description>
     </item>
     
     <item>
@@ -112,8 +112,8 @@ Download the package as a ZIP file Open a terminal on your Downloads folder Unzi
       
       <guid>http://212.71.254.23/blog/change-key-for-toggle-comment-in-sublime-text-3/</guid>
       <description>I love Sublime Text 3 but I&amp;rsquo;m sued to Ctrl + Shift + C to toggle comment the current line or block of lines. The default behaviour of Sublime Text for commenting is:
-{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } }{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+/&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: true } } I like it to behave like this:
-{ &amp;#34;keys&amp;#34;: [&amp;#34;ctrl+shift+c&amp;#34;], &amp;#34;command&amp;#34;: &amp;#34;toggle_comment&amp;#34;, &amp;#34;args&amp;#34;: { &amp;#34;block&amp;#34;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } { &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+/&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: true } } I like it to behave like this:
+{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+shift+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;toggle_comment&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;block&amp;quot;: false } } So, this lines means that the comments are done by line (not by block) and with the Ctrl + Shift + C key-binding.</description>
     </item>
     
     <item>
@@ -133,7 +133,7 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-4-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this forth post I am going to expose some utilities I have implemented for my version of VSLcompiler. I have designed them thinking in my first university&amp;rsquo;s subject related with compilers.</description>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this forth post I am going to expose some utilities I have implemented for my version of VSLcompiler.</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-3-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler.</description>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler.</description>
     </item>
     
     <item>
@@ -153,7 +153,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-2-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens.</description>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens.</description>
     </item>
     
     <item>
@@ -163,7 +163,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
       
       <guid>http://212.71.254.23/blog/building-a-compiler-in-net-1-of-4/</guid>
       <description>This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</description>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction A compiler is a translator. As a translator can translate a piece of text, written in French, to German; a compiler translates a file written in a high level programming language to a low level programming language (like MicroJava or assembly).</description>
     </item>
     
   </channel>

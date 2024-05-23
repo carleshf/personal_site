@@ -5,7 +5,7 @@
     <link>http://212.71.254.23/tags/haxe/</link>
     <description>Recent content in haxe on Carles Hernandez-Ferrer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0200</lastBuildDate><atom:link href="http://212.71.254.23/tags/haxe/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       
       <guid>http://212.71.254.23/fun/procedural-generation-of-triangular-glyphs/</guid>
       <description>Some triangular glyphs
-Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
+  Some days ago I randomly ended into the subreddit on Procedural generation, which I didn&amp;rsquo;t suspect existed. In specific, I ended up into the monthly challange of March 2017.
 As you can see there, the challenge was on generating a set of runes, glyphs, or symbols. I found the challenge very interesting and starting from one of the pictures they reference (this one) I decided to create my own generator as an excuse to learn a bit of Haxe and OpenFL.</description>
     </item>
     

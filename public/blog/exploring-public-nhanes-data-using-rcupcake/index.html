@@ -126,17 +126,17 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
             <div class="post-content">
                 <p>The <code>Rcupcake</code> package contains functions to query different databases through the BD2K RESTful API. BD2K RESTful API is an interface that provides access to different data sources, making easier data accessibility, analysis reproducibility and scalability.</p>
 <p>The package is installed via <code>devtools</code> using it&rsquo;s GitHub URL (<code>hms-dbmi/Rcupcake</code>) or following their guide (also in GiHub - <a href="https://github.com/hms-dbmi/Rcupcake">here</a>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>( Rcupcake )
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>( knitr )
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>( stringr )
-</span></span><span style="display:flex;"><span>opts_chunk<span style="color:#f92672">$</span><span style="color:#a6e22e">set</span>(
-</span></span><span style="display:flex;"><span>    fig.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Figs/&#39;</span>,
-</span></span><span style="display:flex;"><span>    echo<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, 
-</span></span><span style="display:flex;"><span>    warning<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>, 
-</span></span><span style="display:flex;"><span>    message<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,
-</span></span><span style="display:flex;"><span>    cache<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p><code>Rcupcake</code> package follows a four-step process to retrieve the data from a database:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( Rcupcake )
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>( knitr )
+<span style="color:#a6e22e">library</span>( stringr )
+opts_chunk<span style="color:#f92672">$</span><span style="color:#a6e22e">set</span>(
+    fig.path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Figs/&#39;</span>,
+    echo<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>, 
+    warning<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>, 
+    message<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>,
+    cache<span style="color:#f92672">=</span><span style="color:#66d9ef">FALSE</span>
+)
+</code></pre></div><p><code>Rcupcake</code> package follows a four-step process to retrieve the data from a database:</p>
 <ol>
 <li>Start session</li>
 <li>Select the variables of interest</li>
@@ -149,177 +149,177 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
 <li><code>apiKey</code>: the key to successfully access to the data.</li>
 </ul>
 <p>It works as follows</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>sessionEx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">start.session</span>( 
-</span></span><span style="display:flex;"><span>    url    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;url&#34;</span>, 
-</span></span><span style="display:flex;"><span>    apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>In this case, the URL corresponds to <code>https://nhanes.hms.harvard.edu/</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>sessionEx
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;Start Session: success&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">start.session</span>( 
+    url    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;url&#34;</span>, 
+    apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key&#34;</span>
+)
+</code></pre></div><p>In this case, the URL corresponds to <code>https://nhanes.hms.harvard.edu/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">sessionEx
+</code></pre></div><pre tabindex="0"><code>## [1] &quot;Start Session: success&quot;
 </code></pre><p>With the connection opened we can proceed to explores the existing variables. To this end we use <code>get.children</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nhanesCategories <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesCategories
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;/nhanes/Demo/demographics/demographics/&#34;  
-## [2] &#34;/nhanes/Demo/examination/examination/&#34;    
-## [3] &#34;/nhanes/Demo/laboratory/laboratory/&#34;      
-## [4] &#34;/nhanes/Demo/questionnaire/questionnaire/&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesCategories <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo&#34;</span>
+)
+nhanesCategories
+</code></pre></div><pre tabindex="0"><code>## [1] &quot;/nhanes/Demo/demographics/demographics/&quot;  
+## [2] &quot;/nhanes/Demo/examination/examination/&quot;    
+## [3] &quot;/nhanes/Demo/laboratory/laboratory/&quot;      
+## [4] &quot;/nhanes/Demo/questionnaire/questionnaire/&quot;
 </code></pre><p>As you can see, the content of the <code>fieldname</code> it not really clear since it includes a <em>Demo</em> and the results includes two times the <em>category</em>. Let&rsquo;s hope the <code>Rcupcake</code>&rsquo;s paper puts some light here.</p>
 <p>Using the same strategy we can obtain the list of laboratory tests:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nhanesLaboratory <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/laboratory/laboratory/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesLaboratory
-</span></span></code></pre></div><pre tabindex="0"><code>##  [1] &#34;/nhanes/Demo/laboratory/laboratory/acrylamide/&#34;           
-##  [2] &#34;/nhanes/Demo/laboratory/laboratory/aging/&#34;                
-##  [3] &#34;/nhanes/Demo/laboratory/laboratory/allergen test/&#34;        
-##  [4] &#34;/nhanes/Demo/laboratory/laboratory/bacterial infection/&#34;  
-##  [5] &#34;/nhanes/Demo/laboratory/laboratory/biochemistry/&#34;         
-##  [6] &#34;/nhanes/Demo/laboratory/laboratory/blood/&#34;                
-##  [7] &#34;/nhanes/Demo/laboratory/laboratory/cotinine/&#34;             
-##  [8] &#34;/nhanes/Demo/laboratory/laboratory/diakyl/&#34;               
-##  [9] &#34;/nhanes/Demo/laboratory/laboratory/dioxins/&#34;              
-## [10] &#34;/nhanes/Demo/laboratory/laboratory/furans/&#34;               
-## [11] &#34;/nhanes/Demo/laboratory/laboratory/heavy metals/&#34;         
-## [12] &#34;/nhanes/Demo/laboratory/laboratory/hormone/&#34;              
-## [13] &#34;/nhanes/Demo/laboratory/laboratory/hydrocarbons/&#34;         
-## [14] &#34;/nhanes/Demo/laboratory/laboratory/melamine/&#34;             
-## [15] &#34;/nhanes/Demo/laboratory/laboratory/nutrients/&#34;            
-## [16] &#34;/nhanes/Demo/laboratory/laboratory/pcbs/&#34;                 
-## [17] &#34;/nhanes/Demo/laboratory/laboratory/perchlorate/&#34;          
-## [18] &#34;/nhanes/Demo/laboratory/laboratory/pesticides/&#34;           
-## [19] &#34;/nhanes/Demo/laboratory/laboratory/phenols/&#34;              
-## [20] &#34;/nhanes/Demo/laboratory/laboratory/phthalates/&#34;           
-## [21] &#34;/nhanes/Demo/laboratory/laboratory/phytoestrogens/&#34;       
-## [22] &#34;/nhanes/Demo/laboratory/laboratory/polybrominated ethers/&#34;
-## [23] &#34;/nhanes/Demo/laboratory/laboratory/polyflourochemicals/&#34;  
-## [24] &#34;/nhanes/Demo/laboratory/laboratory/viral infection/&#34;      
-## [25] &#34;/nhanes/Demo/laboratory/laboratory/volatile compounds/&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesLaboratory <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/laboratory/laboratory/&#34;</span>
+)
+nhanesLaboratory
+</code></pre></div><pre tabindex="0"><code>##  [1] &quot;/nhanes/Demo/laboratory/laboratory/acrylamide/&quot;           
+##  [2] &quot;/nhanes/Demo/laboratory/laboratory/aging/&quot;                
+##  [3] &quot;/nhanes/Demo/laboratory/laboratory/allergen test/&quot;        
+##  [4] &quot;/nhanes/Demo/laboratory/laboratory/bacterial infection/&quot;  
+##  [5] &quot;/nhanes/Demo/laboratory/laboratory/biochemistry/&quot;         
+##  [6] &quot;/nhanes/Demo/laboratory/laboratory/blood/&quot;                
+##  [7] &quot;/nhanes/Demo/laboratory/laboratory/cotinine/&quot;             
+##  [8] &quot;/nhanes/Demo/laboratory/laboratory/diakyl/&quot;               
+##  [9] &quot;/nhanes/Demo/laboratory/laboratory/dioxins/&quot;              
+## [10] &quot;/nhanes/Demo/laboratory/laboratory/furans/&quot;               
+## [11] &quot;/nhanes/Demo/laboratory/laboratory/heavy metals/&quot;         
+## [12] &quot;/nhanes/Demo/laboratory/laboratory/hormone/&quot;              
+## [13] &quot;/nhanes/Demo/laboratory/laboratory/hydrocarbons/&quot;         
+## [14] &quot;/nhanes/Demo/laboratory/laboratory/melamine/&quot;             
+## [15] &quot;/nhanes/Demo/laboratory/laboratory/nutrients/&quot;            
+## [16] &quot;/nhanes/Demo/laboratory/laboratory/pcbs/&quot;                 
+## [17] &quot;/nhanes/Demo/laboratory/laboratory/perchlorate/&quot;          
+## [18] &quot;/nhanes/Demo/laboratory/laboratory/pesticides/&quot;           
+## [19] &quot;/nhanes/Demo/laboratory/laboratory/phenols/&quot;              
+## [20] &quot;/nhanes/Demo/laboratory/laboratory/phthalates/&quot;           
+## [21] &quot;/nhanes/Demo/laboratory/laboratory/phytoestrogens/&quot;       
+## [22] &quot;/nhanes/Demo/laboratory/laboratory/polybrominated ethers/&quot;
+## [23] &quot;/nhanes/Demo/laboratory/laboratory/polyflourochemicals/&quot;  
+## [24] &quot;/nhanes/Demo/laboratory/laboratory/viral infection/&quot;      
+## [25] &quot;/nhanes/Demo/laboratory/laboratory/volatile compounds/&quot;
 </code></pre><p>Or the demographic information:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nhanesDemographic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/demographics/demographics/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesDemographic
-</span></span></code></pre></div><pre tabindex="0"><code>##  [1] &#34;/nhanes/Demo/demographics/demographics/AGE/&#34;      
-##  [2] &#34;/nhanes/Demo/demographics/demographics/area/&#34;     
-##  [3] &#34;/nhanes/Demo/demographics/demographics/DMDBORN/&#34;  
-##  [4] &#34;/nhanes/Demo/demographics/demographics/DMDMARTL/&#34; 
-##  [5] &#34;/nhanes/Demo/demographics/demographics/education/&#34;
-##  [6] &#34;/nhanes/Demo/demographics/demographics/INDFMPIR/&#34; 
-##  [7] &#34;/nhanes/Demo/demographics/demographics/RACE/&#34;     
-##  [8] &#34;/nhanes/Demo/demographics/demographics/SDDSRVYR/&#34; 
-##  [9] &#34;/nhanes/Demo/demographics/demographics/SDMVPSU/&#34;  
-## [10] &#34;/nhanes/Demo/demographics/demographics/SDMVSTRA/&#34; 
-## [11] &#34;/nhanes/Demo/demographics/demographics/SES_LEVEL/&#34;
-## [12] &#34;/nhanes/Demo/demographics/demographics/SEX/&#34;      
-## [13] &#34;/nhanes/Demo/demographics/demographics/WTMEC2YR/&#34; 
-## [14] &#34;/nhanes/Demo/demographics/demographics/WTMEC4YR/&#34;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nhanesExamination <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesExamination
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;/nhanes/Demo/examination/examination/blood pressure/&#34;  
-## [2] &#34;/nhanes/Demo/examination/examination/body measures/&#34;   
-## [3] &#34;/nhanes/Demo/examination/examination/physical fitness/&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesDemographic <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/demographics/demographics/&#34;</span>
+)
+nhanesDemographic
+</code></pre></div><pre tabindex="0"><code>##  [1] &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;      
+##  [2] &quot;/nhanes/Demo/demographics/demographics/area/&quot;     
+##  [3] &quot;/nhanes/Demo/demographics/demographics/DMDBORN/&quot;  
+##  [4] &quot;/nhanes/Demo/demographics/demographics/DMDMARTL/&quot; 
+##  [5] &quot;/nhanes/Demo/demographics/demographics/education/&quot;
+##  [6] &quot;/nhanes/Demo/demographics/demographics/INDFMPIR/&quot; 
+##  [7] &quot;/nhanes/Demo/demographics/demographics/RACE/&quot;     
+##  [8] &quot;/nhanes/Demo/demographics/demographics/SDDSRVYR/&quot; 
+##  [9] &quot;/nhanes/Demo/demographics/demographics/SDMVPSU/&quot;  
+## [10] &quot;/nhanes/Demo/demographics/demographics/SDMVSTRA/&quot; 
+## [11] &quot;/nhanes/Demo/demographics/demographics/SES_LEVEL/&quot;
+## [12] &quot;/nhanes/Demo/demographics/demographics/SEX/&quot;      
+## [13] &quot;/nhanes/Demo/demographics/demographics/WTMEC2YR/&quot; 
+## [14] &quot;/nhanes/Demo/demographics/demographics/WTMEC4YR/&quot;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesExamination <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+   url       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+   fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/&#34;</span>
+)
+nhanesExamination
+</code></pre></div><pre tabindex="0"><code>## [1] &quot;/nhanes/Demo/examination/examination/blood pressure/&quot;  
+## [2] &quot;/nhanes/Demo/examination/examination/body measures/&quot;   
+## [3] &quot;/nhanes/Demo/examination/examination/physical fitness/&quot;
 </code></pre><p>Once we now the <em>paths</em> of the variables we want to use we put them in a vector.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nhanesPressure <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/blood pressure/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesMetals <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
-</span></span><span style="display:flex;"><span>    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/laboratory/laboratory/heavy metals/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>nhanesVector <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(
-</span></span><span style="display:flex;"><span>    nhanesDemographic,
-</span></span><span style="display:flex;"><span>    nhanesPressure,
-</span></span><span style="display:flex;"><span>    nhanesMetals
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>This vector indicates to <code>my.query</code> where to locate the <em>fields</em> we want to retrieve to from the database. The <em>field</em> must be indicated into <code>myfields</code>, separated using the vertical columns character (<code>|</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nhanesPressure <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/examination/examination/blood pressure/&#34;</span>
+)
+nhanesMetals <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">get.children</span>( 
+    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+    fieldname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/nhanes/Demo/laboratory/laboratory/heavy metals/&#34;</span>
+)
+nhanesVector <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(
+    nhanesDemographic,
+    nhanesPressure,
+    nhanesMetals
+)
+</code></pre></div><p>This vector indicates to <code>my.query</code> where to locate the <em>fields</em> we want to retrieve to from the database. The <em>field</em> must be indicated into <code>myfields</code>, separated using the vertical columns character (<code>|</code>).</p>
 <p>At this point we need to now that the first <em>field</em> filters the output by existing value. This means that the samples with missing data in the first <em>field</em> will be dropped by default.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.query</span>( 
-</span></span><span style="display:flex;"><span>    myfields <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AGE|SEX|mean diastolic|Mercury, hair (ppm)|Lead (ug per dL)&#34;</span>, 
-</span></span><span style="display:flex;"><span>    myvector <span style="color:#f92672">=</span> nhanesVector, 
-</span></span><span style="display:flex;"><span>    url      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>The function returns the JSON structure of the query:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>query
-</span></span></code></pre></div><pre tabindex="0"><code>## {
-##   &#34;select&#34;: [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.query</span>( 
+    myfields <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AGE|SEX|mean diastolic|Mercury, hair (ppm)|Lead (ug per dL)&#34;</span>, 
+    myvector <span style="color:#f92672">=</span> nhanesVector, 
+    url      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>
+)
+</code></pre></div><p>The function returns the JSON structure of the query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">query
+</code></pre></div><pre tabindex="0"><code>## {
+##   &quot;select&quot;: [
 ##     {
-##       &#34;field&#34;: {
-##         &#34;pui&#34;: &#34;/nhanes/Demo/demographics/demographics/AGE/&#34;,
-##         &#34;dataType&#34;: &#34;string&#34;
+##       &quot;field&quot;: {
+##         &quot;pui&quot;: &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;,
+##         &quot;dataType&quot;: &quot;string&quot;
 ##       },
-##       &#34;alias&#34;: &#34;/nhanes/Demo/demographics/demographics/AGE/&#34;
+##       &quot;alias&quot;: &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;
 ##     },
 ##     {
-##       &#34;field&#34;: {
-##         &#34;pui&#34;: &#34;/nhanes/Demo/demographics/demographics/SEX/female/&#34;,
-##         &#34;dataType&#34;: &#34;string&#34;
+##       &quot;field&quot;: {
+##         &quot;pui&quot;: &quot;/nhanes/Demo/demographics/demographics/SEX/female/&quot;,
+##         &quot;dataType&quot;: &quot;string&quot;
 ##       },
-##       &#34;alias&#34;: &#34;/nhanes/Demo/demographics/demographics/SEX/&#34;
+##       &quot;alias&quot;: &quot;/nhanes/Demo/demographics/demographics/SEX/&quot;
 ##     },
 ##     {
-##       &#34;field&#34;: {
-##         &#34;pui&#34;: &#34;/nhanes/Demo/demographics/demographics/SEX/male/&#34;,
-##         &#34;dataType&#34;: &#34;string&#34;
+##       &quot;field&quot;: {
+##         &quot;pui&quot;: &quot;/nhanes/Demo/demographics/demographics/SEX/male/&quot;,
+##         &quot;dataType&quot;: &quot;string&quot;
 ##       },
-##       &#34;alias&#34;: &#34;/nhanes/Demo/demographics/demographics/SEX/&#34;
+##       &quot;alias&quot;: &quot;/nhanes/Demo/demographics/demographics/SEX/&quot;
 ##     },
 ##     {
-##       &#34;field&#34;: {
-##         &#34;pui&#34;: &#34;/nhanes/Demo/examination/examination/blood pressure/mean diastolic/&#34;,
-##         &#34;dataType&#34;: &#34;string&#34;
+##       &quot;field&quot;: {
+##         &quot;pui&quot;: &quot;/nhanes/Demo/examination/examination/blood pressure/mean diastolic/&quot;,
+##         &quot;dataType&quot;: &quot;string&quot;
 ##       },
-##       &#34;alias&#34;: &#34;/nhanes/Demo/examination/examination/blood pressure/mean diastolic/&#34;
+##       &quot;alias&quot;: &quot;/nhanes/Demo/examination/examination/blood pressure/mean diastolic/&quot;
 ##     }
 ##   ],
-##   &#34;where&#34;: [
+##   &quot;where&quot;: [
 ##     {
-##       &#34;field&#34;: {
-##         &#34;pui&#34;: &#34;/nhanes/Demo/demographics/demographics/AGE/&#34;,
-##         &#34;dataType&#34;: &#34;STRING&#34;
+##       &quot;field&quot;: {
+##         &quot;pui&quot;: &quot;/nhanes/Demo/demographics/demographics/AGE/&quot;,
+##         &quot;dataType&quot;: &quot;STRING&quot;
 ##       },
-##       &#34;predicate&#34;: &#34;CONTAINS&#34;,
-##       &#34;fields&#34;: {
-##         &#34;ENOUNTER&#34;: &#34;NO&#34;
+##       &quot;predicate&quot;: &quot;CONTAINS&quot;,
+##       &quot;fields&quot;: {
+##         &quot;ENOUNTER&quot;: &quot;NO&quot;
 ##       }
 ##     }
 ##   ]
 ## }
 </code></pre><p>The last step is to retrieve the data. Thai is done with <code>my.data</code>, it retrieves he data as a <code>data.frame</code> and save it into a file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.data</span>( 
-</span></span><span style="display:flex;"><span>    query          <span style="color:#f92672">=</span> query,
-</span></span><span style="display:flex;"><span>    url            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
-</span></span><span style="display:flex;"><span>    responseFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CSV&#34;</span>, 
-</span></span><span style="display:flex;"><span>    outputPath     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;~/dataNHANES.txt&#34;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>The variabte data can be explored as standard <code>data.frame</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">dim</span>( data )
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] 41474     4
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">colnames</span>( data )
-</span></span></code></pre></div><pre tabindex="0"><code>## [1] &#34;patient_id&#34;                                                          
-## [2] &#34;X.nhanes.Demo.demographics.demographics.SEX.&#34;                        
-## [3] &#34;X.nhanes.Demo.examination.examination.blood.pressure.mean.diastolic.&#34;
-## [4] &#34;X.nhanes.Demo.demographics.demographics.AGE.&#34;
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Gender Proportion</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">prop.table</span>( <span style="color:#a6e22e">table</span>( data[ , <span style="color:#ae81ff">2</span>] ) )
-</span></span></code></pre></div><pre tabindex="0"><code>## 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">my.data</span>( 
+    query          <span style="color:#f92672">=</span> query,
+    url            <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://nhanes.hms.harvard.edu/&#34;</span>, 
+    responseFormat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CSV&#34;</span>, 
+    outputPath     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;~/dataNHANES.txt&#34;</span>
+)
+</code></pre></div><p>The variabte data can be explored as standard <code>data.frame</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">dim</span>( data )
+</code></pre></div><pre tabindex="0"><code>## [1] 41474     4
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">colnames</span>( data )
+</code></pre></div><pre tabindex="0"><code>## [1] &quot;patient_id&quot;                                                          
+## [2] &quot;X.nhanes.Demo.demographics.demographics.SEX.&quot;                        
+## [3] &quot;X.nhanes.Demo.examination.examination.blood.pressure.mean.diastolic.&quot;
+## [4] &quot;X.nhanes.Demo.demographics.demographics.AGE.&quot;
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Gender Proportion</span>
+<span style="color:#a6e22e">prop.table</span>( <span style="color:#a6e22e">table</span>( data[ , <span style="color:#ae81ff">2</span>] ) )
+</code></pre></div><pre tabindex="0"><code>## 
 ##    female      male 
 ## 0.5114047 0.4885953
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Range of age</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">4</span>] )
-</span></span></code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of age</span>
+<span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">4</span>] )
+</code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    0.00   10.00   19.00   29.25   47.00   85.00
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Range of Blood Diastolic Mean</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">3</span> ] )
-</span></span></code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e"># Range of Blood Diastolic Mean</span>
+<span style="color:#a6e22e">summary</span>( data[ , <span style="color:#ae81ff">3</span> ] )
+</code></pre></div><pre tabindex="0"><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
 ##    0.00   57.33   65.33   64.98   73.33  132.00   15438
 </code></pre>
             </div>
@@ -349,7 +349,7 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
             <span>&copy; 2024</span>
             <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            
+            <span><a href="http://212.71.254.23/blog/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -367,7 +367,7 @@ library( Rcupcake ) library( knitr ) library( stringr ) opts_chunk$set( fig.path
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

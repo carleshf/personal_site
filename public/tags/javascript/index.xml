@@ -5,7 +5,7 @@
     <link>http://212.71.254.23/tags/javascript/</link>
     <description>Recent content in javascript on Carles Hernandez-Ferrer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 16 Dec 2021 10:10:01 +4900</lastBuildDate><atom:link href="http://212.71.254.23/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,8 +15,8 @@
       
       <guid>http://212.71.254.23/fun/winter_card_2021-2022/</guid>
       <description>Again, this year has been challanging and we all have been busy coping with all the difulties that the pandeic rasied in our everyday. So, makeing a diference with the last year, this one I created a new small game where you help Noelle collect the presents for her workmakes, scattered accross the office by her clumsy boss.
-Winter card 2021 - 2022: Happy Yultide!
-You can play it clicking the previous picture and find the code of this card here.</description>
+ Winter card 2021 - 2022: Happy Yultide!
+  You can play it clicking the previous picture and find the code of this card here.</description>
     </item>
     
     <item>
@@ -26,9 +26,9 @@ You can play it clicking the previous picture and find the code of this card her
       
       <guid>http://212.71.254.23/fun/winter_card_2020-2021/</guid>
       <description>This past year has been a really significant one with many challenges. Therefore I wanted to make a winter card that shows the opposite: simplicity, elegance, and, specially, joy.
-Winter card 2020 - 2021: Happy Yultide!
-So, the winter card it is juts a snowing page that allows you to discover your present, from a possible random set of 35 different drawings.
-You can play it clicking the previous picture. You can find the code of this card here.</description>
+ Winter card 2020 - 2021: Happy Yultide!
+  So, the winter card it is juts a snowing page that allows you to discover your present, from a possible random set of 35 different drawings.
+You can play it clicking the previous picture.</description>
     </item>
     
     <item>
@@ -59,8 +59,8 @@ First I missed three core methods related of the content of the array. A method 
       
       <guid>http://212.71.254.23/fun/winter_card_2018-2019/</guid>
       <description>Following the tradition, I&amp;rsquo;ve made the geek christmas card for this year. As it is being the trend lately, it is coded in javascript and HTML5.
-Winter card 2018 - 2019: Mike has lost his presents for Santaclaus!
-The card is, again, a minigame where Mike &amp;rsquo;the elf&amp;rsquo; has lost the present he crafter for this Christmas and we need to help him to find them all. Make a click on the picture to play the game.</description>
+ Winter card 2018 - 2019: Mike has lost his presents for Santaclaus!
+  The card is, again, a minigame where Mike &amp;lsquo;the elf&amp;rsquo; has lost the present he crafter for this Christmas and we need to help him to find them all. Make a click on the picture to play the game.</description>
     </item>
     
     <item>
@@ -81,8 +81,8 @@ The card is an HTML5 canvas used as a grid where different pixelled cartoons app
       
       <guid>http://212.71.254.23/fun/winter_card_2016-2017/</guid>
       <description>Following the tradition of the last years, I&amp;rsquo;ve made a _geek christmas card:. This year I typed it in javascript using the improvements of HTML5.
-Winter card 2016 - 2017: Mr Snowman has lost his hat!
-The card is a minigame where a small and blue snowman has lost his hat and you need to help him to recover it. The characteristic of the game is that the snowman moves autonomously once the user gave him a direction.</description>
+ Winter card 2016 - 2017: Mr Snowman has lost his hat!
+  The card is a minigame where a small and blue snowman has lost his hat and you need to help him to recover it. The characteristic of the game is that the snowman moves autonomously once the user gave him a direction.</description>
     </item>
     
   </channel>

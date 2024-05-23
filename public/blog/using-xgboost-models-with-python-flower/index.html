@@ -129,140 +129,140 @@ Client code The code assumes that there is an environment-variables called DATA_
 <h1 id="client-code">Client code</h1>
 <p>The code assumes that there is an environment-variables called <code>DATA_PATH</code> pointing to a CSV-file having the data to be used. With this in mind, the first step is to create the <code>XGBClient</code>, wrapping a <code>NumPyClient</code>&rsquo;s from <code>flwr</code>.</p>
 <p>We should start with the imports:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> flwr <span style="color:#66d9ef">as</span> fl
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> xgboost <span style="color:#66d9ef">as</span> xgb
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils_flwr_xgboost <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span></code></pre></div><p>We will use the <code>os</code> mode to access the <code>DATA_PATH</code> variables, the <code>flwr</code> to create the wrapper and start the client, <code>xgb</code> to access the models class, and <code>utils_flwr_xgboost</code> is a utility module that has five functions: <code>load_data</code>, <code>prepare_data</code>, <code>get_parameters</code>, <code>model_from_paramaters</code>, and <code>get_metrics_from_model</code>. We will describe them during the implementation of the client and the server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#f92672">import</span> flwr <span style="color:#66d9ef">as</span> fl
+<span style="color:#f92672">import</span> xgboost <span style="color:#66d9ef">as</span> xgb
+
+<span style="color:#f92672">from</span> utils_flwr_xgboost <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><p>We will use the <code>os</code> mode to access the <code>DATA_PATH</code> variables, the <code>flwr</code> to create the wrapper and start the client, <code>xgb</code> to access the models class, and <code>utils_flwr_xgboost</code> is a utility module that has five functions: <code>load_data</code>, <code>prepare_data</code>, <code>get_parameters</code>, <code>model_from_paramaters</code>, and <code>get_metrics_from_model</code>. We will describe them during the implementation of the client and the server.</p>
 <p>We will start with the generic code to load the data and start the client:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tmp_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/home/.../tmp-cl/&#39;</span>
-</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> prepare_data( os<span style="color:#f92672">.</span>getenv( <span style="color:#e6db74">&#39;DATA_PATH&#39;</span> ) )
-</span></span></code></pre></div><p>The function <code>prepare_data</code> calls the <code>load_data</code> and then splits the data into training and testing sets:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_data</span>( data_path ):
-</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv( data_path )
-</span></span><span style="display:flex;"><span>    code_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ID&#39;</span>
-</span></span><span style="display:flex;"><span>    code_outcome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;class&#39;</span>
-</span></span><span style="display:flex;"><span>    X <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>drop( [ code_id, code_outcome ], axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> )
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> data[ code_outcome ]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> X, y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prepare_data</span>( data_path, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span> ):
-</span></span><span style="display:flex;"><span>    X, y <span style="color:#f92672">=</span> load_data( data_path )
-</span></span><span style="display:flex;"><span>    X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split( X, y, test_size <span style="color:#f92672">=</span> test_size, random_state <span style="color:#f92672">=</span> random_state )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> X_train, X_test, y_train, y_test
-</span></span></code></pre></div><p>Now, let&rsquo;s go for the <code>XGBClient</code>&rsquo;s implementation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XGBClient</span>( fl<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>NumPyClient ):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__( self ):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>XGBClassifier()
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model<span style="color:#f92672">.</span>fit( X_train, y_train )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parameters</span>( self, config ):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> get_parameters( self<span style="color:#f92672">.</span>model, tmp_path )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fit</span>( self, parameters, config ):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model_from_paramaters( parameters, tmp_path )
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model<span style="color:#f92672">.</span>fit( X_train, y_train )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>            get_parameters( self<span style="color:#f92672">.</span>model, tmp_path ),
-</span></span><span style="display:flex;"><span>            len( X_train ),
-</span></span><span style="display:flex;"><span>            get_metrics_from_model( self<span style="color:#f92672">.</span>model, X_test, y_test )
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">evaluate</span>(self, parameters, config):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model_from_paramaters( parameters, tmp_path )
-</span></span><span style="display:flex;"><span>        metrics <span style="color:#f92672">=</span> get_metrics_from_model( self<span style="color:#f92672">.</span>model, X_test, y_test )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>            metrics[ <span style="color:#e6db74">&#39;loss&#39;</span> ], 
-</span></span><span style="display:flex;"><span>            int( len( X_test ) ), 
-</span></span><span style="display:flex;"><span>            metrics
-</span></span><span style="display:flex;"><span>        )
-</span></span></code></pre></div><p>Here the fun starts!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tmp_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/home/.../tmp-cl/&#39;</span>
+X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> prepare_data( os<span style="color:#f92672">.</span>getenv( <span style="color:#e6db74">&#39;DATA_PATH&#39;</span> ) )
+</code></pre></div><p>The function <code>prepare_data</code> calls the <code>load_data</code> and then splits the data into training and testing sets:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_data</span>( data_path ):
+    data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv( data_path )
+    code_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ID&#39;</span>
+    code_outcome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;class&#39;</span>
+    X <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>drop( [ code_id, code_outcome ], axis <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> )
+    y <span style="color:#f92672">=</span> data[ code_outcome ]
+    <span style="color:#66d9ef">return</span> X, y
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prepare_data</span>( data_path, test_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>, random_state <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span> ):
+    X, y <span style="color:#f92672">=</span> load_data( data_path )
+    X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split( X, y, test_size <span style="color:#f92672">=</span> test_size, random_state <span style="color:#f92672">=</span> random_state )
+    <span style="color:#66d9ef">return</span> X_train, X_test, y_train, y_test
+</code></pre></div><p>Now, let&rsquo;s go for the <code>XGBClient</code>&rsquo;s implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XGBClient</span>( fl<span style="color:#f92672">.</span>client<span style="color:#f92672">.</span>NumPyClient ):
+    <span style="color:#66d9ef">def</span> __init__( self ):
+        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>XGBClassifier()
+        self<span style="color:#f92672">.</span>model<span style="color:#f92672">.</span>fit( X_train, y_train )
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parameters</span>( self, config ):
+        <span style="color:#66d9ef">return</span> get_parameters( self<span style="color:#f92672">.</span>model, tmp_path )
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fit</span>( self, parameters, config ):
+        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model_from_paramaters( parameters, tmp_path )
+        self<span style="color:#f92672">.</span>model<span style="color:#f92672">.</span>fit( X_train, y_train )
+        <span style="color:#66d9ef">return</span> (
+            get_parameters( self<span style="color:#f92672">.</span>model, tmp_path ),
+            len( X_train ),
+            get_metrics_from_model( self<span style="color:#f92672">.</span>model, X_test, y_test )
+        )
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">evaluate</span>(self, parameters, config):
+        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model_from_paramaters( parameters, tmp_path )
+        metrics <span style="color:#f92672">=</span> get_metrics_from_model( self<span style="color:#f92672">.</span>model, X_test, y_test )
+        <span style="color:#66d9ef">return</span> (
+            metrics[ <span style="color:#e6db74">&#39;loss&#39;</span> ], 
+            int( len( X_test ) ), 
+            metrics
+        )
+</code></pre></div><p>Here the fun starts!</p>
 <p>Our <code>XGBClient</code> is implementing 3 required methods so the infrastructure can communicate the updates on the model from client to server and vice-versa: <code>get_parameters</code>, <code>fit</code>, and <code>evaluate</code>.</p>
 <h3 id="get_parameters"><code>get_parameters</code></h3>
 <p>The method, calling the <code>get_parameters</code> from our utility module, is packaging the &ldquo;parameters&rdquo; of the model. The name &ldquo;parameters&rdquo; can be a bit confusing or create a misunderstanding. For the XGBoost family of models those &ldquo;parameters&rdquo; are the <em>weights of the leaves</em>. Another example would be that for a linear or logistic model, those &ldquo;parameters&rdquo; would, be the <em>coefficients</em> of the models.</p>
 <p>In our case, the one for XGBoost models, we need to obtain the full definition of the forest of trees. Following XGBoost&rsquo;s documentation we see that we could use <a href="https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.Booster.dump_model"><code>dump_model</code></a> or <a href="https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier.save_model"><code>save_model</code></a>. But if we read properly, only the definition created using the <code>save_model</code> can be then loaded again to recreate the model.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parameters</span>( model, tmp_path ):
-</span></span><span style="display:flex;"><span>    tmp_model <span style="color:#f92672">=</span> Path( tmp_path ) <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;model_tmp_prms.json&#39;</span>
-</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>get_booster()<span style="color:#f92672">.</span>save_model( tmp_model )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open( tmp_model, <span style="color:#e6db74">&#39;r&#39;</span> ) <span style="color:#66d9ef">as</span> fr:
-</span></span><span style="display:flex;"><span>        params <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load( fr )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [ json<span style="color:#f92672">.</span>dumps( params ) ]
-</span></span></code></pre></div><p>Therefore we need a temporary JSON file where the model is saved. We follow by reading this file and returning it serialized. See that the <code>get_paramaters</code> method from our client needs to return a list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parameters</span>( model, tmp_path ):
+    tmp_model <span style="color:#f92672">=</span> Path( tmp_path ) <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;model_tmp_prms.json&#39;</span>
+    model<span style="color:#f92672">.</span>get_booster()<span style="color:#f92672">.</span>save_model( tmp_model )
+    <span style="color:#66d9ef">with</span> open( tmp_model, <span style="color:#e6db74">&#39;r&#39;</span> ) <span style="color:#66d9ef">as</span> fr:
+        params <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>load( fr )
+    <span style="color:#66d9ef">return</span> [ json<span style="color:#f92672">.</span>dumps( params ) ]
+</code></pre></div><p>Therefore we need a temporary JSON file where the model is saved. We follow by reading this file and returning it serialized. See that the <code>get_paramaters</code> method from our client needs to return a list.</p>
 <h3 id="fit"><code>fit</code></h3>
 <p>This method is the one in charge to train the model given a set of parameters. This method needs, first, to recreate a model from the set of parameters. The function <code>model_from_paramaters</code> is the one in charge of doing so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">model_from_paramaters</span>( parameters, tmp_path ):
-</span></span><span style="display:flex;"><span>    parameters <span style="color:#f92672">=</span> parameters[ <span style="color:#ae81ff">0</span> ]
-</span></span><span style="display:flex;"><span>    tmp_model <span style="color:#f92672">=</span> Path( tmp_path ) <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;model_tmp_fit.json&#39;</span>
-</span></span><span style="display:flex;"><span>    parameters <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads( str( parameters ) )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open( tmp_model, <span style="color:#e6db74">&#39;w&#39;</span> ) <span style="color:#66d9ef">as</span> fw:
-</span></span><span style="display:flex;"><span>        json<span style="color:#f92672">.</span>dump( parameters, fw )
-</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>XGBClassifier()
-</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>load_model( tmp_model )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> model
-</span></span></code></pre></div><p>We start by loading the parameters to a dictionary from the serialized JSON that is given. Then, we save the model definition to a file and load this file to recreate the model using the method <a href="https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier.load_model"><code>load_model</code></a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">model_from_paramaters</span>( parameters, tmp_path ):
+    parameters <span style="color:#f92672">=</span> parameters[ <span style="color:#ae81ff">0</span> ]
+    tmp_model <span style="color:#f92672">=</span> Path( tmp_path ) <span style="color:#f92672">/</span> <span style="color:#e6db74">&#39;model_tmp_fit.json&#39;</span>
+    parameters <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads( str( parameters ) )
+    <span style="color:#66d9ef">with</span> open( tmp_model, <span style="color:#e6db74">&#39;w&#39;</span> ) <span style="color:#66d9ef">as</span> fw:
+        json<span style="color:#f92672">.</span>dump( parameters, fw )
+    model <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>XGBClassifier()
+    model<span style="color:#f92672">.</span>load_model( tmp_model )
+    <span style="color:#66d9ef">return</span> model
+</code></pre></div><p>We start by loading the parameters to a dictionary from the serialized JSON that is given. Then, we save the model definition to a file and load this file to recreate the model using the method <a href="https://xgboost.readthedocs.io/en/stable/python/python_api.html#xgboost.XGBClassifier.load_model"><code>load_model</code></a>.</p>
 <p>Once the model is created from the set of parameters, we fit it and return the required results: the newly refined parameters, the size of the training set, and some quality metrics.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> log_loss
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_metrics_from_model</span>( model, X_test, y_test ):
-</span></span><span style="display:flex;"><span>    loss <span style="color:#f92672">=</span> log_loss( y_test, model<span style="color:#f92672">.</span>predict_proba( X_test ) )
-</span></span><span style="display:flex;"><span>    accuracy <span style="color:#f92672">=</span> float( model<span style="color:#f92672">.</span>score( X_test, y_test ) )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> { <span style="color:#e6db74">&#39;loss&#39;</span>: float( loss ), <span style="color:#e6db74">&#39;accuracy&#39;</span>: accuracy }
-</span></span></code></pre></div><h3 id="evaluate"><code>evaluate</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> log_loss
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_metrics_from_model</span>( model, X_test, y_test ):
+    loss <span style="color:#f92672">=</span> log_loss( y_test, model<span style="color:#f92672">.</span>predict_proba( X_test ) )
+    accuracy <span style="color:#f92672">=</span> float( model<span style="color:#f92672">.</span>score( X_test, y_test ) )
+    <span style="color:#66d9ef">return</span> { <span style="color:#e6db74">&#39;loss&#39;</span>: float( loss ), <span style="color:#e6db74">&#39;accuracy&#39;</span>: accuracy }
+</code></pre></div><h3 id="evaluate"><code>evaluate</code></h3>
 <p>This method evaluates a given set of parameters on the local dataset and returns the metrics.</p>
 <h1 id="server-code">Server code</h1>
 <p>Lastly, we will write the code used on the server side. As for our client, the code assumes that there is an environment-variables called <code>DATA_PATH</code> pointing to a CSV-file having the data to be used.</p>
 <p>The following imports are needed by the server script.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> flwr <span style="color:#66d9ef">as</span> fl
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> xgboost <span style="color:#66d9ef">as</span> xgb
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> flwr.common <span style="color:#f92672">import</span> ndarrays_to_parameters, parameters_to_ndarrays
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils_flwr_xgboost <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span></code></pre></div><p>Now, we will be implementing not a <code>flwr</code>&rsquo;s server but a <code>flwr</code>&rsquo;s strategy. A strategy is in change of defining how the federation works as well as initializing parameters and aggregating models. We will use the <code>FedAvg</code> strategy as a base strategy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XGBAvgStrategy</span>( fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>FedAvg ):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate_fit</span>( self, rnd, results, failures ):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> results:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, {}
-</span></span><span style="display:flex;"><span>        status       <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>status <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
-</span></span><span style="display:flex;"><span>        parameters   <span style="color:#f92672">=</span> [ json<span style="color:#f92672">.</span>loads( parameters_to_ndarrays( x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>parameters )[ <span style="color:#ae81ff">0</span> ]<span style="color:#f92672">.</span>item( <span style="color:#ae81ff">0</span> ) ) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
-</span></span><span style="display:flex;"><span>        num_examples <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>num_examples <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
-</span></span><span style="display:flex;"><span>        metrics      <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>metrics <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
-</span></span><span style="display:flex;"><span>        aggregated_params <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>aggregate( status, parameters, num_examples, metrics )
-</span></span><span style="display:flex;"><span>        model <span style="color:#f92672">=</span> model_from_paramaters( aggregated_params, tmp_path )
-</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span>fit( X_train, y_train )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ndarrays_to_parameters( np<span style="color:#f92672">.</span>array( get_parameters( model, tmp_path ) ) ), {}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate</span>( self, status, parameters, num_examples, metrics ):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># [ this one is up to you :-) ]</span>
-</span></span><span style="display:flex;"><span>        parameters <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps( parameters[ <span style="color:#ae81ff">0</span> ] )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [ parameters ]
-</span></span></code></pre></div><h3 id="aggregate_fit"><code>aggregate_fit</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+<span style="color:#f92672">import</span> flwr <span style="color:#66d9ef">as</span> fl
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> xgboost <span style="color:#66d9ef">as</span> xgb
+
+<span style="color:#f92672">from</span> flwr.common <span style="color:#f92672">import</span> ndarrays_to_parameters, parameters_to_ndarrays
+
+<span style="color:#f92672">from</span> utils_flwr_xgboost <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><p>Now, we will be implementing not a <code>flwr</code>&rsquo;s server but a <code>flwr</code>&rsquo;s strategy. A strategy is in change of defining how the federation works as well as initializing parameters and aggregating models. We will use the <code>FedAvg</code> strategy as a base strategy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XGBAvgStrategy</span>( fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>strategy<span style="color:#f92672">.</span>FedAvg ):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate_fit</span>( self, rnd, results, failures ):
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> results:
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>, {}
+        status       <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>status <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
+        parameters   <span style="color:#f92672">=</span> [ json<span style="color:#f92672">.</span>loads( parameters_to_ndarrays( x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>parameters )[ <span style="color:#ae81ff">0</span> ]<span style="color:#f92672">.</span>item( <span style="color:#ae81ff">0</span> ) ) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
+        num_examples <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>num_examples <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
+        metrics      <span style="color:#f92672">=</span> [ x[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>metrics <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> results ]
+        aggregated_params <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>aggregate( status, parameters, num_examples, metrics )
+        model <span style="color:#f92672">=</span> model_from_paramaters( aggregated_params, tmp_path )
+        model<span style="color:#f92672">.</span>fit( X_train, y_train )
+        <span style="color:#66d9ef">return</span> ndarrays_to_parameters( np<span style="color:#f92672">.</span>array( get_parameters( model, tmp_path ) ) ), {}
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aggregate</span>( self, status, parameters, num_examples, metrics ):
+        <span style="color:#75715e"># [ this one is up to you :-) ]</span>
+        parameters <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps( parameters[ <span style="color:#ae81ff">0</span> ] )
+        <span style="color:#66d9ef">return</span> [ parameters ]
+</code></pre></div><h3 id="aggregate_fit"><code>aggregate_fit</code></h3>
 <p>This method is responsible to aggregate the models obtained from the multiple nodes and return a single model from them. In our implementation, we put here all the steps required to obtain all the required data from each of the nodes and models. For instance: the <code>status</code> variable indicates if the transmission between each node and the server worked or failed, <code>parameters</code> will have all the dictionaries loaded from the transmitted JSONs, <code>num_examples</code> will provide the number of samples used to train each model, and <code>metrics</code> will have the metrics of each node.</p>
 <p>Then, we call our custom <code>aggregate</code> method providing the previous lists, and create a new model from the aggregated models before sending it back to the clients to be trained again.</p>
 <p>The tricky steps here are being able to set the parameters to be read from and sent to the clients. Take a look and see that to read the parameters obtained from the clients we are using <code>parameters_to_ndarrays</code> and <code>ndarrays_to_parameters</code> to send them to the clients.</p>
 <h3 id="aggregate"><code>aggregate</code></h3>
 <p>Here is where magic happens and all the <code>XGBClassifier</code> objects are averaged and a single new set of parameters is returned.</p>
 <p>Finally, we only need to load the data used to assign the initial set of parameters and run the strategy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tmp_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/home/.../xgboost/tmp-sr/&#39;</span>
-</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> prepare_data( os<span style="color:#f92672">.</span>getenv( <span style="color:#e6db74">&#39;DATA_PATH&#39;</span> ) )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>start_server(
-</span></span><span style="display:flex;"><span>    server_address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[::]:8080&#34;</span>, 
-</span></span><span style="display:flex;"><span>    config         <span style="color:#f92672">=</span> fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>ServerConfig(num_rounds<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>), 
-</span></span><span style="display:flex;"><span>    strategy       <span style="color:#f92672">=</span> XGBAvgStrategy()
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><h1 id="resources">Resources</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tmp_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/home/.../xgboost/tmp-sr/&#39;</span>
+X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> prepare_data( os<span style="color:#f92672">.</span>getenv( <span style="color:#e6db74">&#39;DATA_PATH&#39;</span> ) )
+
+fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>start_server(
+    server_address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[::]:8080&#34;</span>, 
+    config         <span style="color:#f92672">=</span> fl<span style="color:#f92672">.</span>server<span style="color:#f92672">.</span>ServerConfig(num_rounds<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>), 
+    strategy       <span style="color:#f92672">=</span> XGBAvgStrategy()
+)
+</code></pre></div><h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://flower.dev/docs/index.html">Flower Documentation</a></li>
 <li><a href="https://flower.dev/blog/2021-07-21-federated-scikit-learn-using-flower/">Scikit-learn&rsquo;s logistic regression on flower</a></li>
@@ -298,7 +298,7 @@ Client code The code assumes that there is an environment-variables called DATA_
             <span>&copy; 2024</span>
             <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            
+            <span><a href="http://212.71.254.23/blog/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -316,7 +316,7 @@ Client code The code assumes that there is an environment-variables called DATA_
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

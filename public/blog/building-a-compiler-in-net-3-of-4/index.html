@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Carles Hernandez-Ferrer ">
 <meta name="description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler." />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&amp;rsquo;ve done to our compiler." />
 <meta name="keywords" content="bioinformatics, software, data analysis, .net, Csharp" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,7 +35,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
 
 <meta itemprop="name" content="Building a Compiler in .Net  (3 of 4)">
 <meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."><meta itemprop="datePublished" content="2012-02-13T00:00:00+02:00" />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."><meta itemprop="datePublished" content="2012-02-13T00:00:00+02:00" />
 <meta itemprop="dateModified" content="2012-02-13T00:00:00+02:00" />
 <meta itemprop="wordCount" content="1488"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content=".net,Csharp," />
@@ -44,7 +44,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
 
 <meta name="twitter:title" content="Building a Compiler in .Net  (3 of 4)"/>
 <meta name="twitter:description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."/>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In previous posts In this third post we will finish our compiler. In the last part ( number 4 ) we will talk about some educative improvements I&rsquo;ve done to our compiler."/>
 
 
 
@@ -147,128 +147,128 @@ mul
 <h2 id="implementation">Implementation</h2>
 <h3 id="reflectionemit">Reflection.Emit</h3>
 <p>Our compiler relies heavily on the <code>Reflection.Emit</code> library to produce an executable. In the constructor of the class (shown behind) we set up the necessary infrastructure from <code>Reflection.Emit</code> to start generating code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> CodeGen( InstrStmt p_input, <span style="color:#66d9ef">string</span> p_module_name ) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( IO.Path.GetFileName( p_module_name ) != p_module_name ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;By the way we can only output into current directory!&#34;</span> );
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    Reflect.AssemblyName name = <span style="color:#66d9ef">new</span> Reflect.AssemblyName( IO.Path.GetFileNameWithoutExtension( p_module_name ) );
-</span></span><span style="display:flex;"><span>    Emit.AssemblyBuilder asmb = System.AppDomain.CurrentDomain.DefineDynamicAssembly( name, Emit.AssemblyBuilderAccess.Save );
-</span></span><span style="display:flex;"><span>    Emit.ModuleBuilder modb = asmb.DefineDynamicModule( p_module_name );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// At start our SL language has no class loaded. But we need, at last, one class on root.</span>
-</span></span><span style="display:flex;"><span>    Emit.TypeBuilder typeBuilder = modb.DefineType( <span style="color:#e6db74">&#34;Foo&#34;</span> );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Here we defines a main method to hold the IL that will be generated.</span>
-</span></span><span style="display:flex;"><span>    Emit.MethodBuilder methb = typeBuilder.DefineMethod( <span style="color:#e6db74">&#34;Main&#34;</span>, Reflect.MethodAttributes.Static, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">void</span> ), System.Type.EmptyTypes );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Global CodeGenerator</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.il = methb.GetILGenerator();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">new</span> Collections.Dictionary&lt; <span style="color:#66d9ef">string</span>, Emit.LocalBuilder &gt;();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Compile</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.GenInstr( p_input, <span style="color:#66d9ef">null</span> );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    il.Emit( Emit.OpCodes.Ret );
-</span></span><span style="display:flex;"><span>    typeBuilder.CreateType();
-</span></span><span style="display:flex;"><span>    modb.CreateGlobalFunctions();
-</span></span><span style="display:flex;"><span>    asmb.SetEntryPoint( methb ); <span style="color:#75715e">// Calling SetEntryPoint on MethodBuilder so it will run on startup when a user runs the executable.</span>
-</span></span><span style="display:flex;"><span>    asmb.Save( p_module_name );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Clear</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.il = <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.module_name = p_module_name;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>We start defining the assembly name and passing that to the assembly builder. In this example, we use the source file name as the assembly name. Next is the <code>ModuleBuilder</code> definition this uses the same name as the assembly. After that we define a <code>TypeBuilder</code> on the <code>ModuleBuilder</code> to hold the only type in the assembly. There are no types defined as first class citizens of the our language definition, but at least one type is necessary to hold the method, which will run on startup. We cal it <em>Foo</em>. The <code>MethodBuilder</code> defines a Main method to hold the CIL that will be generated. We need to call <code>SetEntryPoint</code> on this <code>MethodBuilder</code> so it will run on startup when the executable will be runt. The we create the global <code>ILGenerator</code> from the <code>MethodBuilder</code> using the <code>GetILGenerator</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> CodeGen( InstrStmt p_input, <span style="color:#66d9ef">string</span> p_module_name ) {
+    <span style="color:#66d9ef">if</span> ( IO.Path.GetFileName( p_module_name ) != p_module_name ) {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;By the way we can only output into current directory!&#34;</span> );
+    }
+    Reflect.AssemblyName name = <span style="color:#66d9ef">new</span> Reflect.AssemblyName( IO.Path.GetFileNameWithoutExtension( p_module_name ) );
+    Emit.AssemblyBuilder asmb = System.AppDomain.CurrentDomain.DefineDynamicAssembly( name, Emit.AssemblyBuilderAccess.Save );
+    Emit.ModuleBuilder modb = asmb.DefineDynamicModule( p_module_name );
+
+    <span style="color:#75715e">// At start our SL language has no class loaded. But we need, at last, one class on root.
+</span><span style="color:#75715e"></span>    Emit.TypeBuilder typeBuilder = modb.DefineType( <span style="color:#e6db74">&#34;Foo&#34;</span> );
+
+    <span style="color:#75715e">// Here we defines a main method to hold the IL that will be generated.
+</span><span style="color:#75715e"></span>    Emit.MethodBuilder methb = typeBuilder.DefineMethod( <span style="color:#e6db74">&#34;Main&#34;</span>, Reflect.MethodAttributes.Static, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">void</span> ), System.Type.EmptyTypes );
+
+    <span style="color:#75715e">// Global CodeGenerator
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.il = methb.GetILGenerator();
+    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">new</span> Collections.Dictionary&lt; <span style="color:#66d9ef">string</span>, Emit.LocalBuilder &gt;();
+
+    <span style="color:#75715e">// Compile
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.GenInstr( p_input, <span style="color:#66d9ef">null</span> );
+
+    il.Emit( Emit.OpCodes.Ret );
+    typeBuilder.CreateType();
+    modb.CreateGlobalFunctions();
+    asmb.SetEntryPoint( methb ); <span style="color:#75715e">// Calling SetEntryPoint on MethodBuilder so it will run on startup when a user runs the executable.
+</span><span style="color:#75715e"></span>    asmb.Save( p_module_name );
+
+    <span style="color:#75715e">// Clear
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.symbol_table = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.il = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.module_name = p_module_name;
+}
+</code></pre></div><p>We start defining the assembly name and passing that to the assembly builder. In this example, we use the source file name as the assembly name. Next is the <code>ModuleBuilder</code> definition this uses the same name as the assembly. After that we define a <code>TypeBuilder</code> on the <code>ModuleBuilder</code> to hold the only type in the assembly. There are no types defined as first class citizens of the our language definition, but at least one type is necessary to hold the method, which will run on startup. We cal it <em>Foo</em>. The <code>MethodBuilder</code> defines a Main method to hold the CIL that will be generated. We need to call <code>SetEntryPoint</code> on this <code>MethodBuilder</code> so it will run on startup when the executable will be runt. The we create the global <code>ILGenerator</code> from the <code>MethodBuilder</code> using the <code>GetILGenerator</code> method.</p>
 <h3 id="geninstr">GenInstr</h3>
 <p>After all this set up step we call the function <code>GenInstr</code>. This function will walk into the syntax-tree generating the necessary CIL code using our <code>ILGenerator</code> instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> GenInstr(<span style="color:#66d9ef">object</span> p_instr, System.Type p_expected_type) { 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    System.Type my_type = <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Sequence ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadIntStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadStrStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> IfStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> WhileStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ExprStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BoolStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> TermStmt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> StringLt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BracketExpr) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Variable ) {
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Unexpected code bloc &#34;</span> + p_instr.GetType().Name );
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p_expected_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != p_expected_type ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( my_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) &amp;&amp; p_expected_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">string</span> ) ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Box, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) );
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Callvirt, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">object</span> ).GetMethod( <span style="color:#e6db74">&#34;ToString&#34;</span> ) );
-</span></span><span style="display:flex;"><span>        } 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Can&#39;t coerce a &#34;</span> + my_type.Name + <span style="color:#e6db74">&#34; to a &#34;</span> + p_expected_type.Name );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>As we can see each type of &ldquo;VSL instruction&rdquo; has its own code-generation step. Now we&rsquo;re going to look carefully three of this steps, you can look the other ones at your own time. The three cases discussed below represent the three different types of cases that we are generating code: Code-Generation code in intself, check/modify the Symbol&rsquo;s table and using existing methods.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> GenInstr(<span style="color:#66d9ef">object</span> p_instr, System.Type p_expected_type) { 
+
+    System.Type my_type = <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Sequence ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadIntStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ReadStrStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> IfStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> WhileStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> ExprStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BoolStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> TermStmt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> StringLt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> BracketExpr) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> Variable ) {
+    }
+    <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Unexpected code bloc &#34;</span> + p_instr.GetType().Name );
+    }
+
+    <span style="color:#66d9ef">if</span> (p_expected_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != <span style="color:#66d9ef">null</span> &amp;&amp; my_type != p_expected_type ) {
+        <span style="color:#66d9ef">if</span> ( my_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) &amp;&amp; p_expected_type == <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">string</span> ) ) {
+            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Box, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ) );
+            <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Callvirt, <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">object</span> ).GetMethod( <span style="color:#e6db74">&#34;ToString&#34;</span> ) );
+        } 
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Can&#39;t coerce a &#34;</span> + my_type.Name + <span style="color:#e6db74">&#34; to a &#34;</span> + p_expected_type.Name );
+        }
+    }
+}
+</code></pre></div><p>As we can see each type of &ldquo;VSL instruction&rdquo; has its own code-generation step. Now we&rsquo;re going to look carefully three of this steps, you can look the other ones at your own time. The three cases discussed below represent the three different types of cases that we are generating code: Code-Generation code in intself, check/modify the Symbol&rsquo;s table and using existing methods.</p>
 <h4 id="numberlt"><code>NumberLt</code></h4>
 <p>Let&rsquo;s start with <code>NumberLt</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) { 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Ldc_I4, ( (NumberLt) p_instr ).Value ); my_type = <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ); 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this case we&rsquo;re creating the opcode <code>lcd.i4</code> like the opcode seen in the .NET Framework section of this article, pushing to the stack the value of a number literal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> NumberLt ) { 
+    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Ldc_I4, ( (NumberLt) p_instr ).Value ); my_type = <span style="color:#66d9ef">typeof</span>( <span style="color:#66d9ef">int</span> ); 
+}
+</code></pre></div><p>In this case we&rsquo;re creating the opcode <code>lcd.i4</code> like the opcode seen in the .NET Framework section of this article, pushing to the stack the value of a number literal.</p>
 <h3 id="variable"><code>Variable</code></h3>
 <p>Now we go with <code>Variable</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) { 
-</span></span><span style="display:flex;"><span>    VarStmt declare = (VarStmt) p_instr; 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.symbol_table.ContainsKey( declare.Identifier ) ) { 
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// declare local </span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.symbol_table[ declare.Identifier ] = <span style="color:#66d9ef">this</span>.il.DeclareLocal( <span style="color:#66d9ef">this</span>.TypeOf( declare.Expression ) ); 
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// set the initial value =&gt; &lt; identifier &gt; = &lt; expr &gt; AssignStmt assign = new AssignStmt(); </span>
-</span></span><span style="display:flex;"><span>        assign.Identifier = declare.Identifier; 
-</span></span><span style="display:flex;"><span>        assign.Expression = declare.Expression; <span style="color:#66d9ef">this</span>.GenInstr( assign, <span style="color:#66d9ef">null</span> ); 
-</span></span><span style="display:flex;"><span>    } 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> { 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;A variable with name &#34;&#34; + declare.Identifier + &#34;&#34; was declared before.&#34;</span> ); 
-</span></span><span style="display:flex;"><span>    } 
-</span></span><span style="display:flex;"><span>} 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// [ ... ] </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) { 
-</span></span><span style="display:flex;"><span>    AssignStmt assign = (AssignStmt) p_instr; 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.GenInstr( assign.Expression, <span style="color:#66d9ef">null</span> ); 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.StoreTS( assign.Identifier, <span style="color:#66d9ef">this</span>.TypeOf( assign.Expression ) ); 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this case we&rsquo;re creating a variable. First of all we must check if a variable with the same name exists. If not, we add this new variable to the symbol&rsquo;s table with it&rsquo;s type. Then we create an assignment statement to store the first value of the declared variable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> VarStmt ) { 
+    VarStmt declare = (VarStmt) p_instr; 
+    <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.symbol_table.ContainsKey( declare.Identifier ) ) { 
+        <span style="color:#75715e">// declare local 
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.symbol_table[ declare.Identifier ] = <span style="color:#66d9ef">this</span>.il.DeclareLocal( <span style="color:#66d9ef">this</span>.TypeOf( declare.Expression ) ); 
+        <span style="color:#75715e">// set the initial value =&gt; &lt; identifier &gt; = &lt; expr &gt; AssignStmt assign = new AssignStmt(); 
+</span><span style="color:#75715e"></span>        assign.Identifier = declare.Identifier; 
+        assign.Expression = declare.Expression; <span style="color:#66d9ef">this</span>.GenInstr( assign, <span style="color:#66d9ef">null</span> ); 
+    } 
+    <span style="color:#66d9ef">else</span> { 
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;A variable with name &#34;&#34; + declare.Identifier + &#34;&#34; was declared before.&#34;</span> ); 
+    } 
+} 
+<span style="color:#75715e">// [ ... ] 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> AssignStmt ) { 
+    AssignStmt assign = (AssignStmt) p_instr; 
+    <span style="color:#66d9ef">this</span>.GenInstr( assign.Expression, <span style="color:#66d9ef">null</span> ); 
+    <span style="color:#66d9ef">this</span>.StoreTS( assign.Identifier, <span style="color:#66d9ef">this</span>.TypeOf( assign.Expression ) ); 
+}
+</code></pre></div><p>In this case we&rsquo;re creating a variable. First of all we must check if a variable with the same name exists. If not, we add this new variable to the symbol&rsquo;s table with it&rsquo;s type. Then we create an assignment statement to store the first value of the declared variable.</p>
 <h3 id="printstmt"><code>PrintStmt</code></h3>
 <p>The last case of code-generation we&rsquo;re gonna see is <code>PrintStmt</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) { 
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// &#34;print&#34; statement is an alias for System.Console.WriteLine. </span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// it uses the string case System.Type </span>
-</span></span><span style="display:flex;"><span>    expr_type = <span style="color:#66d9ef">this</span>.TypeOf( ( (PrintStmt) p_instr ).Expression ); 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.GenInstr( ( (PrintStmt) p_instr ).Expression, <span style="color:#66d9ef">null</span> ); 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Call, <span style="color:#66d9ef">typeof</span>( System.Console ).GetMethod( <span style="color:#e6db74">&#34;WriteLine&#34;</span>, <span style="color:#66d9ef">new</span> System.Type[] { expr_type } ) ); 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>In this last case we call a function from <code>System.Console</code> class. See we use <code>Emit.OpCode.Call</code> with a <code>GetMethod</code> to access to method <code>WriteLine</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> ( p_instr <span style="color:#66d9ef">is</span> PrintStmt ) { 
+    <span style="color:#75715e">// &#34;print&#34; statement is an alias for System.Console.WriteLine. 
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// it uses the string case System.Type 
+</span><span style="color:#75715e"></span>    expr_type = <span style="color:#66d9ef">this</span>.TypeOf( ( (PrintStmt) p_instr ).Expression ); 
+    <span style="color:#66d9ef">this</span>.GenInstr( ( (PrintStmt) p_instr ).Expression, <span style="color:#66d9ef">null</span> ); 
+    <span style="color:#66d9ef">this</span>.il.Emit( Emit.OpCodes.Call, <span style="color:#66d9ef">typeof</span>( System.Console ).GetMethod( <span style="color:#e6db74">&#34;WriteLine&#34;</span>, <span style="color:#66d9ef">new</span> System.Type[] { expr_type } ) ); 
+}
+</code></pre></div><p>In this last case we call a function from <code>System.Console</code> class. See we use <code>Emit.OpCode.Call</code> with a <code>GetMethod</code> to access to method <code>WriteLine</code>.</p>
 
             </div>
         </article>
@@ -298,7 +298,7 @@ mul
             <span>&copy; 2024</span>
             <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            
+            <span><a href="http://212.71.254.23/blog/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -316,7 +316,7 @@ mul
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 
