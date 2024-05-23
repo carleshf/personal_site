@@ -266,7 +266,7 @@ draft: false
 
 ### Associate/Substitute Teacher
 
-* [Artificial Vision](https://www.fib.upc.edu/ca/estudis/masters/master-en-intelligencia-artificial/pla-destudis/assignatures/CV-MAI) // [Master in Artificial Intelligence](https://web.ub.edu/en/web/estudis/w/masteruniversitari-M0K05) // Universitat de Barcelona // 2023
+* [Artificial Vision](https://www.fib.upc.edu/ca/estudis/masters/master-en-intelligencia-artificial/pla-destudis/assignatures/CV-MAI) // [Master in Artificial Intelligence](https://web.ub.edu/en/web/estudis/w/masteruniversitari-M0K05) // Universitat de Barcelona // 2023-2024
 
 ### Direction of master thesis in bioinformatics
 
