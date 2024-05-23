@@ -36,7 +36,7 @@ draft: false
   * [eLife](https://elifesciences.org/articles/65310) (2022-03-18)
 
 * __The RD-Connect Genome-Phenome Analysis Platform: Accelerating diagnosis, research, and gene discovery for rare diseases__
-  * S	Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
+  * S Laurie, ..., _C Hernandez-Ferrer_, ..., S Beltran
   * [Human Mutation](https://onlinelibrary.wiley.com/doi/abs/10.1002/humu.24353) (2022-02-17)
 
 * __Variability of multi-omics profiles in a population-based child cohort__
