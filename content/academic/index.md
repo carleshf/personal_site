@@ -5,13 +5,13 @@ draft: false
 ---
 
 
-| Sections                      | Description                                                                   | N  |
-|:------------------------------|:------------------------------------------------------------------------------|:--:|
-| [Articles](#articles)         | Peer-reviewed publications in biomedical and computational sciences.          | 33 |
-| [Talks](#talks)               | Presentations at national and international conferences.                      |  7 |
-| [Poster](#posters)            | Research posters displayed at academic ational and international conferences. | 13 |
-| [Teaching](#formal-teaching)         | Courses and mentorship in bioinformatics and biostatistics.                   |  - |
-| [Certificates](#certificates) | Professional qualifications and certifications earned.                        |  - |
+| Sections                      | Description                                                                    | N  |
+|:------------------------------|:-------------------------------------------------------------------------------|:--:|
+| [Articles](#articles)         | Peer-reviewed publications in biomedical and computational sciences.           | 33 |
+| [Talks](#talks)               | Presentations at national and international conferences.                       |  7 |
+| [Poster](#posters)            | Research posters displayed at academic national and international conferences. | 13 |
+| [Teaching](#formal-teaching)  | Courses and mentorship in bioinformatics and biostatistics.                    |  - |
+| [Certificates](#certificates) | Professional qualifications and certifications earned.                         |  - |
 
 ## Articles
 
