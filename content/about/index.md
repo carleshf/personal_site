@@ -24,10 +24,10 @@ I hold a [B.Sc. in Computer Engineering](https://www.uab.cat/web/estudiar/ehea-d
 
 My professional experience includes roles as a software engineer and data engineer at various institutions:
 
-* [Departament de Telecomunicació i d'Enginyeria de Sistemes](https://www.uab.cat/departament/telecomunicacio-enginyeria-sistemes/) at UAB
-* [Institut de Física d’Altes Energies (IFAE)](https://www.ifae.es/)
-* [Centre Nacional d’Anàlisi Genòmica (CNAG)](https://cnag.es/)
-* [Microsoft](https://www.microsoft.com/) ([Microsoft Rewards](https://www.microsoft.com/rewards))
+* At [Microsoft](https://www.microsoft.com/) ([Microsoft Rewards](https://www.microsoft.com/rewards)) improving the product's ETLs and designing the first recommendation system for the platform.
+* At [Centre Nacional d’Anàlisi Genòmica (CNAG)](https://cnag.es/) improving the internal ETL for genomics data and developing a new analytical workflow.
+* At [Institut de Física d’Altes Energies (IFAE)](https://www.ifae.es/) working for the [PAU](https://pausurvey.org/) project.
+* At [Departament de Telecomunicació i d'Enginyeria de Sistemes](https://www.uab.cat/departament/telecomunicacio-enginyeria-sistemes/), from the UAB, developing the infrastructure for a new teaching methodology.
 
 ## Contact
 

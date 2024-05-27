@@ -5,7 +5,7 @@
     <link>http://212.71.254.23/tags/java/</link>
     <description>Recent content in java on Carles Hernandez-Ferrer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 18 Dec 2015 16:12:12 +0200</lastBuildDate><atom:link href="http://212.71.254.23/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -16,8 +16,8 @@
       <guid>http://212.71.254.23/fun/winter_card_2015-2016/</guid>
       <description>It&amp;rsquo;s time for the geek christmas card. This year I wrote it in JAVA, and it can generate, randomly, one of four different outputs.
 It is the simplest card I coded but I made it thinking in simplicity.
- Winter card 2015 - 2014: ASCI art
-  The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
+Winter card 2015 - 2014: ASCI art
+The source code for that can be found at my christmas-card&amp;rsquo;s github (link), inside the folder mc201516. If you take care, you will find a two-output version of this card coded in R 😁.</description>
     </item>
     
   </channel>
