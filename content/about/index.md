@@ -16,11 +16,11 @@ Before my current role, my research interests focused on the relationships betwe
 
 * __Post-Doctoral Fellow__, at the [Centre Nacional d’Anàlisi Genòmica (CNAG)](https://cnag.es/), working on medical informatics for rare disease diagnostics.
 * __Post-Doctoral Fellow__, at the [Computational Health Informatics Program](https://www.chip.org/) of [Boston Children’s Hospital](https://www.childrenshospital.org/) and the [Pediatrics Department](https://connects.catalyst.harvard.edu/Profiles/display/Person/171981) of [Harvard Medical School](https://hms.harvard.edu/), where I studied the relationship between environmental pollutants and autism.
-* __Ph.D. Candidate__, at the [Bioinformatics Research Group in Epidemiology](http://brge.isglobal.org/) from the Barcelona [Institute for Global Health (ISGlobal)](https://www.isglobal.org/) and [Universitat Pompeu Fabra (UPF)](https://www.upf.edu/), researching the impact of ultraviolet light on human health and the effects of multiple environmental factors on human molecular signatures within the framework of the HELIX project.
+* __Ph.D. Candidate__, at the [Bioinformatics Research Group in Epidemiology](http://brge.isglobal.org/) from the Barcelona [Institute for Global Health (ISGlobal)](https://www.isglobal.org/), researching the impact of ultraviolet light on human health and the effects of multiple environmental factors on human molecular signatures within the framework of the HELIX project.
 
 ### Academic and Professional Background
 
-I hold a [B.Sc. in Computer Engineering](https://www.uab.cat/web/estudiar/ehea-degrees/general-information/computer-engineering-1216708259085.html?param1=1263367146646) from [Universitat Autònoma de Barcelona (UAB)](https://www.uab.cat/) and an [M.Sc. in Bioinformatics](http://mscbioinformatics.uab.cat/) from the same university.
+I hold a [B.Sc. in Computer Engineering](https://www.uab.cat/web/estudiar/ehea-degrees/general-information/computer-engineering-1216708259085.html?param1=1263367146646) from [Universitat Autònoma de Barcelona (UAB)](https://www.uab.cat/), an [M.Sc. in Bioinformatics](http://mscbioinformatics.uab.cat/) from the same university, and a [Ph.D. in Biomedicine](https://www.upf.edu/web/phd-biomedicine) from [Universitat Pompeu Fabra (UPF)](https://www.upf.edu/).
 
 My professional experience includes roles as a software engineer and data engineer at various institutions:
 
