@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Carles Hernandez-Ferrer ">
 <meta name="description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens." />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens." />
 <meta name="keywords" content="bioinformatics, software, data analysis, .net, Csharp" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,7 +35,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
 
 <meta itemprop="name" content="Building a Compiler in .Net  (2 of 4)">
 <meta itemprop="description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens."><meta itemprop="datePublished" content="2012-01-25T00:00:00+02:00" />
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens."><meta itemprop="datePublished" content="2012-01-25T00:00:00+02:00" />
 <meta itemprop="dateModified" content="2012-01-25T00:00:00+02:00" />
 <meta itemprop="wordCount" content="2475"><meta itemprop="image" content="http://212.71.254.23"/>
 <meta itemprop="keywords" content=".net,Csharp," />
@@ -44,7 +44,7 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
 
 <meta name="twitter:title" content="Building a Compiler in .Net  (2 of 4)"/>
 <meta name="twitter:description" content="This post is part of a series of 4. Here you have the links to each one:
-Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4) Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens."/>
+ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Building a Compiler in .Net (3 of 4) Building a Compiler in .Net (4 of 4)   Introduction In this second post we will implement the two first steps of a compiler: Scanner and Parser. Remember from part 1 a Scanner, also known as Lexical analyser, reads the characters from source code file and compose tokens."/>
 
 
 
@@ -165,361 +165,361 @@ Building a Compiler in .Net (1 of 4) Building a Compiler in .Net (2 of 4) Buildi
 &lt; number_lt &gt; ::= &lt; digit &gt;+
 &lt; digit &gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-&lt; string_lt &gt; ::= &#34; &lt; string_elem &gt;* &#34;
-&lt; string_elem &gt; ::= &lt; any char other than &#34; &gt;
+&lt; string_lt &gt; ::= &quot; &lt; string_elem &gt;* &quot;
+&lt; string_elem &gt; ::= &lt; any char other than &quot; &gt;
 </code></pre><p>Take care with the grammar. A good grammar will be longer than this one: Or numbers can&rsquo;t be negative, we haven&rsquo;t specified how big the numbers can be (32 bit integer?). A true and complete BNF grammar definition would precisely define all these details. By the way, in our VSLCompiler v0 this will be our grammar (If I have time, in the future, I will try to improve the grammar and the compiler for VSL).</p>
 <p>Here we can see a sample of a VSL program:</p>
 <pre tabindex="0"><code>var times = 0;
-print &#34;Type the number:&#34;;
+print &quot;Type the number:&quot;;
 read_int times;
 
 var cnt = 0;
 while cnt &lt;&gt; times do
-    print &#34;lambda-function&#34;;
+    print &quot;lambda-function&quot;;
     cnt = cnt + 1;
 endwhile;
 </code></pre><h2 id="implementation">Implementation</h2>
 <h3 id="scanner">Scanner</h3>
 <p>The primary job of the Scanner is to break the input text in tokens. It&rsquo;s in charge to determinate which tokens will be sent to the Parser so it&rsquo;s able to throw out things that are not defined in the grammar (like tabs, comments,&hellip;).</p>
 <p>So, at the end, we need to define with symbols will be interpreted as operands (in VSL case: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>=</code>, <code>==</code>, <code>&lt;&gt;</code>) or special operands (<code>(</code>, <code>)</code>, <code>;</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> tokens { Addition, Substraction, Division, Production, Assignment, Equating, Differentiation, LBracket, RBracket, Semicolon };
-</span></span></code></pre></div><p>The Scanner implemented for VSL is as simple as the language. The structure of the class is the following one:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Scanner</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> tokens { 
-</span></span><span style="display:flex;"><span>        Addition, Substraction, Division, Production, 
-</span></span><span style="display:flex;"><span>        Assignment, Equating, Differentiation,
-</span></span><span style="display:flex;"><span>        LBracket, RBracket, Semicolon 
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; Tokens {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.result; }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Scan( IO.TextReader p_input ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    &lt;/code&gt;&lt;/pre&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>With this structure we get an &ldquo;input text stream&rdquo; with a <code>TextReader</code> object and we will process it in <code>Scan</code> method. This method is, basically, a loop that walks over every character trying to recognise it according to the grammar. Every time a character is recognised a token will be formed and pushed into the tokens-list <code>result</code>. We assume that when we find a character <code>&quot;</code> it will encapsulate a string token.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Scan( IO.TextReader p_input ) { 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) { 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsWhiteSpace( read_ch ) ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Skiping white spaces</span>
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsLetter( read_ch ) || read_ch == <span style="color:#e6db74">&#39;_&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Reading an identifier</span>
-</span></span><span style="display:flex;"><span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> ( <span style="color:#66d9ef">char</span>.IsLetter( read_ch ) || read_ch == <span style="color:#e6db74">&#39;_&#39;</span> ) {
-</span></span><span style="display:flex;"><span>                accum.Append( read_ch );
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( accum.ToString() );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;&#34;&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Reading a string literal</span>
-</span></span><span style="display:flex;"><span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
-</span></span><span style="display:flex;"><span>            p_input.Read(); <span style="color:#75715e">// Skiping &#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">do</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated string literal.&#34;</span>);
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( read_ch != <span style="color:#e6db74">&#39;&#34;&#39;</span> ) {
-</span></span><span style="display:flex;"><span>                    accum.Append( read_ch );
-</span></span><span style="display:flex;"><span>                    p_input.Read();
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">while</span> ( read_ch != <span style="color:#e6db74">&#39;&#34;&#39;</span> );
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( accum ); <span style="color:#75715e">// NO .ToString(). We will use type TextBuffer in Parser.</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsDigit( read_ch ) ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Reading a numeric literal</span>
-</span></span><span style="display:flex;"><span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">bool</span> is_float = <span style="color:#66d9ef">false</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span>( <span style="color:#66d9ef">char</span>.IsDigit( read_ch ) || ( read_ch == <span style="color:#e6db74">&#39;.&#39;</span> ) ) {
-</span></span><span style="display:flex;"><span>                accum.Append( read_ch );
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;.&#39;</span> ) {
-</span></span><span style="display:flex;"><span>                    is_float = <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( is_float ) {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( <span style="color:#66d9ef">float</span>.Parse( accum.ToString() ) );
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( <span style="color:#66d9ef">int</span>.Parse( accum.ToString() ) );
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;+&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Addition );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;-&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Substraction );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;*&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Production );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;/&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Division );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;=&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) &amp;&amp; ( p_input.Peek() == <span style="color:#e6db74">&#39;=&#39;</span> ) ) {
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Equating );
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Assignment );
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;&lt;&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) || ( p_input.Peek() != <span style="color:#e6db74">&#39;&gt;&#39;</span> ) ) {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated operation literal.&#34;</span>);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Differentiation );
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;;&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Semicolon );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;(&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) &amp;&amp; ( p_input.Peek() == <span style="color:#e6db74">&#39;*&#39;</span> ) ) {
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">bool</span> end_comm = <span style="color:#66d9ef">false</span>;
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">do</span> {
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
-</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated comment.&#34;</span>);
-</span></span><span style="display:flex;"><span>                    }
-</span></span><span style="display:flex;"><span>                    read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
-</span></span><span style="display:flex;"><span>                    p_input.Read();
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> ( ( read_ch == <span style="color:#e6db74">&#39;*&#39;</span> ) &amp;&amp; (p_input.Peek() == <span style="color:#e6db74">&#39;)&#39;</span>) ) {
-</span></span><span style="display:flex;"><span>                        p_input.Read();
-</span></span><span style="display:flex;"><span>                        end_comm = <span style="color:#66d9ef">true</span>;
-</span></span><span style="display:flex;"><span>                    }
-</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">while</span> ( !end_comm );
-</span></span><span style="display:flex;"><span>                p_input.Read();
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.LBracket );
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated operation.&#34;</span>);
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;)&#39;</span> ) {
-</span></span><span style="display:flex;"><span>            p_input.Read();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.RBracket );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>At this point we have all the tokens in <code>result</code>, ready to be sent to Parser.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> tokens { Addition, Substraction, Division, Production, Assignment, Equating, Differentiation, LBracket, RBracket, Semicolon };
+</code></pre></div><p>The Scanner implemented for VSL is as simple as the language. The structure of the class is the following one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Scanner</span> {
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> tokens { 
+        Addition, Substraction, Division, Production, 
+        Assignment, Equating, Differentiation,
+        LBracket, RBracket, Semicolon 
+    };
+
+    <span style="color:#66d9ef">public</span> Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; Tokens {
+        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.result; }
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Scan( IO.TextReader p_input ) {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+    &lt;/code&gt;&lt;/pre&gt;
+
+}
+</code></pre></div><p>With this structure we get an &ldquo;input text stream&rdquo; with a <code>TextReader</code> object and we will process it in <code>Scan</code> method. This method is, basically, a loop that walks over every character trying to recognise it according to the grammar. Every time a character is recognised a token will be formed and pushed into the tokens-list <code>result</code>. We assume that when we find a character <code>&quot;</code> it will encapsulate a string token.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Scan( IO.TextReader p_input ) { 
+    <span style="color:#66d9ef">while</span> ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) { 
+        <span style="color:#66d9ef">char</span> read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
+        <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsWhiteSpace( read_ch ) ) {
+            <span style="color:#75715e">// Skiping white spaces
+</span><span style="color:#75715e"></span>            p_input.Read();
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsLetter( read_ch ) || read_ch == <span style="color:#e6db74">&#39;_&#39;</span> ) {
+            <span style="color:#75715e">// Reading an identifier
+</span><span style="color:#75715e"></span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
+            <span style="color:#66d9ef">while</span> ( <span style="color:#66d9ef">char</span>.IsLetter( read_ch ) || read_ch == <span style="color:#e6db74">&#39;_&#39;</span> ) {
+                accum.Append( read_ch );
+                p_input.Read();
+
+                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
+                    <span style="color:#66d9ef">break</span>;
+                }
+
+                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
+            }
+            <span style="color:#66d9ef">this</span>.result.Add( accum.ToString() );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;&#34;&#39;</span> ) {
+            <span style="color:#75715e">// Reading a string literal
+</span><span style="color:#75715e"></span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
+            p_input.Read(); <span style="color:#75715e">// Skiping &#34;
+</span><span style="color:#75715e"></span>
+            <span style="color:#66d9ef">do</span> {
+                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
+                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated string literal.&#34;</span>);
+                }
+                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
+                <span style="color:#66d9ef">if</span> ( read_ch != <span style="color:#e6db74">&#39;&#34;&#39;</span> ) {
+                    accum.Append( read_ch );
+                    p_input.Read();
+                }
+            } <span style="color:#66d9ef">while</span> ( read_ch != <span style="color:#e6db74">&#39;&#34;&#39;</span> );
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( accum ); <span style="color:#75715e">// NO .ToString(). We will use type TextBuffer in Parser.
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">char</span>.IsDigit( read_ch ) ) {
+            <span style="color:#75715e">// Reading a numeric literal
+</span><span style="color:#75715e"></span>            Text.StringBuilder accum = <span style="color:#66d9ef">new</span> Text.StringBuilder();
+            <span style="color:#66d9ef">bool</span> is_float = <span style="color:#66d9ef">false</span>;
+            <span style="color:#66d9ef">while</span>( <span style="color:#66d9ef">char</span>.IsDigit( read_ch ) || ( read_ch == <span style="color:#e6db74">&#39;.&#39;</span> ) ) {
+                accum.Append( read_ch );
+                p_input.Read();
+
+                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
+                    <span style="color:#66d9ef">break</span>;
+                }
+
+                <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;.&#39;</span> ) {
+                    is_float = <span style="color:#66d9ef">true</span>;
+                }
+
+                read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
+            }
+
+            <span style="color:#66d9ef">if</span> ( is_float ) {
+                <span style="color:#66d9ef">this</span>.result.Add( <span style="color:#66d9ef">float</span>.Parse( accum.ToString() ) );
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.result.Add( <span style="color:#66d9ef">int</span>.Parse( accum.ToString() ) );
+            }
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;+&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Addition );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;-&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Substraction );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;*&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Production );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;/&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Division );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;=&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) &amp;&amp; ( p_input.Peek() == <span style="color:#e6db74">&#39;=&#39;</span> ) ) {
+                p_input.Read();
+                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Equating );
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Assignment );
+            }
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;&lt;&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) || ( p_input.Peek() != <span style="color:#e6db74">&#39;&gt;&#39;</span> ) ) {
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated operation literal.&#34;</span>);
+            }
+            <span style="color:#66d9ef">else</span> {
+                p_input.Read();
+                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Differentiation );
+            }
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;;&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.Semicolon );
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;(&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">if</span> ( ( p_input.Peek() != -<span style="color:#ae81ff">1</span> ) &amp;&amp; ( p_input.Peek() == <span style="color:#e6db74">&#39;*&#39;</span> ) ) {
+                p_input.Read();
+                <span style="color:#66d9ef">bool</span> end_comm = <span style="color:#66d9ef">false</span>;
+                <span style="color:#66d9ef">do</span> {
+                    <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
+                        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated comment.&#34;</span>);
+                    }
+                    read_ch = (<span style="color:#66d9ef">char</span>) p_input.Peek();
+                    p_input.Read();
+                    <span style="color:#66d9ef">if</span> ( ( read_ch == <span style="color:#e6db74">&#39;*&#39;</span> ) &amp;&amp; (p_input.Peek() == <span style="color:#e6db74">&#39;)&#39;</span>) ) {
+                        p_input.Read();
+                        end_comm = <span style="color:#66d9ef">true</span>;
+                    }
+                } <span style="color:#66d9ef">while</span> ( !end_comm );
+                p_input.Read();
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.LBracket );
+                <span style="color:#66d9ef">if</span> ( p_input.Peek() == -<span style="color:#ae81ff">1</span> ) {
+                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Unterminated operation.&#34;</span>);
+                }
+            }
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( read_ch == <span style="color:#e6db74">&#39;)&#39;</span> ) {
+            p_input.Read();
+            <span style="color:#66d9ef">this</span>.result.Add( Scanner.tokens.RBracket );
+        }
+    }
+}
+</code></pre></div><p>At this point we have all the tokens in <code>result</code>, ready to be sent to Parser.</p>
 <h3 id="parser">Parser</h3>
 <p>The Parser developed for Very Simple Language has a umber of jobs: The main one is to ensure source program conforms to the grammar specification (if not it raises an error). It also creates the syntax-tree, the unique representation of the source code, consumed by Code Generator, and figures out what runtime types to use.</p>
 <p>On the first hand we are going to take a look the the syntax-tree structure. In my mind I have developed the syntax-tree as a instanced-class tree, lets see:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstrStmt</span> { }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// var &lt; identifier &gt; = &lt; expr_stmt &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VarStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; <span style="color:#66d9ef">public</span> ExprStmt Expression; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; identifier &gt; =  </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AssignStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; <span style="color:#66d9ef">public</span> ExprStmt Expression; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// read_int &lt; identifier &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReadIntStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// read_str &lt; identifier &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReadStrStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// print &lt; expr_stmt &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrintStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Expression; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; instr_stmt &gt;; &lt; instr_stmt &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sequence</span> : InstrStmt { <span style="color:#66d9ef">public</span> InstrStmt First; <span style="color:#66d9ef">public</span> InstrStmt Second; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// if &lt; expr_stmt &gt; then &lt; instr_stmt &gt; { else &lt; instr_stmt &gt; } endif </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IfStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Condition; <span style="color:#66d9ef">public</span> InstrStmt If_Body; <span style="color:#66d9ef">public</span> InstrStmt Else_Body; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// while &lt; expr_stmt &gt; do &lt; instr_stmt &gt; endwhile </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WhileStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Condition; <span style="color:#66d9ef">public</span> InstrStmt While_Body; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; expr_stmt &gt; = &lt; bool_stmt &gt; {&lt; bool_op &gt; &lt; bool_stmt &gt; } </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExprStmt</span> { <span style="color:#66d9ef">public</span> BoolStmt Right; <span style="color:#66d9ef">public</span> BoolStmt Left; <span style="color:#66d9ef">public</span> BoolOp Op; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; bool_op &gt; ::= == | &lt;&gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> BoolOp { Equating, Differentiation };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; bool_stmt &gt; ::= &lt; term_stmt &gt; { &lt; term_op &gt; &lt; term_stmt &gt; } </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoolStmt</span> { <span style="color:#66d9ef">public</span> TermStmt Right; <span style="color:#66d9ef">public</span> TermStmt Left; <span style="color:#66d9ef">public</span> TermOp Op; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; term_op &gt; := + | - </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> TermOp { Addition, Substraction };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; term_stmt &gt; ::= &lt; factor_stmt &gt; { &lt; factor_op &gt; &lt; factor_stmt &gt; } </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TermStmt</span> { <span style="color:#66d9ef">public</span> FactorStmt Right; <span style="color:#66d9ef">public</span> FactorStmt Left; <span style="color:#66d9ef">public</span> FactorOp Op; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; factor_op &gt; ::= * | / </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> FactorOp { Division, Production };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; factor_stmt &gt; ::= &lt; identifier &gt; // | &lt; number &gt; // | &lt; string &gt; // | ( &lt; expr_stm &gt; ) </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FactorStmt</span> { }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; string &gt; ::= &#34; &lt; string_elem &gt;* &#34; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Value; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; int &gt; ::= &lt; digit &gt;+ </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IntLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Value; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FloatLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Value; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt; ident &gt; ::= &lt; char &gt; &lt; ident_rest &gt;* // &lt; ident_rest &gt; ::= &lt; char &gt; | &lt; digit &gt; </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Variable</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// ( &lt; expr_stm &gt; ) </span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BracketExpr</span> : FactorStmt { <span style="color:#66d9ef">public</span> ExprStmt Expression; }
-</span></span></code></pre></div><p>I prefer to think syntax-tree keeps the structure of the source code according to the language&rsquo;s grammar. Sure you can find a different way to implement the syntax-tree (may be an abstract syntax-tree).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstrStmt</span> { }
+
+<span style="color:#75715e">// var &lt; identifier &gt; = &lt; expr_stmt &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VarStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; <span style="color:#66d9ef">public</span> ExprStmt Expression; }
+
+<span style="color:#75715e">// &lt; identifier &gt; =  
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AssignStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; <span style="color:#66d9ef">public</span> ExprStmt Expression; }
+
+<span style="color:#75715e">// read_int &lt; identifier &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReadIntStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
+
+<span style="color:#75715e">// read_str &lt; identifier &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReadStrStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
+
+<span style="color:#75715e">// print &lt; expr_stmt &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrintStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Expression; }
+
+<span style="color:#75715e">// &lt; instr_stmt &gt;; &lt; instr_stmt &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sequence</span> : InstrStmt { <span style="color:#66d9ef">public</span> InstrStmt First; <span style="color:#66d9ef">public</span> InstrStmt Second; }
+
+<span style="color:#75715e">// if &lt; expr_stmt &gt; then &lt; instr_stmt &gt; { else &lt; instr_stmt &gt; } endif 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IfStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Condition; <span style="color:#66d9ef">public</span> InstrStmt If_Body; <span style="color:#66d9ef">public</span> InstrStmt Else_Body; }
+
+<span style="color:#75715e">// while &lt; expr_stmt &gt; do &lt; instr_stmt &gt; endwhile 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WhileStmt</span> : InstrStmt { <span style="color:#66d9ef">public</span> ExprStmt Condition; <span style="color:#66d9ef">public</span> InstrStmt While_Body; }
+
+<span style="color:#75715e">// &lt; expr_stmt &gt; = &lt; bool_stmt &gt; {&lt; bool_op &gt; &lt; bool_stmt &gt; } 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExprStmt</span> { <span style="color:#66d9ef">public</span> BoolStmt Right; <span style="color:#66d9ef">public</span> BoolStmt Left; <span style="color:#66d9ef">public</span> BoolOp Op; }
+
+<span style="color:#75715e">// &lt; bool_op &gt; ::= == | &lt;&gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> BoolOp { Equating, Differentiation };
+
+<span style="color:#75715e">// &lt; bool_stmt &gt; ::= &lt; term_stmt &gt; { &lt; term_op &gt; &lt; term_stmt &gt; } 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BoolStmt</span> { <span style="color:#66d9ef">public</span> TermStmt Right; <span style="color:#66d9ef">public</span> TermStmt Left; <span style="color:#66d9ef">public</span> TermOp Op; }
+
+<span style="color:#75715e">// &lt; term_op &gt; := + | - 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> TermOp { Addition, Substraction };
+
+<span style="color:#75715e">// &lt; term_stmt &gt; ::= &lt; factor_stmt &gt; { &lt; factor_op &gt; &lt; factor_stmt &gt; } 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TermStmt</span> { <span style="color:#66d9ef">public</span> FactorStmt Right; <span style="color:#66d9ef">public</span> FactorStmt Left; <span style="color:#66d9ef">public</span> FactorOp Op; }
+
+<span style="color:#75715e">// &lt; factor_op &gt; ::= * | / 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> FactorOp { Division, Production };
+
+<span style="color:#75715e">// &lt; factor_stmt &gt; ::= &lt; identifier &gt; // | &lt; number &gt; // | &lt; string &gt; // | ( &lt; expr_stm &gt; ) 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FactorStmt</span> { }
+
+<span style="color:#75715e">// &lt; string &gt; ::= &#34; &lt; string_elem &gt;* &#34; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Value; }
+
+<span style="color:#75715e">// &lt; int &gt; ::= &lt; digit &gt;+ 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IntLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Value; }
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FloatLt</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Value; }
+
+<span style="color:#75715e">// &lt; ident &gt; ::= &lt; char &gt; &lt; ident_rest &gt;* // &lt; ident_rest &gt; ::= &lt; char &gt; | &lt; digit &gt; 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Variable</span> : FactorStmt { <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Identifier; }
+
+<span style="color:#75715e">// ( &lt; expr_stm &gt; ) 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BracketExpr</span> : FactorStmt { <span style="color:#66d9ef">public</span> ExprStmt Expression; }
+</code></pre></div><p>I prefer to think syntax-tree keeps the structure of the source code according to the language&rsquo;s grammar. Sure you can find a different way to implement the syntax-tree (may be an abstract syntax-tree).</p>
 <p>There are many algorithms available for parsing implementation. The definition of our grammar implies we will use a LL strategy (Left-to-right, Left-most derivation) and a top-down parser (for more information you can see LR, and bottom-up grammars). At the end, LL, simple means that it reads text from left to down, building the syntax-tree based on the next available token.</p>
 <p>The constructor for my Parser class is as simply as Scanner ones. It takes a list of tokens that was created by the scanner:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parser</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; tokens;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> InstrStmt result;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Parser ( Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; p_tokens ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.tokens = p_tokens;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.index = <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.result = <span style="color:#66d9ef">this</span>.ParseInstr();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.index != <span style="color:#66d9ef">this</span>.tokens.Count) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Expected EOF&#34;</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> InstrStmt Result {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> result; }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> InstrStmt ParseInstr() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> ExprStmt ParseExpr() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> BoolStmt ParseBool() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> TermStmt ParseTerm() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> FactorStmt ParseFctr() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TODO</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The core of the parsing work is done by <code>ParseInstr</code> method. As we can see in the code before it returns a <code>InstrStmt</code> node (which serves as a root node of the syntax-tree). The Parser traverses the list of tokens using an index as the current position. For each token it tries to assign to an &ldquo;Instruction case&rdquo;, in other case it raises an error. In each &ldquo;instruction case&rdquo; the <code>ParseInstr</code> will analyses the statement using the other Parsing methods (<code>ParseExprs</code>, <code>ParseBool</code>, <code>ParseTerm</code>, <code>ParseFactr</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parser</span> {
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> index;
+    <span style="color:#66d9ef">private</span> Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; tokens;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> InstrStmt result;
+
+    <span style="color:#66d9ef">public</span> Parser ( Collections.IList&lt;<span style="color:#66d9ef">object</span>&gt; p_tokens ) {
+        <span style="color:#66d9ef">this</span>.tokens = p_tokens;
+        <span style="color:#66d9ef">this</span>.index = <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">this</span>.result = <span style="color:#66d9ef">this</span>.ParseInstr();
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.index != <span style="color:#66d9ef">this</span>.tokens.Count) {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Expected EOF&#34;</span>);
+        }
+    }
+
+    <span style="color:#66d9ef">public</span> InstrStmt Result {
+        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> result; }
+    }
+
+    <span style="color:#66d9ef">private</span> InstrStmt ParseInstr() {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">private</span> ExprStmt ParseExpr() {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">private</span> BoolStmt ParseBool() {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">private</span> TermStmt ParseTerm() {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">private</span> FactorStmt ParseFctr() {
+        <span style="color:#75715e">// TODO
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>The core of the parsing work is done by <code>ParseInstr</code> method. As we can see in the code before it returns a <code>InstrStmt</code> node (which serves as a root node of the syntax-tree). The Parser traverses the list of tokens using an index as the current position. For each token it tries to assign to an &ldquo;Instruction case&rdquo;, in other case it raises an error. In each &ldquo;instruction case&rdquo; the <code>ParseInstr</code> will analyses the statement using the other Parsing methods (<code>ParseExprs</code>, <code>ParseBool</code>, <code>ParseTerm</code>, <code>ParseFactr</code>).</p>
 <p>We are going to see an example of ParseInstr: <code>print 3;</code>.</p>
 <p>Firstly we see the <code>ParseIntr</code> statement to parse this order:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;print&#34;</span> ) ) { 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.index++; 
-</span></span><span style="display:flex;"><span>    PrintStmt print_ = <span style="color:#66d9ef">new</span> PrintStmt(); 
-</span></span><span style="display:flex;"><span>    print_.Expression = <span style="color:#66d9ef">this</span>.ParseExpr(); 
-</span></span><span style="display:flex;"><span>    result = print_; 
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The <code>print</code> token is discarded and we call <code>ParseExpr</code> to obtain the expression needed after the token <code>print</code> (grammar rules). We follow the call-list until <code>ParseFactr</code>. The implementation of <code>ParseFactr</code> is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> FactorStmt ParseFctr() { 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.index == <span style="color:#66d9ef">this</span>.tokens.Count ) { 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected statement, got EOF.&#34;</span> ); 
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> Text.StringBuilder ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> strValue = ( (Text.StringBuilder) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ] ).ToString();
-</span></span><span style="display:flex;"><span>        StringLt stringLiteral = <span style="color:#66d9ef">new</span> StringLt();
-</span></span><span style="display:flex;"><span>        stringLiteral.Value = strValue;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> stringLiteral;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">int</span> ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> intValue = (<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
-</span></span><span style="display:flex;"><span>        IntLt intLiteral = <span style="color:#66d9ef">new</span> IntLt();
-</span></span><span style="display:flex;"><span>        intLiteral.Value = intValue;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> intLiteral;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">float</span> ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> floatValue = (<span style="color:#66d9ef">float</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
-</span></span><span style="display:flex;"><span>        FloatLt floatLiteral = <span style="color:#66d9ef">new</span> FloatLt();
-</span></span><span style="display:flex;"><span>        floatLiteral.Value = floatValue;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> floatLiteral;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">string</span> ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">string</span> identifier = (<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
-</span></span><span style="display:flex;"><span>        Variable variable = <span style="color:#66d9ef">new</span> Variable();
-</span></span><span style="display:flex;"><span>        variable.Identifier = identifier;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> variable;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.LBracket ) ) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.index++; <span style="color:#75715e">// LBracket</span>
-</span></span><span style="display:flex;"><span>        BracketExpr expr = <span style="color:#66d9ef">new</span> BracketExpr();
-</span></span><span style="display:flex;"><span>        expr.Expression = <span style="color:#66d9ef">this</span>.ParseExpr();
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.RBracket ) ) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.index++; <span style="color:#75715e">// RBracket</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> expr;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected &#34;</span>right bracket<span style="color:#e6db74">&#34; after &#34;</span>left bracket<span style="color:#e6db74">&#34; and &#34;</span>expression<span style="color:#e6db74">&#34;.&#34;</span> );
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected &#34;</span><span style="color:#66d9ef">string</span> literal<span style="color:#e6db74">&#34;, &#34;</span><span style="color:#66d9ef">int</span> literal<span style="color:#e6db74">&#34;, &#34;</span><span style="color:#66d9ef">float</span> literal<span style="color:#e6db74">&#34;, or variable.&#34;</span> );
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Here, at the lowest level of the parsing function we define with is the operand of each operation. In this case we return a int literal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;print&#34;</span> ) ) { 
+    <span style="color:#66d9ef">this</span>.index++; 
+    PrintStmt print_ = <span style="color:#66d9ef">new</span> PrintStmt(); 
+    print_.Expression = <span style="color:#66d9ef">this</span>.ParseExpr(); 
+    result = print_; 
+}
+</code></pre></div><p>The <code>print</code> token is discarded and we call <code>ParseExpr</code> to obtain the expression needed after the token <code>print</code> (grammar rules). We follow the call-list until <code>ParseFactr</code>. The implementation of <code>ParseFactr</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">private</span> FactorStmt ParseFctr() { 
+    <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.index == <span style="color:#66d9ef">this</span>.tokens.Count ) { 
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected statement, got EOF.&#34;</span> ); 
+    }
+
+    <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> Text.StringBuilder ) {
+        <span style="color:#66d9ef">string</span> strValue = ( (Text.StringBuilder) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ] ).ToString();
+        StringLt stringLiteral = <span style="color:#66d9ef">new</span> StringLt();
+        stringLiteral.Value = strValue;
+        <span style="color:#66d9ef">return</span> stringLiteral;
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">int</span> ) {
+        <span style="color:#66d9ef">int</span> intValue = (<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
+        IntLt intLiteral = <span style="color:#66d9ef">new</span> IntLt();
+        intLiteral.Value = intValue;
+        <span style="color:#66d9ef">return</span> intLiteral;
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">float</span> ) {
+        <span style="color:#66d9ef">float</span> floatValue = (<span style="color:#66d9ef">float</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
+        FloatLt floatLiteral = <span style="color:#66d9ef">new</span> FloatLt();
+        floatLiteral.Value = floatValue;
+        <span style="color:#66d9ef">return</span> floatLiteral;
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ] <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">string</span> ) {
+        <span style="color:#66d9ef">string</span> identifier = (<span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index++ ];
+        Variable variable = <span style="color:#66d9ef">new</span> Variable();
+        variable.Identifier = identifier;
+        <span style="color:#66d9ef">return</span> variable;
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.LBracket ) ) {
+        <span style="color:#66d9ef">this</span>.index++; <span style="color:#75715e">// LBracket
+</span><span style="color:#75715e"></span>        BracketExpr expr = <span style="color:#66d9ef">new</span> BracketExpr();
+        expr.Expression = <span style="color:#66d9ef">this</span>.ParseExpr();
+        <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.RBracket ) ) {
+            <span style="color:#66d9ef">this</span>.index++; <span style="color:#75715e">// RBracket
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> expr;
+        }
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected &#34;</span>right bracket<span style="color:#e6db74">&#34; after &#34;</span>left bracket<span style="color:#e6db74">&#34; and &#34;</span>expression<span style="color:#e6db74">&#34;.&#34;</span> );
+        }
+    }
+    <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception( <span style="color:#e6db74">&#34;Expected &#34;</span><span style="color:#66d9ef">string</span> literal<span style="color:#e6db74">&#34;, &#34;</span><span style="color:#66d9ef">int</span> literal<span style="color:#e6db74">&#34;, &#34;</span><span style="color:#66d9ef">float</span> literal<span style="color:#e6db74">&#34;, or variable.&#34;</span> );
+    }
+}
+</code></pre></div><p>Here, at the lowest level of the parsing function we define with is the operand of each operation. In this case we return a int literal.</p>
 <p>Consecutive instructions are allows using the &ldquo;Squence token&rdquo;, implemented in <code>ParseInstr</code> as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.index &lt; <span style="color:#66d9ef">this</span>.tokens.Count &amp;&amp; <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.Semicolon ) ) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.index++;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.index &lt; <span style="color:#66d9ef">this</span>.tokens.Count &amp;&amp; !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;else&#34;</span> ) &amp;&amp;
-</span></span><span style="display:flex;"><span>            !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;endif&#34;</span> ) &amp;&amp; !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;endwhile&#34;</span> ) ) {
-</span></span><span style="display:flex;"><span>        Sequence sqc = <span style="color:#66d9ef">new</span> Sequence();
-</span></span><span style="display:flex;"><span>        sqc.First = result;
-</span></span><span style="display:flex;"><span>        sqc.Second = <span style="color:#66d9ef">this</span>.ParseInstr();
-</span></span><span style="display:flex;"><span>        result = sqc;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.Semicolon ) ) { 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Expected &#34;</span>semicolon<span style="color:#e6db74">&#34; after token &#34;</span> + <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index-<span style="color:#ae81ff">1</span> ].ToString()); 
-</span></span><span style="display:flex;"><span>    } 
-</span></span></code></pre></div><p>This sequence node contains two pointers to <code>InstrStmt</code> nodes and forms the basis of the syntax-tree structure.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.index &lt; <span style="color:#66d9ef">this</span>.tokens.Count &amp;&amp; <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.Semicolon ) ) {
+
+    <span style="color:#66d9ef">this</span>.index++;
+
+    <span style="color:#66d9ef">if</span> ( <span style="color:#66d9ef">this</span>.index &lt; <span style="color:#66d9ef">this</span>.tokens.Count &amp;&amp; !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;else&#34;</span> ) &amp;&amp;
+            !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;endif&#34;</span> ) &amp;&amp; !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( <span style="color:#e6db74">&#34;endwhile&#34;</span> ) ) {
+        Sequence sqc = <span style="color:#66d9ef">new</span> Sequence();
+        sqc.First = result;
+        sqc.Second = <span style="color:#66d9ef">this</span>.ParseInstr();
+        result = sqc;
+    }
+    
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ( !<span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index ].Equals( Scanner.tokens.Semicolon ) ) { 
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> System.Exception(<span style="color:#e6db74">&#34;Expected &#34;</span>semicolon<span style="color:#e6db74">&#34; after token &#34;</span> + <span style="color:#66d9ef">this</span>.tokens[ <span style="color:#66d9ef">this</span>.index-<span style="color:#ae81ff">1</span> ].ToString()); 
+    } 
+</code></pre></div><p>This sequence node contains two pointers to <code>InstrStmt</code> nodes and forms the basis of the syntax-tree structure.</p>
 
             </div>
         </article>
@@ -567,7 +567,7 @@ endwhile;
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

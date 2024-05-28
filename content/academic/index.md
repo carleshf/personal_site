@@ -205,14 +205,22 @@ draft: false
 
 * __rexposome: a bioinformatic tool for characterizing multiple environmental factors and its association with different omics biomarkers and diseases__
   * _C Hernandez-Ferrer_, M Vrijheid, JR Gonzalez (conductor: C Hernandez-Ferrer)
-  * The Emory Exposome Summer Course  ([highlights](https://emoryhercules.com/news/highlights-emorys-exposome-summer-course/), [agenda](#))
+  * The Emory Exposome Summer Course  ([highlights](https://emoryhercules.com/news/highlights-emorys-exposome-summer-course/))
   * to 2016-06-17 (performed: 2016-06-12)
 
 ## Posters
 
 * __Orchestrating federated processing within a federation of cancer data nodes - The EUCAIM perspective__
   * _C Hernandez-Ferrer_, S Jouide, L Codó, M Chavero-Díez, I Blanquer, F Cremonesi, M Lorenzi, L Karim, LM Bonmati, S Capella-Gutierrez, JL Gelpí (conductor: C Hernandez-Ferrer)
-  * ELIXIR All Hands 2024
+  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](https://f1000research.com/posters/13-537))
+
+* __OpenEBench 2024 update: Capturing the new perspectives and current needs of communities and scientific projects for scientific benchmarking__
+  * A Redondo Guitarte, L Portell-Silva, _C Hernandez-Ferrer_, L Codó, JM Fernández, D Repchevsky, JL Gelpí, S Capella-Gutierrez
+  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](#))
+
+* __OpenEBench 2024 update: Updating web widgets  and introducing users intranet__
+  * A Morales-Mata, A Valle-Banegas, E Martín, _Carles Hernandez-Ferrer_, JM Fernández, D Repchevsky, JL Gelpí, S Capella-Gutiérrez (conductor: A Morales-Mata)
+  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](#))
 
 * __OpenEBench 2023 update: better support and deeper interactions with benchmarking scientific communities__
   * _C Hernandez-Ferrer_, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí, S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
@@ -220,7 +228,7 @@ draft: false
 
 * __Federated Learning: General Review and Future Directions__
   * M Chavero-Díez, S Jouide, _C Hernandez-Ferrer_, L Codó, S Capella-Gutierrez, K Lekadir, JL Gelpí  (conductor: M Chavero-Díez)
-  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda))
+  * ELIXIR All Hands 2023 ([program](https://elixir-events.eventscase.com/EN/elixirallhands2023/Agenda), [poster](https://f1000research.com/posters/12-578))
 
 * __Treatabolome database: towards enhancing Rare Diseases' treatment visibility__
   * _C Hernandez-Ferrer_, A Corvó, ..., G Bonne, S Beltran (conductor: A Atalaia)
