@@ -216,11 +216,11 @@ draft: false
 
 * __OpenEBench 2024 update: Capturing the new perspectives and current needs of communities and scientific projects for scientific benchmarking__
   * A Redondo Guitarte, L Portell-Silva, _C Hernandez-Ferrer_, L Codó, JM Fernández, D Repchevsky, JL Gelpí, S Capella-Gutierrez
-  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](#))
+  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](https://f1000research.com/posters/13-567))
 
-* __OpenEBench 2024 update: Updating web widgets  and introducing users intranet__
+* __OpenEBench 2024 update: Updating web widgets and introducing users intranet__
   * A Morales-Mata, A Valle-Banegas, E Martín, _Carles Hernandez-Ferrer_, JM Fernández, D Repchevsky, JL Gelpí, S Capella-Gutiérrez (conductor: A Morales-Mata)
-  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](#))
+  * ELIXIR All Hands 2024 ([program](https://elixir-events.eventscase.com/EN/ahm2024/Agenda), [poster](https://f1000research.com/posters/13-561))
 
 * __OpenEBench 2023 update: better support and deeper interactions with benchmarking scientific communities__
   * _C Hernandez-Ferrer_, L Portell-Silva, A Redondo Guitarte, E Vendrell, L Codó, JM Fernández, D Repchevski, L López, A Valencia, JL Gelpí, S Capella-Gutierrez (conductor: C Hernandez-Ferrer)
