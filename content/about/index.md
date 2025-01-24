@@ -6,7 +6,7 @@ draft: false
 
 ## Trajectory
 
-I am a Senior Research Engineer at the [Barcelona Supercomputing Center (BSC)](www.bsc.es), where I primarily develop new infrastructure for European collaborative projects in biomedical sciences, such as ELIXIR. Additionally, I mentor and direct master’s theses for the [MSc. in Bioinformatics & Biostatitics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion) at the [Universitat Oberta de Catalunya (UOC)](https://uoc.edu) (see my [teaching activities](http://carleshf.com/academic/#formal-teaching)).
+I am a Senior Research Engineer at the [Barcelona Supercomputing Center (BSC)](www.bsc.es), where I primarily develop new infrastructure for European collaborative projects in biomedical sciences, such as ELIXIR. Additionally, I teach at [Universitat de Barcelona (UB)](https://ub.edu) at the [BSc. Computer Engineering](https://web.ub.edu/en/web/estudis/w/bachelordegree-g1077) (see my [teaching activities](http://carleshf.com/academic/#formal-teaching)).
 
 {{< figure src="/img/portrait.png" caption="Welcome to BSC's MareNostrum 4" >}}
 

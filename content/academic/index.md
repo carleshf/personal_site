@@ -19,6 +19,10 @@ draft: false
 
 ### Published
 
+* __Systematic assessment of long-read RNA-seq methods for transcript identification and quantification__
+  * F Pardo-Palacios, ..., _C Hernandez-Ferrer_, ..., Rene Maehr
+  * [Nature Methods](https://www.nature.com/articles/s41592-024-02298-3) (2024-06-07)
+
 * __Epimutation detection in the clinical context: guidelines and a use case from a new Bioconductor package__
   * C Ruiz-Arenas, ..., _C Hernandez-Ferrer_, ..., JR Gonzalez
   * [Epigenetics](https://www.tandfonline.com/doi/full/10.1080/15592294.2023.2230670) (2023-07-06)
@@ -153,9 +157,7 @@ draft: false
 
 #### Accepted or Submitted
 
-* __Systematic assessment of long-read RNA-seq methods for transcript identification and quantification__
-  * F Pardo-Palacios, ..., _C Hernandez-Ferrer_, ..., Rene Maehr
-  * Nature Methods (Submitted: 2021-07-02)
+_None_
 
 #### In preparation
 
@@ -272,16 +274,18 @@ draft: false
 
 ## Formal Teaching
 
-### Associate/Substitute Teacher
+### Associate/Substitute Teacher (Universitat de Barcelona)
 
-* [Artificial Vision](https://www.fib.upc.edu/ca/estudis/masters/master-en-intelligencia-artificial/pla-destudis/assignatures/CV-MAI) // [Master in Artificial Intelligence](https://web.ub.edu/en/web/estudis/w/masteruniversitari-M0K05) // Universitat de Barcelona // 2023-2024
+* 2024-2025
+  * [Tallers de Nous Usos de la Informàtica](https://grad.ub.edu/grad3/plae/AccesInformePD?curs=2022&codiGiga=364322&idioma=CAT&recurs=publicacio) // [BSc. Computer Engineering](https://web.ub.edu/en/web/estudis/w/bachelordegree-g1077)
+  * [Tallers de Nous Usos de la Informàtica](https://grad.ub.edu/grad3/plae/AccesInformePD?curs=2022&codiGiga=364311&idioma=CAT&recurs=publicacio) // [BSc. Computer Engineering](https://web.ub.edu/en/web/estudis/w/bachelordegree-g1077)
+  
+* 2023-2024
+  * [Artificial Vision](https://www.fib.upc.edu/ca/estudis/masters/master-en-intelligencia-artificial/pla-destudis/assignatures/CV-MAI) // [Master in Artificial Intelligence](https://web.ub.edu/en/web/estudis/w/masteruniversitari-M0K05)
 
-### Direction of master thesis in bioinformatics
+### Direction of master thesis in bioinformatics (Open University of Catalonia)
 
-* Open University of Catalonia // [Master in Bioinformatics and Biostatistics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion)
-* from 2019-09 to 07-2023 as _External Collaborator_
-
-Acting as final master thesis director:
+Acting as final master thesis director // [Master in Bioinformatics and Biostatistics](https://estudios.uoc.edu/es/masters-universitarios/bioinformatica-bioestadistica/presentacion)
 
 * _Federated machine learning applied to biomedical analysis; a bibliographic review_; by María Chavero and conducted during 2nd semester of 2022-2023 (grade: A+; score of `10/10`)
 * _Enhanced production of Monoclonal Antibodies with Artificial Intelligence and data-driven modelling_; by Irene Martínez and conducted during 2nd semester of 2022-2023 (grade: B; score of `8.5/10`)

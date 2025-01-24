@@ -125,13 +125,13 @@ Currently the author of PsyGeNET, Alba Gutiérrez, and me are developing an R pa
 <p>Currently the author of <strong>PsyGeNET</strong>, <a href="http://dbmi.hms.harvard.edu/person/postdoctoral-fellows/alba-gutierrez">Alba Gutiérrez</a>, and me are developing an R package (<code>PsyGeNET2R</code>) to query the information stored into the database and to perform some analysis using this information. We thought that could be a good idea to perform an enrichment analysis on the three main psychiatric disorders given a list of genes of interest.</p>
 <p>Using the <strong>PsyGeNET</strong>&rsquo;s browser we can get the following code to download the stored data:</p>
 <pre tabindex="0"><code>library(RCurl)
-oql &lt;- &quot;DEFINE
-    c0='/data/main',
-    c1='/data/genes',
-    c2='/data/diseases',
-    c3='/data/datasources'
+oql &lt;- &#34;DEFINE
+    c0=&#39;/data/main&#39;,
+    c1=&#39;/data/genes&#39;,
+    c2=&#39;/data/diseases&#39;,
+    c3=&#39;/data/datasources&#39;
   ON
-   'http://www.psygenet.org/web/PsyGeNET'
+   &#39;http://www.psygenet.org/web/PsyGeNET&#39;
   SELECT
     c1 (Gene_Symbol, Gene_Id, Gene_Description),
     c2 (Disease_Id, Disease_code, DiseaseName, PsychiatricDisorder),
@@ -139,17 +139,17 @@ oql &lt;- &quot;DEFINE
   FROM
     c0
   WHERE
-    c3 ='ALL'
+    c3 =&#39;ALL&#39;
   ORDER BY
-    c0.Score DESC&quot;;
+    c0.Score DESC&#34;;
 
-dataTsv &lt;- getURLContent(&quot;http://www.psygenet.org/oql&quot;, readfunction = charToRaw(oql), upload = TRUE, customrequest = &quot;POST&quot;)
-data &lt;- read.csv(textConnection(dataTsv), header = TRUE, sep=&quot;;&quot;)
+dataTsv &lt;- getURLContent(&#34;http://www.psygenet.org/oql&#34;, readfunction = charToRaw(oql), upload = TRUE, customrequest = &#34;POST&#34;)
+data &lt;- read.csv(textConnection(dataTsv), header = TRUE, sep=&#34;;&#34;)
 </code></pre><p>The <code>data.frame</code> called <code>data</code> corresponds to a generalization of the information stored into <strong>PsyGeNET</strong>:</p>
 <pre tabindex="0"><code>&gt; colnames(data)
-[1] &quot;c1.Gene_Symbol&quot;         &quot;c1.Gene_Id&quot;             &quot;c1.Gene_Description&quot;
-[4] &quot;c2.Disease_Id2&quot;         &quot;c2.Disease_code&quot;        &quot;c2.DiseaseName&quot;
-[7] &quot;c2.PsychiatricDisorder&quot; &quot;c0.Score&quot;               &quot;c0.Number_of_Abstracts&quot;
+[1] &#34;c1.Gene_Symbol&#34;         &#34;c1.Gene_Id&#34;             &#34;c1.Gene_Description&#34;
+[4] &#34;c2.Disease_Id2&#34;         &#34;c2.Disease_code&#34;        &#34;c2.DiseaseName&#34;
+[7] &#34;c2.PsychiatricDisorder&#34; &#34;c0.Score&#34;               &#34;c0.Number_of_Abstracts&#34;
 </code></pre><p>The following tables shows the content of the first three rows of <strong>data</strong>:</p>
 <pre tabindex="0"><code>	c1.Gene_Symbol 	c1.Gene_Id 	c1.Gene_Description 	                                c2.Disease_Id
 1 	NPY 	        4852 	    neuropeptide Y 	                                        umls:C0001973
@@ -166,15 +166,15 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 2 	82
 3 	37
 </code></pre><p>From the vignette <em>&ldquo;PsyGeNET2R: Case study with genes from GWAS study related to bipolar disorder&rdquo;</em> that we are writting, I extracted a list of genes of interest:</p>
-<pre tabindex="0"><code>genesOfInterest &lt;- c( &quot;ADCY2&quot;, &quot;FAM155A&quot;, &quot;MSI2&quot;, &quot;AKAP13&quot;,
-  &quot;FLJ16124&quot;, &quot;NFIX&quot;, &quot;SIPA1L2&quot;, &quot;SNX8&quot;, &quot;ANK3&quot;, &quot;FSTL5&quot;,
-  &quot;NGF&quot;, &quot;SPERT&quot;, &quot;ANKS1A&quot;, &quot;GATA5&quot;, &quot;NPAS3&quot;, &quot;STK39&quot;, &quot;ATP6V1G3&quot;,
-  &quot;GNA14&quot;, &quot;ODZ4&quot;, &quot;SYNE1&quot;, &quot;ATXN1&quot;, &quot;GPR81&quot;, &quot;PAPOLG&quot;, &quot;THSD7A&quot;,
-  &quot;C11orf80&quot;, &quot;HHAT&quot;, &quot;PAX1&quot;, &quot;TNR&quot;, &quot;C15orf53&quot;, &quot;IFI44&quot;, &quot;PBRM1&quot;,
-  &quot;TRANK1&quot;, &quot;CACNA1C&quot;, &quot;ITIH3&quot;, &quot;PTPRE&quot;, &quot;TRIM9&quot;, &quot;CACNA1D&quot;, &quot;KDM5B&quot;,
-  &quot;PTPRT&quot;, &quot;UBE2E3&quot;, &quot;CACNB3&quot;, &quot;KIF1A&quot;, &quot;RASIP1&quot;, &quot;UBR1&quot;, &quot;CROT&quot;,
-  &quot;LOC150197&quot;, &quot;RIMBP2&quot;, &quot;ZMIZ1&quot;, &quot;DLG2&quot;, &quot;MAD1L1&quot;, &quot;RXRG&quot;, &quot;ZNF274&quot;,
-  &quot;DNAJB4&quot;, &quot;MAPK10&quot;, &quot;SGCG&quot;, &quot;DUSP22&quot;, &quot;MCM9&quot;, &quot;SH3PXD2A&quot;
+<pre tabindex="0"><code>genesOfInterest &lt;- c( &#34;ADCY2&#34;, &#34;FAM155A&#34;, &#34;MSI2&#34;, &#34;AKAP13&#34;,
+  &#34;FLJ16124&#34;, &#34;NFIX&#34;, &#34;SIPA1L2&#34;, &#34;SNX8&#34;, &#34;ANK3&#34;, &#34;FSTL5&#34;,
+  &#34;NGF&#34;, &#34;SPERT&#34;, &#34;ANKS1A&#34;, &#34;GATA5&#34;, &#34;NPAS3&#34;, &#34;STK39&#34;, &#34;ATP6V1G3&#34;,
+  &#34;GNA14&#34;, &#34;ODZ4&#34;, &#34;SYNE1&#34;, &#34;ATXN1&#34;, &#34;GPR81&#34;, &#34;PAPOLG&#34;, &#34;THSD7A&#34;,
+  &#34;C11orf80&#34;, &#34;HHAT&#34;, &#34;PAX1&#34;, &#34;TNR&#34;, &#34;C15orf53&#34;, &#34;IFI44&#34;, &#34;PBRM1&#34;,
+  &#34;TRANK1&#34;, &#34;CACNA1C&#34;, &#34;ITIH3&#34;, &#34;PTPRE&#34;, &#34;TRIM9&#34;, &#34;CACNA1D&#34;, &#34;KDM5B&#34;,
+  &#34;PTPRT&#34;, &#34;UBE2E3&#34;, &#34;CACNB3&#34;, &#34;KIF1A&#34;, &#34;RASIP1&#34;, &#34;UBR1&#34;, &#34;CROT&#34;,
+  &#34;LOC150197&#34;, &#34;RIMBP2&#34;, &#34;ZMIZ1&#34;, &#34;DLG2&#34;, &#34;MAD1L1&#34;, &#34;RXRG&#34;, &#34;ZNF274&#34;,
+  &#34;DNAJB4&#34;, &#34;MAPK10&#34;, &#34;SGCG&#34;, &#34;DUSP22&#34;, &#34;MCM9&#34;, &#34;SH3PXD2A&#34;
 )
 </code></pre><p>But from the total of 58 genes, only 21 are in <strong>PsyGeNET</strong> today (January 06th, 2015):</p>
 <pre tabindex="0"><code>&gt; length(genesOfInterest)
@@ -183,10 +183,10 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 [1] 21
 &gt; sel &lt;- genesOfInterest[genesOfInterest %in% data$c1.Gene_Symbol]
 &gt; sel
- [1] &quot;MSI2&quot;     &quot;NFIX&quot;     &quot;ANK3&quot;     &quot;NGF&quot;      &quot;ANKS1A&quot;   &quot;NPAS3&quot;
- [7] &quot;SYNE1&quot;    &quot;THSD7A&quot;   &quot;C11orf80&quot; &quot;C15orf53&quot; &quot;PBRM1&quot;    &quot;CACNA1C&quot;
-[13] &quot;ITIH3&quot;    &quot;PTPRE&quot;    &quot;PTPRT&quot;    &quot;CACNB3&quot;   &quot;RASIP1&quot;   &quot;ZMIZ1&quot;
-[19] &quot;DLG2&quot;     &quot;MAD1L1&quot;   &quot;SGCG&quot;
+ [1] &#34;MSI2&#34;     &#34;NFIX&#34;     &#34;ANK3&#34;     &#34;NGF&#34;      &#34;ANKS1A&#34;   &#34;NPAS3&#34;
+ [7] &#34;SYNE1&#34;    &#34;THSD7A&#34;   &#34;C11orf80&#34; &#34;C15orf53&#34; &#34;PBRM1&#34;    &#34;CACNA1C&#34;
+[13] &#34;ITIH3&#34;    &#34;PTPRE&#34;    &#34;PTPRT&#34;    &#34;CACNB3&#34;   &#34;RASIP1&#34;   &#34;ZMIZ1&#34;
+[19] &#34;DLG2&#34;     &#34;MAD1L1&#34;   &#34;SGCG&#34;
 </code></pre><p>From the data we can build the following table:</p>
 <table>
 <thead>
@@ -219,7 +219,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 </tbody>
 </table>
 <p>All the data come from:</p>
-<pre tabindex="0"><code>&gt; data.dep = data[data$c2.PsychiatricDisorder == &quot;Depression&quot;, ]
+<pre tabindex="0"><code>&gt; data.dep = data[data$c2.PsychiatricDisorder == &#34;Depression&#34;, ]
 &gt; x &lt;- sum(genesOfInterest %in% data$c1.Gene_Symbol)
 &gt; n &lt;- sum(sel %in% data.dep$c1.Gene_Symbol)
 &gt; t &lt;- length(unique(data.dep$c1.Gene_Symbol))
@@ -260,7 +260,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2025</span>
             <span><a href="http://212.71.254.23">Carles Hernandez-Ferrer</a></span>
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             <span><a href="http://212.71.254.23/blog/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -281,7 +281,7 @@ c2.Disease_code 	c2.DiseaseName 	c2.PsychiatricDisorder 	c0.Score
 
 
 
-<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 
